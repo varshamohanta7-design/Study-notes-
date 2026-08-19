@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FC Study Notes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        #status {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #777;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        .fc-button {
+            display: block;
+            padding: 25px 15px;
+            background: white;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #222;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+            transition: 0.2s ease;
+        }
+
+        .fc-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        .fc-button:active {
+            transform: translateY(-1px);
+        }
+
+        .error {
+            text-align: center;
+            color: #c62828;
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #777;
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .fc-button {
+                padding: 20px 10px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>📚 FC Study Notes</h1>
+        <p>Your personal study library</p>
+    </header>
+
+    <div class="container">
+
+        <div id="status">
+            Loading your FC notes...
+        </div>
+
+        <div id="fc-list" class="grid"></div>
+
+    </div>
+
+    <footer>
+        Keep studying. Keep improving. 💪📖
+    </footer>
+
+
+    <script>
+
+        // Your GitHub repository
+        const username = "varshamohanta7-design";
+        const repository = "Study-notes-";
+
+        // GitHub API address
+        const apiURL =
+            `https://api.github.com/repos/${username}/${repository}/contents/`;
+
+        async function loadFCFiles() {
+
+            const status = document.getElementById("status");
+            const list = document.getElementById("fc-list");
+
+            try {
+
+                const response = await fetch(apiURL);
+
+                if (!response.ok) {
+                    throw new Error("Could not access GitHub repository.");
+                }
+
+                const files = await response.json();
+
+                // Find files like:
+                // FC 6.html
+                // FC 17.html
+                // FC 100.html
+
+                const fcFiles = files.filter(file =>
+                    file.type === "file" &&
+                    /^FC\s+\d+\.html$/i.test(file.name)
+                );
+
+                // Sort numerically:
+                // FC 6, FC 7, FC 8 ... FC 17, FC 18
+
+                fcFiles.sort((a, b) => {
+
+                    const numberA =
+                        parseInt(a.name.match(/\d+/)[0]);
+
+                    const numberB =
+                        parseInt(b.name.match(/\d+/)[0]);
+
+                    return numberA - numberB;
+
+                });
+
+                // Show number of available notes
+
+                status.textContent =
+                    `${fcFiles.length} FC notes available`;
+
+                // Create buttons automatically
+
+                fcFiles.forEach(file => {
+
+                    const number =
+                        file.name.match(/\d+/)[0];
+
+                    const link =
+                        document.createElement("a");
+
+                    link.className = "fc-button";
+
+                    link.href =
+                        encodeURI(file.name);
+
+                    link.textContent =
+                        `📖 FC ${number}`;
+
+                    list.appendChild(link);
+
+                });
+
+                // If no FC files are found
+
+                if (fcFiles.length === 0) {
+
+                    status.textContent =
+                        "No FC HTML files found.";
+
+                }
+
+            } catch (error) {
+
+                status.innerHTML =
+                    `<div class="error">
+                        ⚠️ Unable to load FC notes.<br>
+                        Please try again later.
+                    </div>`;
+
+                console.error(error);
+
+            }
+        }
+
+        // Start loading files
+        loadFCFiles();
+
+    </script>
+
+</body>
+
+</html>
