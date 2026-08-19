@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topper Study Notes - Food Chemistry: Proteins</title>
+  <!-- Google Fonts for Realistic Handwriting -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Gochi+Hand&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            handwriting: ['Kalam', 'cursive'],
+            marker: ['Gochi Hand', 'Kalam', 'cursive'],
+            caveat: ['Caveat', 'cursive'],
+            patrick: ['Patrick Hand', 'cursive'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            gelblue: '#1d4ed8',
+            penblack: '#111827',
+            markerblack: '#090d16',
+            paper: '#fffef7',
+            highlight: 'rgba(253, 224, 71, 0.75)',
+            examred: '#dc2626',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Notebook Paper Texture with Horizontal Blue Lines & Red Margin Line */
+    .notebook-page {
+      background-color: #fffef7;
+      background-image: 
+        linear-gradient(90deg, transparent 69px, rgba(239, 68, 68, 0.35) 69px, rgba(239, 68, 68, 0.35) 71px, transparent 71px),
+        linear-gradient(rgba(59, 130, 246, 0.12) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 28px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    /* Wobbly Hand-Drawn Borders & Circles */
+    .hand-box {
+      border: 2px solid #2563eb;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .hand-box-black {
+      border: 2px solid #111827;
+      border-radius: 225px 18px 255px 12px/18px 255px 12px 225px;
+    }
+
+    .hand-circle-red {
+      display: inline-block;
+      border: 2.5px solid #ef4444;
+      border-radius: 255px 20px 225px 15px/20px 225px 15px 255px;
+      padding: 1px 8px;
+      transform: rotate(-1deg);
+    }
+
+    .hand-underline-red {
+      text-decoration: none;
+      background-image: linear-gradient(120deg, rgba(239, 68, 68, 0.8) 0%, rgba(239, 68, 68, 0.8) 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 2.5px;
+      background-position: 0 92%;
+    }
+
+    /* Highlighter Stroke Effect */
+    .hl-yellow {
+      background: linear-gradient(100deg, rgba(254, 240, 138, 0) 1%, rgba(254, 240, 138, 0.95) 2%, rgba(253, 224, 71, 0.85) 96%, rgba(254, 240, 138, 0) 99%);
+      padding: 1px 5px;
+      border-radius: 3px;
+      display: inline;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .sticky-note {
+      background: #fef08a;
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.12);
+      transform: rotate(-1.5deg);
+      border-bottom-right-radius: 20px 5px;
+      transition: transform 0.2s ease;
+    }
+    .sticky-note:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    /* Handwritten Table Style */
+    .hand-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+    }
+    .hand-table th {
+      border-bottom: 2px solid #111827;
+      font-weight: 700;
+      color: #111827;
+      padding: 6px 10px;
+    }
+    .hand-table td {
+      border-bottom: 1px dashed rgba(37, 99, 235, 0.3);
+      padding: 6px 10px;
+      color: #1d4ed8;
+    }
+
+    /* Print View Customization */
+    @media print {
+      body { background: white; }
+      .no-print { display: none !important; }
+      .notebook-page { box-shadow: none; border: 1px solid #ccc; page-break-after: always; }
+    }
+  </style>
+</head>
+<body class="bg-slate-800 text-slate-900 font-sans min-h-screen py-4 px-2 md:px-6">
+
+  <!-- TOP CONTROL BAR -->
+  <header class="max-w-5xl mx-auto mb-4 bg-slate-900 border border-slate-700 rounded-xl p-3 md:p-4 text-white shadow-xl no-print">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">📝</span>
+        <div>
+          <h1 class="text-lg md:text-xl font-bold font-handwriting tracking-wide text-yellow-300">FOOD CHEMISTRY: PROTEINS (Class 07)</h1>
+          <p class="text-xs text-slate-300">Ultra-Realistic Topper Notes • Swa Education • By Anubhav Pandey</p>
+        </div>
+      </div>
+
+      <!-- Navigation & Utility Controls -->
+      <div class="flex flex-wrap items-center gap-2 text-xs md:text-sm">
+        <button onclick="switchPage(1)" id="btn-p1" class="px-3 py-1.5 rounded-lg bg-blue-600 font-medium hover:bg-blue-500 transition">Page 1: Composition</button>
+        <button onclick="switchPage(2)" id="btn-p2" class="px-3 py-1.5 rounded-lg bg-slate-700 font-medium hover:bg-blue-500 transition">Page 2: Conformation & R-Group</button>
+        <button onclick="switchPage(3)" id="btn-p3" class="px-3 py-1.5 rounded-lg bg-slate-700 font-medium hover:bg-blue-500 transition">Page 3: Denaturation & SCP</button>
+        <button onclick="switchPage(4)" id="btn-p4" class="px-3 py-1.5 rounded-lg bg-amber-600 font-medium hover:bg-amber-500 transition">🎯 Revision Quiz</button>
+        <button onclick="readAloud()" class="p-1.5 bg-emerald-600 rounded-lg hover:bg-emerald-500" title="Listen to Notes Summary">🎧 Audio</button>
+        <button onclick="window.print()" class="p-1.5 bg-slate-700 rounded-lg hover:bg-slate-600" title="Print Notes">🖨️ Print</button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="mt-3 relative">
+      <input type="text" id="searchInput" onkeyup="searchNotes()" placeholder="Search key concepts (e.g. 'casein', 'denaturation', 'tryptophan', 'indole')..." class="w-full bg-slate-800 border border-slate-600 text-white rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-yellow-400">
+      <span class="absolute right-3 top-2 text-slate-400 text-xs">🔍 Search</span>
+    </div>
+  </header>
+
+  <!-- MAIN NOTEBOOK CONTAINER -->
+  <main class="max-w-5xl mx-auto relative flex">
+
+    <!-- Binder Spiral Rings (Left side decor) -->
+    <div class="hidden md:flex flex-col justify-around py-12 -mr-3 z-20 no-print select-none">
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+      <div class="w-7 h-4 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 rounded-full shadow-md border border-slate-600 my-2"></div>
+    </div>
+
+    <!-- NOTEBOOK PAGES CONTENT -->
+    <div class="w-full">
+
+      <!-- ================= PAGE 1 ================= -->
+      <article id="page-1" class="notebook-page rounded-2xl p-4 sm:p-8 pl-12 sm:pl-20 min-h-[900px] font-handwriting text-gelblue leading-relaxed text-base sm:text-lg mb-8">
+        
+        <!-- Header Banner -->
+        <div class="border-b-2 border-slate-800 pb-3 mb-6 relative">
+          <!-- Page Number & Date -->
+          <div class="absolute right-0 top-0 text-xs text-slate-500 font-sans flex flex-col items-end">
+            <span>Date: <u>05/08/2026</u></span>
+            <span>Page: <strong>01</strong></span>
+          </div>
+
+          <div class="inline-block bg-yellow-100 text-slate-900 border-2 border-slate-900 px-3 py-1 rounded-lg text-xs font-bold uppercase mb-1 font-sans">
+            Swa Education • Food Science Series
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-penblack font-marker tracking-wide">FOOD CHEMISTRY: PROTEINS</h2>
+          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-700 font-sans font-medium mt-1">
+            <span>📚 Class: <strong class="text-blue-800">07</strong></span> |
+            <span>👨‍🏫 Educator: <strong class="text-slate-900 font-bold">Anubhav Pandey</strong></span>
+            <span class="bg-blue-100 text-blue-900 text-xs px-2 py-0.5 rounded border border-blue-300">ICAR JRF Qualified • UGC NET Qualified</span>
+          </div>
+        </div>
+
+        <!-- Sticky Note - Memory Trick -->
+        <div class="float-right ml-4 mb-4 w-64 p-3 sticky-note text-slate-900 text-sm font-patrick rounded-lg border border-yellow-400 z-10">
+          <div class="font-bold text-base text-amber-900 border-b border-amber-300 pb-1 mb-1 flex items-center gap-1">
+            <span>💡 MEMORY TRICK</span>
+          </div>
+          <p><strong>Globular vs Fibrous:</strong></p>
+          <p class="text-xs mt-1">
+            • <span class="hl-yellow">Albumins</span> = Water Soluble (Egg, Milk)
+            <br>• <span class="hl-yellow">Globulins</span> = Salt Soluble, H₂O Insoluble (Myosin, Peanuts)
+            <br>• <span class="hl-yellow">Scleroproteins</span> = Structural & Insoluble (Skin, Hair, Nails)
+          </p>
+        </div>
+
+        <!-- Section 1: Classification based on chemical composition -->
+        <section class="mb-8">
+          <h3 class="text-xl sm:text-2xl font-bold text-penblack font-marker underline decoration-wavy decoration-blue-500 mb-3">
+            📌 CLASSIFICATION OF PROTEINS
+          </h3>
+          
+          <div class="mb-4">
+            <span class="text-lg font-bold text-penblack bg-blue-100 px-2 py-0.5 rounded border border-blue-300">1. Based on Chemical Composition</span>
+          </div>
+
+          <!-- Table 1: Globular & Fibrous Proteins -->
+          <div class="hand-box p-3 my-4 overflow-x-auto">
+            <table class="hand-table text-sm sm:text-base">
+              <thead>
+                <tr>
+                  <th class="text-left">Protein Class</th>
+                  <th class="text-left">Sub-type</th>
+                  <th class="text-left">Characteristics</th>
+                  <th class="text-left">Examples / Occurrence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Globular -->
+                <tr>
+                  <td rowspan="3" class="font-bold text-penblack bg-amber-50/50 align-top">Globular Proteins</td>
+                  <td class="font-bold text-penblack">Albumins</td>
+                  <td>Soluble in <span class="hl-yellow">water</span>, dilute salt solution, dilute acid and base; <span class="hl-yellow">coagulated by heat</span>.</td>
+                  <td>Lactalbumin, egg albumin, serum albumin.</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-penblack">Globulins</td>
+                  <td>Soluble in salt solution, <span class="hand-circle-red font-bold text-red-600">insoluble in H₂O</span>.</td>
+                  <td>Serum globulin, arachin & conarchin of peanuts, myosin.</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-penblack">Histones</td>
+                  <td><span class="hl-yellow">Basic proteins</span>, soluble in most common solvents.</td>
+                  <td>Nucleoproteins.</td>
+                </tr>
+
+                <!-- Fibrous -->
+                <tr>
+                  <td rowspan="3" class="font-bold text-penblack bg-slate-50 align-top border-t-2 border-slate-800">Fibrous / Scleroproteins</td>
+                  <td class="font-bold text-penblack border-t-2 border-slate-800">Collagens</td>
+                  <td class="border-t-2 border-slate-800">Resistant to digestive enzymes, <span class="hl-yellow">insoluble</span>.</td>
+                  <td class="border-t-2 border-slate-800">Skin, tendons, bones.</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-penblack">Elastins</td>
+                  <td>Partially resistant to digestive enzymes.</td>
+                  <td>Arteries, tendons, elastic tissues.</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-penblack">Keratin</td>
+                  <td><span class="hl-yellow">Highly insoluble</span> and resistant to digestive enzymes.</td>
+                  <td>Skin, hair, nails.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <ul class="list-disc pl-6 space-y-2 mt-4 text-base sm:text-lg">
+            <li><strong class="text-penblack">Globular Proteins:</strong> Compact, spherical structure. Highly responsive to changes in pH, ionic strength, and temperature.</li>
+            <li><strong class="text-penblack">Fibrous Proteins (Scleroproteins):</strong> Long polypeptide chains forming fibers. Play major <span class="hl-yellow">structural roles</span> in animal body tissue.</li>
+          </ul>
+        </section>
+
+        <!-- Exam Tip Footer -->
+        <div class="mt-8 pt-4 border-t border-dashed border-blue-300 flex items-center justify-between text-xs font-sans text-slate-600">
+          <span>* Handwritten revision notes by toppers • 100% textbook accuracy</span>
+          <span>Swa Education Class 07 • Page 1</span>
+        </div>
+      </article>
+
+
+      <!-- ================= PAGE 2 ================= -->
+      <article id="page-2" class="notebook-page rounded-2xl p-4 sm:p-8 pl-12 sm:pl-20 min-h-[900px] font-handwriting text-gelblue leading-relaxed text-base sm:text-lg mb-8">
+        
+        <!-- Header Banner -->
+        <div class="border-b-2 border-slate-800 pb-3 mb-6 relative">
+          <div class="absolute right-0 top-0 text-xs text-slate-500 font-sans flex flex-col items-end">
+            <span>Date: <u>05/08/2026</u></span>
+            <span>Page: <strong>02</strong></span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-penblack font-marker tracking-wide">FOOD CHEMISTRY: PROTEINS (Contd.)</h2>
+          <span class="text-xs font-bold text-blue-800 font-sans">Class 07 • Conformation, R-Groups & Chemical Structures</span>
+        </div>
+
+        <!-- Sticky Note - Exam Tip -->
+        <div class="float-right ml-4 mb-4 w-60 p-3 sticky-note text-slate-900 text-sm font-patrick rounded-lg border border-yellow-400 z-10">
+          <div class="font-bold text-base text-amber-900 border-b border-amber-300 pb-1 mb-1 flex items-center gap-1">
+            <span>🎯 EXAM TIP (ICAR JRF)</span>
+          </div>
+          <p class="text-xs">
+            • <span class="hl-yellow">Casein</span> is a Phosphoprotein in Milk.
+            <br>• <span class="hl-yellow">Mucin</span> is a Glycoprotein in Saliva.
+            <br>• <span class="hl-yellow">Lipovitellin</span> is a Lipoprotein in Egg Yolk.
+            <br>• <span class="hl-yellow">Ceruloplasmin</span> contains <strong class="text-red-600">Copper (Cu)</strong> as a metalloprotein!
+          </p>
+        </div>
+
+        <!-- Section 2: Conformation -->
+        <section class="mb-6">
+          <div class="mb-3">
+            <span class="text-lg font-bold text-penblack bg-blue-100 px-2 py-0.5 rounded border border-blue-300">2. Classification Based on Conformation</span>
+          </div>
+
+          <ul class="list-none space-y-2 pl-2">
+            <li>
+              ✏️ <strong class="text-penblack">Simple Proteins:</strong> Yield <span class="hl-yellow">ONLY amino acids</span> on complete hydrolysis.
+              <br><span class="text-sm pl-6 text-slate-700 font-sans font-medium">➔ Examples: Albumin, Globulin, Prolamine etc.</span>
+            </li>
+            <li>
+              ✏️ <strong class="text-penblack">Conjugated Proteins:</strong> Made up of simple protein (<span class="hl-yellow">apoprotein</span>) + non-protein substance known as <span class="hand-circle-red font-bold text-red-600">prosthetic group</span>. On hydrolysis, yield amino acids PLUS other organic/inorganic compounds.
+            </li>
+            <li>
+              ✏️ <strong class="text-penblack">Derived Proteins:</strong> Degradation products obtained by action of acids, alkalis, or enzymes on simple/conjugated proteins.
+              <br><span class="text-sm pl-6 text-slate-700 font-sans font-medium">➔ Examples: Denatured proteins, Peptones, Polypeptides.</span>
+            </li>
+          </ul>
+
+          <!-- Major Classes Table -->
+          <div class="my-4 hand-box p-3 bg-white/70 overflow-x-auto">
+            <p class="font-bold text-penblack mb-2 text-sm uppercase tracking-wide">Table: Major Classes of Conjugated Proteins</p>
+            <table class="hand-table text-sm">
+              <thead>
+                <tr>
+                  <th>Sr. No.</th>
+                  <th>Class</th>
+                  <th>Other Compound Present (Prosthetic Group)</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>01</td><td class="font-bold text-penblack">Chromoprotein</td><td>Coloured pigment</td><td>Haemoglobin</td></tr>
+                <tr><td>02</td><td class="font-bold text-penblack">Glycoprotein</td><td>Carbohydrate</td><td>Mucin (in saliva)</td></tr>
+                <tr><td>03</td><td class="font-bold text-penblack">Phosphoprotein</td><td>Phosphoric acid</td><td>Casein (in milk)</td></tr>
+                <tr><td>04</td><td class="font-bold text-penblack">Lipoprotein</td><td>Lipid</td><td>Lipovitellin (in egg yolk)</td></tr>
+                <tr><td>05</td><td class="font-bold text-penblack">Nucleoprotein</td><td>Nucleic acid</td><td>Viruses</td></tr>
+                <tr><td>06</td><td class="font-bold text-penblack">Metalloprotein</td><td>Metal</td><td>Ceruloplasmin (Cu)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 3: R-Group Classification -->
+        <section class="mb-6">
+          <div class="mb-3">
+            <span class="text-lg font-bold text-penblack bg-blue-100 px-2 py-0.5 rounded border border-blue-300">3. Classification Based on R-Group or Side Group</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-3 text-sm sm:text-base">
+            <div class="p-2 border-l-4 border-blue-600 bg-blue-50/50 rounded">
+              • <strong class="text-penblack">Acidic Amino Acids:</strong> Contain more carboxyl (-COOH) groups than amino (-NH₂) groups.
+              <br><span class="text-slate-800 font-semibold pl-4">➔ Eg: Aspartic acid, Glutamic acid.</span>
+            </div>
+            <div class="p-2 border-l-4 border-amber-500 bg-amber-50/50 rounded">
+              • <strong class="text-penblack">Basic Amino Acids:</strong> Contain more amino (-NH₂) groups than carboxyl (-COOH) groups.
+              <br><span class="text-slate-800 font-semibold pl-4">➔ Eg: Lysine, Glutamine, Histidine.</span>
+            </div>
+            <div class="p-2 border-l-4 border-emerald-500 bg-emerald-50/50 rounded">
+              • <strong class="text-penblack">Neutral Amino Acids:</strong> Equal number of amino and carboxyl groups.
+              <br><span class="text-slate-800 font-semibold pl-4">➔ Eg: Glycine, Alanine, Serine.</span>
+            </div>
+            <div class="p-2 border-l-4 border-purple-500 bg-purple-50/50 rounded">
+              • <strong class="text-penblack">Sulphur Containing:</strong> Contain sulphur (S) atoms.
+              <br><span class="text-slate-800 font-semibold pl-4">➔ Eg: Methionine, Cysteine.</span>
+            </div>
+          </div>
+
+          <p class="font-bold text-penblack mt-3">
+            • <span class="hl-yellow">Aromatic Amino Acids:</span> Contain aromatic ring (ring form). 
+            <br><span class="text-sm text-slate-700 pl-4 font-sans font-medium">➔ Examples: Phenylalanine, Tyrosine, Tryptophan.</span>
+          </p>
+
+          <!-- FULL CHEMICAL STRUCTURES SECTION (PAGE 5 OF ORIGINAL PDF) -->
+          <div class="my-5 hand-box-black p-4 bg-white shadow-md">
+            <div class="border-b border-slate-300 pb-2 mb-3 flex flex-wrap items-center justify-between">
+              <span class="font-bold text-penblack font-marker text-lg text-red-700">✏️ CHEMICAL STRUCTURAL FORMULAS (PDF PAGE 5)</span>
+              <span class="text-xs bg-yellow-200 text-yellow-900 px-2 py-0.5 rounded border border-yellow-400 font-sans font-bold">
+                High-Yield Structural Formulas
+              </span>
+            </div>
+
+            <!-- CHEMICAL DIAGRAMS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+              
+              <!-- 1. PHENYLALANINE -->
+              <div class="border border-slate-300 rounded-xl p-3 bg-red-50/20 flex flex-col justify-between">
+                <div>
+                  <div class="text-center border-b border-red-200 pb-1 mb-2">
+                    <span class="font-bold text-penblack text-base font-marker">Phenylalanine</span>
+                    <span class="text-xs text-red-700 block font-sans">(Benzene Ring + Backbone)</span>
+                  </div>
+                  
+                  <!-- SVG Chemical Structure of Phenylalanine -->
+                  <svg viewBox="0 0 240 150" class="w-full h-44 mx-auto">
+                    <!-- Benzene Ring -->
+                    <polygon points="55,35 80,50 80,80 55,95 30,80 30,50" fill="#fff" stroke="#dc2626" stroke-width="2.5"/>
+                    <line x1="75" y1="53" x2="75" y2="77" stroke="#dc2626" stroke-width="2"/>
+                    <line x1="53" y1="89" x2="35" y2="78" stroke="#dc2626" stroke-width="2"/>
+                    <line x1="35" y1="52" x2="53" y2="41" stroke="#dc2626" stroke-width="2"/>
+                    
+                    <!-- Bond from Benzene C1 to CH2 -->
+                    <line x1="80" y1="65" x2="115" y2="65" stroke="#111827" stroke-width="2.5"/>
+                    <text x="106" y="58" font-family="Kalam" font-size="12" fill="#dc2626" font-weight="bold">CH₂</text>
+                    
+                    <!-- Bond to C-alpha -->
+                    <line x1="125" y1="65" x2="155" y2="65" stroke="#111827" stroke-width="2.5"/>
+                    <circle cx="155" cy="65" r="3.5" fill="#1d4ed8"/>
+                    <text x="150" y="52" font-family="Kalam" font-size="12" fill="#1d4ed8" font-weight="bold">CH</text>
+                    
+                    <!-- Bond to NH2 -->
+                    <line x1="155" y1="65" x2="155" y2="98" stroke="#1d4ed8" stroke-width="2.5"/>
+                    <text x="144" y="115" font-family="Kalam" font-size="14" fill="#1d4ed8" font-weight="bold">NH₂</text>
+                    
+                    <!-- Bond to C=O and OH -->
+                    <line x1="155" y1="65" x2="188" y2="46" stroke="#111827" stroke-width="2.5"/>
+                    <line x1="185" y1="44" x2="185" y2="20" stroke="#111827" stroke-width="2"/>
+                    <line x1="191" y1="48" x2="191" y2="20" stroke="#111827" stroke-width="2"/>
+                    <text x="183" y="15" font-family="Kalam" font-size="14" fill="#111827" font-weight="bold">O</text>
+                    
+                    <line x1="188" y1="46" x2="212" y2="60" stroke="#111827" stroke-width="2.5"/>
+                    <text x="212" y="70" font-family="Kalam" font-size="14" fill="#111827" font-weight="bold">OH</text>
+                    
+                    <text x="55" y="120" font-family="Gochi Hand" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="bold">Benzene Ring</text>
+                  </svg>
+                </div>
+                <div class="text-xs bg-white p-1.5 rounded border border-slate-200 text-slate-700 font-sans mt-1">
+                  Non-polar hydrophobic aromatic amino acid.
+                </div>
+              </div>
+
+              <!-- 2. TYROSINE -->
+              <div class="border border-slate-300 rounded-xl p-3 bg-amber-50/20 flex flex-col justify-between">
+                <div>
+                  <div class="text-center border-b border-amber-200 pb-1 mb-2">
+                    <span class="font-bold text-penblack text-base font-marker">Tyrosine</span>
+                    <span class="text-xs text-amber-700 block font-sans">(Phenol Ring + OH)</span>
+                  </div>
+
+                  <!-- SVG Chemical Structure of Tyrosine -->
+                  <svg viewBox="0 0 260 150" class="w-full h-44 mx-auto">
+                    <!-- HO- group -->
+                    <text x="2" y="70" font-family="Kalam" font-size="13" fill="#dc2626" font-weight="bold">HO</text>
+                    <line x1="24" y1="65" x2="42" y2="65" stroke="#dc2626" stroke-width="2.5"/>
+
+                    <!-- Benzene ring -->
+                    <polygon points="42,65 57,41 85,41 100,65 85,89 57,89" fill="#fff" stroke="#d97706" stroke-width="2.5"/>
+                    <line x1="60" y1="46" x2="82" y2="46" stroke="#d97706" stroke-width="2"/>
+                    <line x1="95" y1="65" x2="82" y2="84" stroke="#d97706" stroke-width="2"/>
+                    <line x1="47" y1="65" x2="60" y2="84" stroke="#d97706" stroke-width="2"/>
+
+                    <!-- Bond from Benzene C1 to CH2 -->
+                    <line x1="100" y1="65" x2="132" y2="65" stroke="#111827" stroke-width="2.5"/>
+                    <text x="124" y="58" font-family="Kalam" font-size="12" fill="#d97706" font-weight="bold">CH₂</text>
+
+                    <!-- Bond to C-alpha -->
+                    <line x1="142" y1="65" x2="170" y2="65" stroke="#111827" stroke-width="2.5"/>
+                    <circle cx="170" cy="65" r="3.5" fill="#1d4ed8"/>
+                    <text x="165" y="52" font-family="Kalam" font-size="12" fill="#1d4ed8" font-weight="bold">CH</text>
+
+                    <!-- Bond to NH2 -->
+                    <line x1="170" y1="65" x2="170" y2="98" stroke="#1d4ed8" stroke-width="2.5"/>
+                    <text x="158" y="115" font-family="Kalam" font-size="14" fill="#1d4ed8" font-weight="bold">NH₂</text>
+
+                    <!-- Bond to COOH -->
+                    <line x1="170" y1="65" x2="202" y2="46" stroke="#111827" stroke-width="2.5"/>
+                    <line x1="199" y1="44" x2="199" y2="20" stroke="#111827" stroke-width="2"/>
+                    <line x1="205" y1="48" x2="205" y2="20" stroke="#111827" stroke-width="2"/>
+                    <text x="197" y="15" font-family="Kalam" font-size="14" fill="#111827" font-weight="bold">O</text>
+
+                    <line x1="202" y1="46" x2="228" y2="60" stroke="#111827" stroke-width="2.5"/>
+                    <text x="228" y="70" font-family="Kalam" font-size="14" fill="#111827" font-weight="bold">OH</text>
+
+                    <text x="71" y="115" font-family="Gochi Hand" font-size="12" fill="#b45309" text-anchor="middle" font-weight="bold">Phenol Ring</text>
+                  </svg>
+                </div>
+                <div class="text-xs bg-white p-1.5 rounded border border-slate-200 text-slate-700 font-sans mt-1">
+                  Contains Phenolic hydroxyl group (-OH).
+                </div>
+              </div>
+
+              <!-- 3. TRYPTOPHAN -->
+              <div class="border border-slate-300 rounded-xl p-3 bg-purple-50/20 flex flex-col justify-between">
+                <div>
+                  <div class="text-center border-b border-purple-200 pb-1 mb-2">
+                    <span class="font-bold text-penblack text-base font-marker">Tryptophan</span>
+                    <span class="text-xs text-purple-700 block font-sans">(Indole Ring System)</span>
+                  </div>
+
+                  <!-- SVG Chemical Structure of Tryptophan -->
+                  <svg viewBox="0 0 270 150" class="w-full h-44 mx-auto">
+                    <!-- Indole Ring System (Fused Benzene 6-ring + Pyrrole 5-ring) -->
+                    <polygon points="15,45 42,28 68,45 68,78 42,95 15,78" fill="#fff" stroke="#7e22ce" stroke-width="2.5"/>
+                    <line x1="40" y1="34" x2="63" y2="48" stroke="#7e22ce" stroke-width="2"/>
+                    <line x1="63" y1="75" x2="40" y2="89" stroke="#7e22ce" stroke-width="2"/>
+                    <line x1="20" y1="49" x2="20" y2="74" stroke="#7e22ce" stroke-width="2"/>
+
+                    <polygon points="68,45 95,54 87,85 68,78" fill="#fff" stroke="#7e22ce" stroke-width="2.5"/>
+                    <line x1="71" y1="50" x2="91" y2="57" stroke="#7e22ce" stroke-width="2"/>
+                    
+                    <text x="70" y="90" font-family="Kalam" font-size="12" fill="#dc2626" font-weight="bold">HN</text>
+
+                    <!-- Bond from Pyrrole to CH2 -->
+                    <line x1="95" y1="54" x2="130" y2="54" stroke="#111827" stroke-width="2.5"/>
+                    <text x="122" y="47" font-family="Kalam" font-size="12" fill="#7e22ce" font-weight="bold">CH₂</text>
+
+                    <!-- Bond to C-alpha -->
+                    <line x1="140" y1="54" x2="172" y2="54" stroke="#111827" stroke-width="2.5"/>
+                    <circle cx="172" cy="54" r="3.5" fill="#1d4ed8"/>
+                    <text x="167" y="42" font-family="Kalam" font-size="12" fill="#1d4ed8" font-weight="bold">CH</text>
+
+                    <!-- Bond to NH2 -->
+                    <line x1="172" y1="54" x2="172" y2="88" stroke="#1d4ed8" stroke-width="2.5"/>
+                    <text x="160" y="105" font-family="Kalam" font-size="14" fill="#1d4ed8" font-weight="bold">NH₂</text>
+
+                    <!-- Bond to COOH -->
+                    <line x1="172" y1="54" x2="205" y2="35" stroke="#111827" stroke-width="2.5"/>
+                    <line x1="202" y1="33" x2="202" y2="12" stroke="#111827" stroke-width="2"/>
+                    <line x1="208" y1="37" x2="208" y2="12" stroke="#111827" stroke-width="2"/>
+                    <text x="200" y="8" font-family="Kalam" font-size="14" fill="#111827" font-weight="bold">O</text>
+
+                    <line x1="205" y1="35" x2="232" y2="50" stroke="#111827" stroke-width="2.5"/>
+                    <text x="232" y="60" font-family="Kalam" font-size="14" fill="#111827" font-weight="bold">OH</text>
+
+                    <text x="55" y="115" font-family="Gochi Hand" font-size="12" fill="#6b21a8" text-anchor="middle" font-weight="bold">Indole Ring (Benzene + Pyrrole)</text>
+                  </svg>
+                </div>
+                <div class="text-xs bg-white p-1.5 rounded border border-slate-200 text-slate-700 font-sans mt-1">
+                  Bicyclic indole ring system with N-atom.
+                </div>
+              </div>
+
+            </div>
+
+            <div class="mt-3 p-2 bg-yellow-100 rounded border border-yellow-300 text-xs text-slate-800 font-patrick flex justify-between items-center">
+              <span><strong>💡 EXAM MEMORY RULE:</strong> Phenylalanine (Benzene) ➔ Tyrosine (+ OH) ➔ Tryptophan (Indole ring: Benzene + Pyrrole with NH)</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Classification based on function -->
+        <section>
+          <div class="mb-3">
+            <span class="text-lg font-bold text-penblack bg-blue-100 px-2 py-0.5 rounded border border-blue-300">4. Classification Based on Function</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs sm:text-sm">
+            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+              <strong class="text-penblack block">1. Enzymes:</strong> Hexokinase, Lactate dehydrogenase, DNA polymerase.
+            </div>
+            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+              <strong class="text-penblack block">2. Contractile:</strong> Myosin, Actin, Flagellar proteins.
+            </div>
+            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+              <strong class="text-penblack block">3. Storage:</strong> Casein, Ovalbumin, Ferritin, Zein.
+            </div>
+            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+              <strong class="text-penblack block">4. Transport:</strong> Haemoglobin, Myoglobin, Serum albumin.
+            </div>
+            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+              <strong class="text-penblack block">5. Protective:</strong> Antibodies, Thrombin.
+            </div>
+            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+              <strong class="text-penblack block">6. Hormones:</strong> Insulin, Growth hormone.
+            </div>
+            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+              <strong class="text-penblack block">7. Structural:</strong> Glycoproteins, Collagen, Elastin, Fibroin.
+            </div>
+            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+              <strong class="text-penblack block">8. Genetic:</strong> Nucleoproteins, Histone.
+            </div>
+          </div>
+        </section>
+
+        <div class="mt-8 pt-4 border-t border-dashed border-blue-300 flex items-center justify-between text-xs font-sans text-slate-600">
+          <span>* Swa Education Class 07 • Handwritten Study Notes</span>
+          <span>Page 2</span>
+        </div>
+      </article>
+
+
+      <!-- ================= PAGE 3 ================= -->
+      <article id="page-3" class="notebook-page rounded-2xl p-4 sm:p-8 pl-12 sm:pl-20 min-h-[900px] font-handwriting text-gelblue leading-relaxed text-base sm:text-lg mb-8 hidden">
+        
+        <!-- Header Banner -->
+        <div class="border-b-2 border-slate-800 pb-3 mb-6 relative">
+          <div class="absolute right-0 top-0 text-xs text-slate-500 font-sans flex flex-col items-end">
+            <span>Date: <u>05/08/2026</u></span>
+            <span>Page: <strong>03</strong></span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-penblack font-marker tracking-wide">DENATURATION, COAGULATION & FOOD SOURCES</h2>
+          <span class="text-xs font-bold text-blue-800 font-sans">Class 07 • Protein Chemistry & Single Cell Proteins (SCP)</span>
+        </div>
+
+        <!-- Sticky Note - Common Mistake -->
+        <div class="float-right ml-4 mb-4 w-64 p-3 sticky-note text-slate-900 text-sm font-patrick rounded-lg border border-yellow-400 z-10">
+          <div class="font-bold text-base text-red-900 border-b border-red-300 pb-1 mb-1 flex items-center gap-1">
+            <span>⚠️ COMMON MISTAKE</span>
+          </div>
+          <p class="text-xs">
+            Students think peptide bonds break during denaturation. <strong>NO!</strong>
+            <br>• Breakage occurs in: <span class="hl-yellow">Hydrogen bonds, Disulphide bonds & Hydrophobic interactions</span>.
+            <br>• <span class="hand-circle-red font-bold text-red-600">PEPTIDE BONDS REMAIN INTACT!</span>
+          </p>
+        </div>
+
+        <!-- Section 5: Denaturation -->
+        <section class="mb-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-penblack font-marker underline decoration-wavy decoration-blue-500 mb-2">
+            🔥 DENATURATION OF PROTEINS
+          </h3>
+
+          <p class="mb-2">
+            • <strong class="text-penblack">Definition:</strong> Denaturation is a process in which a protein <span class="hl-yellow">loses its native shape</span> due to the disruption of weak chemical bonds and interactions, thereby becoming <span class="hl-yellow">biologically inactive</span>. It leads to loss of physical, chemical and structural properties.
+          </p>
+
+          <div class="my-3 pl-4 border-l-4 border-red-500 bg-red-50/60 p-2 rounded">
+            <p class="font-bold text-penblack">⚙️ Mechanism & Agents:</p>
+            <p class="text-sm">
+              - Unfolding of native protein occurs by physical and chemical agents.
+              <br>- <u>Higher Temperature</u>: Heat denaturation / Thermal denaturation.
+              <br>- <u>Lower Temperature</u>: Cold denaturation.
+            </p>
+          </div>
+
+          <!-- Highlighted Alert Box -->
+          <div class="hand-box p-3 my-3 bg-yellow-50 text-slate-900 text-base font-semibold border-2 border-red-500">
+            🚨 <span class="hand-circle-red font-bold text-red-600">NO BREAKAGE OF PEPTIDE BONDS</span> occurs during denaturation! Only H-bonds, disulfide bonds, and hydrophobic interactions break.
+          </div>
+
+          <p class="text-sm sm:text-base">
+            • <strong class="text-penblack">Causes of Denaturation:</strong> Heat, violent shaking or agitation, hydrostatic pressure, UV radiation, acids & alkalis, organic solvents etc.
+          </p>
+        </section>
+
+        <!-- Section 6: Coagulation -->
+        <section class="mb-6">
+          <h3 class="text-xl sm:text-2xl font-bold text-penblack font-marker underline decoration-wavy decoration-blue-500 mb-2">
+            🧪 COAGULATION OF PROTEINS
+          </h3>
+
+          <p>
+            • <strong class="text-penblack">Coagulation:</strong> Denaturation can result in coagulation, which is the <span class="hl-yellow">clotting or curdling</span> of protein molecules into a relatively insoluble protein mass.
+          </p>
+
+          <!-- SVG Flowchart -->
+          <div class="my-4 hand-box p-3 bg-white text-center">
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Flowchart: Sequence of Protein State Change</p>
+            <svg viewBox="0 0 500 100" class="w-full max-w-lg mx-auto h-24">
+              <!-- Native -->
+              <g transform="translate(10, 10)">
+                <rect x="0" y="10" width="110" height="45" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+                <text x="55" y="37" font-family="Kalam" font-size="14" font-weight="bold" fill="#1e3a8a" text-anchor="middle">Native Protein</text>
+              </g>
+              <!-- Arrow 1 -->
+              <g transform="translate(125, 30)">
+                <line x1="0" y1="10" x2="40" y2="10" stroke="#ef4444" stroke-width="2.5"/>
+                <polygon points="40,10 32,5 32,15" fill="#ef4444"/>
+                <text x="20" y="-2" font-family="Kalam" font-size="10" fill="#ef4444" text-anchor="middle">Denature</text>
+              </g>
+              <!-- Denatured -->
+              <g transform="translate(170, 10)">
+                <rect x="0" y="10" width="130" height="45" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+                <text x="65" y="37" font-family="Kalam" font-size="14" font-weight="bold" fill="#78350f" text-anchor="middle">Denatured Protein</text>
+              </g>
+              <!-- Arrow 2 -->
+              <g transform="translate(305, 30)">
+                <line x1="0" y1="10" x2="40" y2="10" stroke="#ef4444" stroke-width="2.5"/>
+                <polygon points="40,10 32,5 32,15" fill="#ef4444"/>
+                <text x="20" y="-2" font-family="Kalam" font-size="10" fill="#ef4444" text-anchor="middle">Aggregate</text>
+              </g>
+              <!-- Coagulated -->
+              <g transform="translate(350, 10)">
+                <rect x="0" y="10" width="135" height="45" rx="10" fill="#fecdd3" stroke="#e11d48" stroke-width="2"/>
+                <text x="67" y="37" font-family="Kalam" font-size="14" font-weight="bold" fill="#881337" text-anchor="middle">Coagulated Protein</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="text-sm sm:text-base space-y-1">
+            <p><strong class="text-penblack">• Factors Affecting Coagulation:</strong></p>
+            <p>1. <span class="hl-yellow">Acid:</span> Denaturation occurs more readily under acidic conditions.</p>
+            <p>2. <span class="hl-yellow">Mechanical action</span> (beating, whipping).</p>
+            <p>3. <span class="hl-yellow">Sugar:</span> Delays coagulation.</p>
+            <p>4. <span class="hl-yellow">Salt:</span> Promotes coagulation.</p>
+            <p>5. <span class="hl-yellow">Rennin Enzyme:</span> Promotes curdling/coagulation.</p>
+            <p class="text-slate-800 font-semibold italic">➔ Example: Egg white turns from transparent liquid to white solid coagulum upon cooking!</p>
+          </div>
+        </section>
+
+        <!-- Section 7 & 8: Nature of Food Proteins & SCP -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+          <!-- Animal vs Plant -->
+          <div class="hand-box p-3 bg-amber-50/40">
+            <h4 class="font-bold text-penblack text-lg font-marker border-b border-slate-400 pb-1">🥩 Nature of Food Proteins</h4>
+            <p class="text-sm mt-2"><strong class="text-penblack">Animal Proteins:</strong></p>
+            <ul class="text-xs sm:text-sm list-disc pl-4 space-y-1">
+              <li><strong class="text-penblack">Meat:</strong> Edible muscle (cattle, sheep, swine) = <span class="hl-yellow">20-25% protein</span> (wet basis).</li>
+              <li><strong class="text-penblack">Fish:</strong> Contains <span class="hl-yellow">10-21% protein</span>.</li>
+              <li><strong class="text-penblack">Egg:</strong> <span class="hl-yellow">13-14% protein</span>. White = Ovalbumin; Yolk = Lipoprotein & Phosphoprotein.</li>
+              <li><strong class="text-penblack">Milk:</strong> Cow milk = <span class="hl-yellow">~3.5% protein</span> (Casein accounts for <span class="hand-circle-red font-bold text-red-600">80%</span>, Whey protein <span class="font-bold text-blue-900">20%</span>).</li>
+            </ul>
+            <p class="text-sm mt-2"><strong class="text-penblack">Plant Proteins:</strong></p>
+            <p class="text-xs sm:text-sm pl-2">• Vegetables: 1-6% | Cereals: 7-15% | <span class="hl-yellow">Pulses: &gt; 20%</span></p>
+          </div>
+
+          <!-- Non-Traditional Proteins (SCP) -->
+          <div class="hand-box p-3 bg-blue-50/40">
+            <h4 class="font-bold text-penblack text-lg font-marker border-b border-slate-400 pb-1">🧫 Single Cell Protein (SCP)</h4>
+            <p class="text-xs sm:text-sm mt-1">Microbes used due to rapid growth, high yield & controlled conditions.</p>
+            <ul class="text-xs sm:text-sm space-y-1.5 mt-2">
+              <li>
+                🍄 <strong class="text-penblack">Yeast Species:</strong>
+                <br>• <i>Candida utilis</i> (Torula yeast)
+                <br>• <i>Saccharomyces carlsbergensis</i> (Brewer's yeast)
+                <br><span class="text-slate-800 font-semibold pl-3">➔ Contain ~50% protein (dry basis).</span>
+              </li>
+              <li>
+                🌿 <strong class="text-penblack">Algae Genera:</strong>
+                <br>• <i>Chlorella</i> (Green algae) & <i>Spirulina</i> (Blue-green algae)
+                <br><span class="text-slate-800 font-semibold pl-3">➔ Contain 50-60% protein (dry weight basis).</span>
+              </li>
+              <li>🌱 Fungi & plant leaf proteins are also extracted nowadays.</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="mt-8 pt-4 border-t border-dashed border-blue-300 flex items-center justify-between text-xs font-sans text-slate-600">
+          <span>* Swa Education Class 07 • End of Class Notes</span>
+          <span>Page 3</span>
+        </div>
+      </article>
+
+
+      <!-- ================= PAGE 4 (REVISION QUIZ) ================= -->
+      <article id="page-4" class="notebook-page rounded-2xl p-4 sm:p-8 pl-12 sm:pl-20 min-h-[900px] font-handwriting text-gelblue leading-relaxed text-base sm:text-lg mb-8 hidden no-print">
+        
+        <div class="border-b-2 border-slate-800 pb-3 mb-6 relative">
+          <h2 class="text-2xl sm:text-3xl font-bold text-penblack font-marker tracking-wide">🎯 TOPPER'S PRACTICE QUIZ</h2>
+          <p class="text-sm text-slate-700 font-sans">Test your mastery on Food Chemistry Class 07 (Proteins)</p>
+        </div>
+
+        <div id="quiz-container" class="space-y-6">
+          
+          <!-- Q1 -->
+          <div class="hand-box p-4 bg-white/80">
+            <p class="font-bold text-penblack text-lg">Q1. Which bond is NOT broken during the denaturation of proteins?</p>
+            <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm font-sans">
+              <button onclick="checkAnswer(1, 'A')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">A) Hydrogen Bonds</button>
+              <button onclick="checkAnswer(1, 'B')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">B) Disulphide Bonds</button>
+              <button onclick="checkAnswer(1, 'C')" id="q1-correct" class="q-btn p-2 border rounded text-left hover:bg-blue-50">C) Peptide Bonds</button>
+              <button onclick="checkAnswer(1, 'D')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">D) Hydrophobic Interactions</button>
+            </div>
+            <div id="ans-1" class="mt-2 text-sm hidden font-bold"></div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="hand-box p-4 bg-white/80">
+            <p class="font-bold text-penblack text-lg">Q2. What is the ratio of Casein to Whey protein in cow milk?</p>
+            <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm font-sans">
+              <button onclick="checkAnswer(2, 'A')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">A) 50% Casein : 50% Whey</button>
+              <button onclick="checkAnswer(2, 'B')" id="q2-correct" class="q-btn p-2 border rounded text-left hover:bg-blue-50">B) 80% Casein : 20% Whey</button>
+              <button onclick="checkAnswer(2, 'C')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">C) 60% Casein : 40% Whey</button>
+              <button onclick="checkAnswer(2, 'D')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">D) 20% Casein : 80% Whey</button>
+            </div>
+            <div id="ans-2" class="mt-2 text-sm hidden font-bold"></div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="hand-box p-4 bg-white/80">
+            <p class="font-bold text-penblack text-lg">Q3. Casein in milk is an example of which type of conjugated protein?</p>
+            <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm font-sans">
+              <button onclick="checkAnswer(3, 'A')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">A) Glycoprotein</button>
+              <button onclick="checkAnswer(3, 'B')" id="q3-correct" class="q-btn p-2 border rounded text-left hover:bg-blue-50">B) Phosphoprotein</button>
+              <button onclick="checkAnswer(3, 'C')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">C) Lipoprotein</button>
+              <button onclick="checkAnswer(3, 'D')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">D) Chromoprotein</button>
+            </div>
+            <div id="ans-3" class="mt-2 text-sm hidden font-bold"></div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="hand-box p-4 bg-white/80">
+            <p class="font-bold text-penblack text-lg">Q4. Which ring system is present in Tryptophan?</p>
+            <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm font-sans">
+              <button onclick="checkAnswer(4, 'A')" id="q4-correct" class="q-btn p-2 border rounded text-left hover:bg-blue-50">A) Indole Ring System</button>
+              <button onclick="checkAnswer(4, 'B')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">B) Phenol Ring System</button>
+              <button onclick="checkAnswer(4, 'C')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">C) Imidazole Ring</button>
+              <button onclick="checkAnswer(4, 'D')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">D) Pyridine Ring</button>
+            </div>
+            <div id="ans-4" class="mt-2 text-sm hidden font-bold"></div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="hand-box p-4 bg-white/80">
+            <p class="font-bold text-penblack text-lg">Q5. How does sugar affect protein coagulation?</p>
+            <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm font-sans">
+              <button onclick="checkAnswer(5, 'A')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">A) Promotes coagulation</button>
+              <button onclick="checkAnswer(5, 'B')" id="q5-correct" class="q-btn p-2 border rounded text-left hover:bg-blue-50">B) Delays coagulation</button>
+              <button onclick="checkAnswer(5, 'C')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">C) Prevents protein synthesis</button>
+              <button onclick="checkAnswer(5, 'D')" class="q-btn p-2 border rounded text-left hover:bg-blue-50">D) Has no effect</button>
+            </div>
+            <div id="ans-5" class="mt-2 text-sm hidden font-bold"></div>
+          </div>
+
+        </div>
+
+        <div id="quiz-score" class="mt-6 p-4 bg-yellow-100 rounded-xl text-center font-bold text-xl text-slate-900 border-2 border-yellow-400 hidden">
+          🏆 Quiz Score: <span id="score-val">0</span> / 5
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- JAVASCRIPT FOR INTERACTIVITY -->
+  <script>
+    let activePage = 1;
+    let score = 0;
+    let answered = {};
+
+    function switchPage(pageNum) {
+      activePage = pageNum;
+      document.querySelectorAll('article').forEach(p => p.classList.add('hidden'));
+      document.getElementById(`page-${pageNum}`).classList.remove('hidden');
+
+      // Update Button Highlight
+      [1, 2, 3, 4].forEach(i => {
+        const btn = document.getElementById(`btn-p${i}`);
+        if (i === pageNum) {
+          btn.className = "px-3 py-1.5 rounded-lg bg-blue-600 font-medium text-white shadow hover:bg-blue-500 transition";
+        } else {
+          btn.className = "px-3 py-1.5 rounded-lg bg-slate-700 font-medium text-white hover:bg-blue-500 transition";
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function searchNotes() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      if (!query) return;
+
+      // Unhighlight previous
+      document.querySelectorAll('.search-found').forEach(el => {
+        el.classList.remove('bg-red-200', 'text-red-900', 'search-found');
+      });
+
+      if (query.length < 2) return;
+
+      let found = false;
+      document.querySelectorAll('article p, article li, article td').forEach(el => {
+        if (el.textContent.toLowerCase().includes(query)) {
+          el.classList.add('bg-red-200', 'text-red-900', 'search-found');
+          if (!found) {
+            // Auto switch page where first result is found
+            const parentPage = el.closest('article').id.replace('page-', '');
+            switchPage(parseInt(parentPage));
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            found = true;
+          }
+        }
+      });
+    }
+
+    function checkAnswer(qNum, choice) {
+      if (answered[qNum]) return;
+      answered[qNum] = true;
+
+      const correctBtn = document.getElementById(`q${qNum}-correct`);
+      const ansDiv = document.getElementById(`ans-${qNum}`);
+
+      if (correctBtn.textContent.startsWith(choice)) {
+        score++;
+        ansDiv.className = "mt-2 text-sm text-emerald-700 font-bold block";
+        ansDiv.innerHTML = "✅ Correct! Excellent topper memory! 🎉";
+      } else {
+        ansDiv.className = "mt-2 text-sm text-red-600 font-bold block";
+        ansDiv.innerHTML = `❌ Incorrect! Correct option: ${correctBtn.textContent}`;
+      }
+
+      // Show quiz score summary if all answered
+      if (Object.keys(answered).length === 5) {
+        document.getElementById('quiz-score').classList.remove('hidden');
+        document.getElementById('score-val').textContent = score;
+      }
+    }
+
+    function readAloud() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const text = `
+          Food Chemistry Class 07: Proteins by Anubhav Pandey.
+          Aromatic amino acids structure highlights:
+          Phenylalanine contains a benzyl group with a benzene ring attached to the amino acid backbone.
+          Tyrosine contains a phenol group with a para hydroxyl OH group.
+          Tryptophan contains a bicyclic indole ring system consisting of a benzene ring fused to a pyrrole ring with nitrogen.
+        `;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.95;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Text-to-speech is not supported on your browser.");
+      }
+    }
+  </script>
+</body>
+</html>

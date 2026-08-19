@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 15: Food Chemistry - Minerals in Food | Topper Notes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Handwritten Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500;600;700&family=Indie+Flower&family=Inter:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Handwriting font classes */
+        .font-heading { font-family: 'Kalam', cursive; }
+        .font-hand { font-family: 'Caveat', cursive; }
+        .font-sub { font-family: 'Patrick Hand', cursive; }
+        .font-doodle { font-family: 'Architects Daughter', cursive; }
+        .font-standard { font-family: 'Inter', sans-serif; }
+
+        /* Lined Notebook Paper Background */
+        .notebook-page {
+            background-color: #fdfbf7;
+            background-image: linear-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 100% 2.2rem;
+            line-height: 2.2rem;
+            position: relative;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Red Left Margin Line */
+        .notebook-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 3.5rem;
+            width: 2px;
+            background-color: #fca5a5;
+            z-index: 10;
+        }
+
+        @media (max-width: 640px) {
+            .notebook-page::before {
+                left: 2rem;
+            }
+        }
+
+        /* Gel Pen Effect Colors */
+        .pen-blue { color: #1e3a8a; }
+        .pen-black { color: #0f172a; }
+        .pen-red { color: #dc2626; }
+        .pen-green { color: #15803d; }
+
+        /* Realistic Yellow Highlighter Effect */
+        .highlight-yellow {
+            background: linear-gradient(100deg, rgba(254, 240, 138, 0) 1%, rgba(254, 240, 138, 0.85) 2.5%, rgba(254, 240, 138, 0.75) 97%, rgba(254, 240, 138, 0) 99%);
+            border-radius: 4px 12px 6px 14px;
+            padding: 0.1rem 0.4rem;
+            margin: 0 -0.2rem;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        .highlight-pink {
+            background: linear-gradient(100deg, rgba(251, 207, 232, 0) 1%, rgba(251, 207, 232, 0.85) 2.5%, rgba(251, 207, 232, 0.75) 97%, rgba(251, 207, 232, 0) 99%);
+            border-radius: 6px 10px 4px 12px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        .highlight-green {
+            background: linear-gradient(100deg, rgba(187, 247, 208, 0) 1%, rgba(187, 247, 208, 0.85) 2.5%, rgba(187, 247, 208, 0.75) 97%, rgba(187, 247, 208, 0) 99%);
+            border-radius: 5px 14px 7px 10px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        /* Hand Drawn Border Enclosure */
+        .hand-circle {
+            border: 2px solid #dc2626;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+
+        .hand-box {
+            border: 2px solid #2563eb;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            padding: 8px 14px;
+            background-color: rgba(239, 246, 255, 0.6);
+        }
+
+        /* Sticky Notes */
+        .sticky-note {
+            background-color: #fef9c3;
+            box-shadow: 3px 5px 12px rgba(0,0,0,0.15);
+            transform: rotate(-1deg);
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        .sticky-note:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        .sticky-tape {
+            position: absolute;
+            top: -12px;
+            left: 35%;
+            width: 80px;
+            height: 22px;
+            background-color: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(200, 200, 200, 0.4);
+            transform: rotate(-2deg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Spiral Ring Binder Holes */
+        .ring-binder {
+            position: absolute;
+            left: 0.8rem;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            z-index: 20;
+            pointer-events: none;
+        }
+        .ring-hole {
+            width: 14px;
+            height: 14px;
+            background-color: #475569;
+            border-radius: 50%;
+            box-shadow: inset 2px 2px 4px #0f172a, 2px 0 2px rgba(255,255,255,0.8);
+        }
+
+        /* Flowchart Box Styling */
+        .fc-node {
+            border: 2px solid #1e293b;
+            border-radius: 12px 4px 14px 5px;
+            background: #ffffff;
+            font-family: 'Patrick Hand', cursive;
+        }
+
+        /* Hide elements when highlighter toggle is off */
+        .hide-highlights .highlight-yellow,
+        .hide-highlights .highlight-pink,
+        .hide-highlights .highlight-green {
+            background: transparent !important;
+            padding: 0 !important;
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Print styles */
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-page { box-shadow: none; background-color: #fff; }
+            .ring-binder { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-slate-200 text-slate-800 font-hand text-xl min-h-screen pb-12 selection:bg-yellow-200 selection:text-slate-900">
+
+    <!-- TOP CONTROL BAR / NAVIGATION -->
+    <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md text-white border-b border-slate-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-3">
+                <span class="bg-amber-400 text-slate-900 font-bold px-2.5 py-1 rounded-md text-sm font-standard tracking-wide">CLASS 15</span>
+                <h1 class="font-heading text-xl sm:text-2xl text-amber-300 font-bold tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-book-bookmark text-amber-400"></i> FOOD CHEMISTRY — MINERALS
+                </h1>
+            </div>
+
+            <!-- Controls & Tools -->
+            <div class="flex items-center flex-wrap gap-2 text-sm font-standard">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Search keywords..." class="bg-slate-800 text-xs sm:text-sm text-slate-100 placeholder-slate-400 px-3 py-1.5 pl-8 rounded-lg border border-slate-600 focus:outline-none focus:border-amber-400 w-36 sm:w-48">
+                    <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-xs text-slate-400"></i>
+                </div>
+
+                <button id="toggleHighlightBtn" onclick="toggleHighlights()" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition text-xs sm:text-sm">
+                    <i class="fa-solid fa-highlighter"></i> <span id="hlBtnText">Highlights: ON</span>
+                </button>
+
+                <button onclick="window.print()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition text-xs sm:text-sm">
+                    <i class="fa-solid fa-print"></i> Print Notes
+                </button>
+            </div>
+        </div>
+
+        <!-- Notebook Tabs Navigation -->
+        <div class="bg-slate-950 px-4 overflow-x-auto scrollbar-none border-t border-slate-800">
+            <div class="max-w-7xl mx-auto flex space-x-1 sm:space-x-2 py-1 text-xs sm:text-sm font-sub">
+                <button onclick="switchTab('tab-1')" class="nav-tab active-tab bg-amber-400 text-slate-950 font-bold px-3 py-1 rounded-t-md transition hover:bg-amber-300" id="btn-tab-1">1. Basic Concepts</button>
+                <button onclick="switchTab('tab-2')" class="nav-tab bg-slate-800 text-slate-300 px-3 py-1 rounded-t-md transition hover:bg-slate-700" id="btn-tab-2">2. Calcium & Absorption</button>
+                <button onclick="switchTab('tab-3')" class="nav-tab bg-slate-800 text-slate-300 px-3 py-1 rounded-t-md transition hover:bg-slate-700" id="btn-tab-3">3. Phosphorus & Sulphur</button>
+                <button onclick="switchTab('tab-4')" class="nav-tab bg-slate-800 text-slate-300 px-3 py-1 rounded-t-md transition hover:bg-slate-700" id="btn-tab-4">4. Mg, Na, K, Cl</button>
+                <button onclick="switchTab('tab-5')" class="nav-tab bg-slate-800 text-slate-300 px-3 py-1 rounded-t-md transition hover:bg-slate-700" id="btn-tab-5">5. Master Tables & Numbers</button>
+                <button onclick="switchTab('tab-6')" class="nav-tab bg-emerald-600 text-white font-bold px-3 py-1 rounded-t-md transition hover:bg-emerald-500" id="btn-tab-6"><i class="fa-solid fa-pen-to-square"></i> Practice Quiz & MCQs</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN NOTEBOOK CONTAINER -->
+    <main class="max-w-5xl mx-auto mt-4 sm:mt-6 px-2 sm:px-4">
+        
+        <!-- NOTEBOOK PAGE WRAPPER -->
+        <div class="notebook-page rounded-xl p-4 sm:p-8 pl-12 sm:pl-20 min-h-[85vh] relative overflow-hidden transition-all duration-300" id="notebook-container">
+            
+            <!-- Spiral Binder Holes Effect -->
+            <div class="ring-binder no-print">
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+                <div class="ring-hole"></div>
+            </div>
+
+            <!-- PAGE HEADER STAMP -->
+            <div class="border-b-2 border-slate-400 pb-2 mb-6 flex justify-between items-end flex-wrap gap-2">
+                <div>
+                    <span class="text-xs font-standard uppercase tracking-widest text-slate-500 font-semibold block">Topper's Personal Study Material</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl pen-black font-bold tracking-tight">
+                        FOOD CHEMISTRY — <span class="text-blue-700 underline decoration-wavy decoration-amber-400">MINERALS IN FOOD</span>
+                    </h2>
+                </div>
+                <div class="text-right font-sub text-base text-slate-600">
+                    <div><span class="pen-red font-bold">Source:</span> 14-Page Official Material</div>
+                    <div><span class="pen-green font-bold">Class:</span> 15 | Complete Notes</div>
+                </div>
+            </div>
+
+            <!-- ========================================================================= -->
+            <!-- TAB 1: BASIC CONCEPTS, IMPORTANCE & CLASSIFICATION -->
+            <!-- ========================================================================= -->
+            <div id="tab-1" class="tab-content space-y-8">
+
+                <!-- SECTION 1 -->
+                <section class="relative">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-slate-900 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">1</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">MINERALS — BASIC CONCEPT</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <div class="hand-box border-l-4 border-l-blue-600">
+                            <p class="text-2xl pen-blue font-bold">
+                                📌 <span class="pen-black font-heading">Definition:</span> 
+                                Minerals are <span class="highlight-yellow pen-black">inorganic components of food</span> that leave <span class="highlight-yellow pen-black">ash as residue</span> when burnt.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
+                            <!-- Left Column: How they occur -->
+                            <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-200">
+                                <h4 class="font-heading text-xl pen-black font-bold mb-2 underline decoration-amber-400">
+                                    How do minerals occur in food & tissues?
+                                </h4>
+                                <ul class="list-disc pl-5 space-y-2 pen-blue text-2xl">
+                                    <li>
+                                        <strong class="pen-black">A. As inorganic salts:</strong>
+                                        <ul class="list-circle pl-6 text-xl pen-blue font-sub">
+                                            <li>Sodium chloride → <span class="highlight-yellow">NaCl</span></li>
+                                            <li>Calcium phosphate</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong class="pen-black">B. In combination with organic compounds:</strong>
+                                        <ul class="list-circle pl-6 text-xl pen-blue font-sub">
+                                            <li>Phosphoproteins</li>
+                                            <li>Phospholipids</li>
+                                            <li>Haemoglobins</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Right Column: Ionic Forms & Memory Sticky Note -->
+                            <div class="space-y-4">
+                                <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-200">
+                                    <h4 class="font-heading text-xl pen-black font-bold mb-2">Chief Ionic Forms:</h4>
+                                    <div class="grid grid-cols-2 gap-2 font-sub text-2xl">
+                                        <div class="bg-white px-3 py-1 rounded-lg border border-slate-200"><span class="font-bold text-blue-700">Na⁺</span> → Sodium</div>
+                                        <div class="bg-white px-3 py-1 rounded-lg border border-slate-200"><span class="font-bold text-blue-700">K⁺</span> → Potassium</div>
+                                        <div class="bg-white px-3 py-1 rounded-lg border border-slate-200"><span class="font-bold text-blue-700">Ca²⁺</span> → Calcium</div>
+                                        <div class="bg-white px-3 py-1 rounded-lg border border-slate-200"><span class="font-bold text-blue-700">Cl⁻</span> → Chloride</div>
+                                        <div class="bg-white px-3 py-1 rounded-lg border border-slate-200 col-span-2"><span class="font-bold text-blue-700">H₂PO₄⁻</span> → Dihydrogen phosphate</div>
+                                    </div>
+                                </div>
+
+                                <!-- Sticky Note -->
+                                <div class="sticky-note p-4 rounded-lg font-hand text-2xl text-slate-800">
+                                    <div class="sticky-tape"></div>
+                                    <p class="font-bold pen-red font-heading flex items-center gap-2">
+                                        <i class="fa-solid fa-brain"></i> REMEMBER:
+                                    </p>
+                                    <p class="pen-blue">
+                                        Minerals are strictly <strong class="pen-black underline">inorganic</strong>. Their presence is detected as <span class="highlight-yellow pen-black font-bold">ASH</span> after complete burning!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-slate-300 my-6">
+
+                <!-- SECTION 2 -->
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-slate-900 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">2</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">IMPORTANCE AND FUNCTIONS OF MINERALS</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <!-- Key Stats Box -->
+                        <div class="flex flex-wrap gap-4 my-2">
+                            <div class="bg-red-50 border-2 border-red-300 p-3 rounded-xl flex-1 min-w-[220px]">
+                                <span class="text-3xl font-heading font-bold pen-red">4–6%</span>
+                                <p class="text-xl pen-blue">of total human body weight consists of minerals.</p>
+                            </div>
+                            <div class="bg-amber-50 border-2 border-amber-300 p-3 rounded-xl flex-1 min-w-[220px]">
+                                <span class="text-3xl font-heading font-bold text-amber-700">~80%</span>
+                                <p class="text-xl pen-blue">of total body mineral is stored in the <span class="highlight-yellow pen-black font-bold">skeleton</span>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Major Functions List -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-300 shadow-sm">
+                            <h4 class="font-heading text-2xl pen-black font-bold mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-list-check text-blue-600"></i> Major Biological Functions:
+                            </h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-2xl pen-blue">
+                                <div class="flex items-start gap-2">
+                                    <span class="pen-red font-bold">1.</span>
+                                    <span>Regulation of enzyme metabolism</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="pen-red font-bold">2.</span>
+                                    <span>Maintenance of acid–base balance</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="pen-red font-bold">3.</span>
+                                    <span>Maintenance of osmotic pressure</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="pen-red font-bold">4.</span>
+                                    <span>Facilitation of membrane transport of essential compounds</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="pen-red font-bold">5.</span>
+                                    <span>Maintenance of nerve functioning</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="pen-red font-bold">6.</span>
+                                    <span>Maintenance of muscular functioning</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EXAM ALERT CALLOUT -->
+                        <div class="bg-red-100/80 border-2 border-red-500 rounded-xl p-4 relative my-4">
+                            <div class="absolute -top-3 left-4 bg-red-600 text-white font-heading px-3 py-0.5 rounded-full text-sm font-bold tracking-wider">
+                                ⚠️ EXAM ALERT
+                            </div>
+                            <p class="text-2xl pen-black font-bold mt-1">
+                                <span class="pen-red">Small requirement ≠ Harmless in excess!</span>
+                            </p>
+                            <p class="text-xl pen-blue">
+                                Although trace minerals are required in very small quantities, <span class="highlight-pink pen-black font-bold">excessive consumption of trace elements can be toxic</span>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-slate-300 my-6">
+
+                <!-- SECTION 3 -->
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-slate-900 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">3</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">CLASSIFICATION OF MINERALS</h3>
+                    </div>
+
+                    <p class="pl-4 text-2xl pen-blue mb-4">
+                        Minerals are classified according to the <span class="highlight-yellow pen-black font-bold">amount required</span> in the adult human body.
+                    </p>
+
+                    <!-- HAND-DRAWN FLOWCHART DIAGRAM -->
+                    <div class="bg-amber-50/40 p-4 sm:p-6 rounded-2xl border-2 border-dashed border-slate-400 my-6">
+                        <h4 class="text-center font-heading text-2xl pen-black font-bold mb-4">
+                            📊 Classification Tree (Hand-Drawn Layout)
+                        </h4>
+
+                        <div class="flex flex-col items-center">
+                            <!-- Parent Node -->
+                            <div class="fc-node px-6 py-2 text-2xl font-bold bg-yellow-200 text-slate-900 border-2 border-slate-800 shadow">
+                                MINERALS
+                            </div>
+
+                            <!-- Vertical Line -->
+                            <div class="w-0.5 h-6 bg-slate-800"></div>
+
+                            <!-- Horizontal Split Bar -->
+                            <div class="w-3/4 max-w-md h-0.5 bg-slate-800 relative">
+                                <div class="absolute top-0 left-0 w-0.5 h-6 bg-slate-800"></div>
+                                <div class="absolute top-0 right-0 w-0.5 h-6 bg-slate-800"></div>
+                            </div>
+
+                            <!-- Two Branches -->
+                            <div class="w-full max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                                <!-- Macrominerals -->
+                                <div class="fc-node p-4 border-2 border-blue-600 bg-blue-50 text-center space-y-2">
+                                    <h5 class="font-heading text-2xl font-bold text-blue-900">MACROMINERALS</h5>
+                                    <p class="text-lg font-sub text-slate-600">(Major minerals)</p>
+                                    <div class="inline-block bg-blue-600 text-white font-bold text-xl px-3 py-1 rounded-full my-1">
+                                        &gt; 100 mg/day
+                                    </div>
+                                    <p class="text-2xl font-bold text-blue-950 pt-2 border-t border-blue-200">
+                                        Ca, P, S, K, Cl, Na, Mg
+                                    </p>
+                                </div>
+
+                                <!-- Microminerals -->
+                                <div class="fc-node p-4 border-2 border-emerald-600 bg-emerald-50 text-center space-y-2">
+                                    <h5 class="font-heading text-2xl font-bold text-emerald-900">MICROMINERALS</h5>
+                                    <p class="text-lg font-sub text-slate-600">(Trace minerals)</p>
+                                    <div class="inline-block bg-emerald-600 text-white font-bold text-xl px-3 py-1 rounded-full my-1">
+                                        &lt; 20 mg/day
+                                    </div>
+                                    <p class="text-2xl font-bold text-emerald-950 pt-2 border-t border-emerald-200">
+                                        Fe, F, Zn, Cu, I, Cr, Co
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Table -->
+                    <div class="overflow-x-auto my-4">
+                        <table class="w-full border-collapse font-sub text-2xl bg-white rounded-lg overflow-hidden border-2 border-slate-800">
+                            <thead>
+                                <tr class="bg-slate-800 text-white font-heading">
+                                    <th class="p-3 text-left border-b border-slate-700">Feature</th>
+                                    <th class="p-3 text-left border-b border-slate-700">Macrominerals</th>
+                                    <th class="p-3 text-left border-b border-slate-700">Microminerals / Trace</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-300 pen-blue">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-bold pen-black">Required amount</td>
+                                    <td class="p-3"><span class="highlight-yellow pen-black font-bold">Over 100 mg/day</span></td>
+                                    <td class="p-3"><span class="highlight-pink pen-black font-bold">Less than 20 mg/day</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-bold pen-black">Other name</td>
+                                    <td class="p-3">Major minerals</td>
+                                    <td class="p-3">Trace minerals</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-bold pen-black">Minerals listed</td>
+                                    <td class="p-3 font-bold text-blue-800">Ca, P, S, K, Cl, Na, Mg</td>
+                                    <td class="p-3 font-bold text-emerald-800">Fe, F, Zn, Cu, I, Cr, Co</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Memory Trick Sticky Note -->
+                    <div class="bg-emerald-100 border-2 border-emerald-400 p-3 rounded-xl flex items-center gap-3">
+                        <div class="text-3xl">📌</div>
+                        <div>
+                            <span class="font-heading font-bold text-emerald-900 text-xl">Memory Trick:</span>
+                            <p class="pen-blue text-2xl">
+                                <strong class="pen-black">MACRO = MORE</strong> → required in larger amounts (&gt;100 mg/day).<br>
+                                <strong class="pen-black">MICRO = MINUTE</strong> → required in tiny amounts (&lt;20 mg/day).
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- ========================================================================= -->
+            <!-- TAB 2: CALCIUM & ABSORPTION -->
+            <!-- ========================================================================= -->
+            <div id="tab-2" class="tab-content hidden space-y-8">
+
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-blue-700 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">5</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">CALCIUM (Ca) — IMPORTANCE & DISTRIBUTION</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-blue-50 border-2 border-blue-300 p-4 rounded-xl text-center">
+                                <span class="text-xl pen-black font-bold font-heading">Abundance</span>
+                                <p class="text-2xl font-bold pen-blue mt-1"><span class="highlight-yellow pen-black">Most abundant</span> mineral in human body</p>
+                            </div>
+                            <div class="bg-blue-50 border-2 border-blue-300 p-4 rounded-xl text-center">
+                                <span class="text-xl pen-black font-bold font-heading">70-kg Adult Male</span>
+                                <p class="text-3xl font-bold pen-red mt-1">~1200 g</p>
+                                <p class="text-lg text-slate-600 font-sub">Total body calcium</p>
+                            </div>
+                            <div class="bg-blue-50 border-2 border-blue-300 p-4 rounded-xl text-center">
+                                <span class="text-xl pen-black font-bold font-heading">Share of Minerals</span>
+                                <p class="text-3xl font-bold text-blue-800 mt-1">~39%</p>
+                                <p class="text-lg text-slate-600 font-sub">Of total body minerals</p>
+                            </div>
+                        </div>
+
+                        <!-- Distribution Breakdown Flow Chart -->
+                        <div class="bg-white p-5 rounded-xl border-2 border-slate-800 my-4">
+                            <h4 class="font-heading text-2xl pen-black font-bold mb-4 text-center">
+                                🦴 Distribution of Body Calcium
+                            </h4>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- 99% Skeleton -->
+                                <div class="bg-amber-50 p-4 rounded-xl border-2 border-amber-300">
+                                    <div class="flex justify-between items-center border-b border-amber-200 pb-2">
+                                        <span class="font-heading text-2xl font-bold pen-black">Skeleton</span>
+                                        <span class="bg-amber-500 text-white font-bold px-3 py-0.5 rounded-full text-xl">~99%</span>
+                                    </div>
+                                    <ul class="list-disc pl-5 mt-3 space-y-1 pen-blue text-2xl">
+                                        <li>Occurs as <span class="highlight-yellow pen-black font-bold">calcium phosphate</span> in bones.</li>
+                                        <li>Forms major structural framework.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- 1% Body Fluids -->
+                                <div class="bg-blue-50 p-4 rounded-xl border-2 border-blue-300">
+                                    <div class="flex justify-between items-center border-b border-blue-200 pb-2">
+                                        <span class="font-heading text-2xl font-bold pen-black">Fluids & Soft Tissues</span>
+                                        <span class="bg-blue-600 text-white font-bold px-3 py-0.5 rounded-full text-xl">~1%</span>
+                                    </div>
+                                    <ul class="list-disc pl-5 mt-3 space-y-1 pen-blue text-2xl">
+                                        <li>Mostly present in <span class="highlight-yellow pen-black font-bold">ionic form (Ca²⁺)</span>.</li>
+                                        <li>Essential for enzyme activity, blood clotting & muscle contraction.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-slate-300 my-6">
+
+                <!-- SECTION 6 & 7: CALCIUM ABSORPTION & MILK -->
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-blue-700 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">6 & 7</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">CALCIUM ABSORPTION & FOOD SOURCES</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <div class="hand-box border-l-4 border-l-red-500">
+                            <p class="text-2xl pen-blue">
+                                📊 <strong class="pen-black">Usual Absorption Rate:</strong>
+                                Only about <span class="highlight-yellow pen-black font-bold text-3xl">20–30%</span> of ingested calcium is actually absorbed by the body. Absorption is influenced by Ca-P levels.
+                            </p>
+                        </div>
+
+                        <!-- Enhancers vs Inhibitors Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
+                            <!-- Factors INCREASING -->
+                            <div class="bg-emerald-50 p-4 rounded-xl border-2 border-emerald-400">
+                                <h4 class="font-heading text-2xl text-emerald-900 font-bold mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-arrow-trend-up text-emerald-600"></i> Factors Increasing Ca²⁺ Absorption
+                                </h4>
+                                <ul class="space-y-2 text-2xl pen-blue font-sub">
+                                    <li class="flex justify-between items-center border-b border-emerald-200 pb-1">
+                                        <span>Vitamin D</span> <span class="pen-green font-bold">↑ Increases</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-emerald-200 pb-1">
+                                        <span>Low pH (Acidic medium)</span> <span class="pen-green font-bold">↑ Increases</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-emerald-200 pb-1">
+                                        <span>Lactose</span> <span class="pen-green font-bold">↑ Increases</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-emerald-200 pb-1">
+                                        <span>Low fat</span> <span class="pen-green font-bold">↑ Increases</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-emerald-200 pb-1">
+                                        <span>High protein</span> <span class="pen-green font-bold">↑ Increases</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Factors DECREASING -->
+                            <div class="bg-rose-50 p-4 rounded-xl border-2 border-rose-400">
+                                <h4 class="font-heading text-2xl text-rose-900 font-bold mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-arrow-trend-down text-rose-600"></i> Factors Decreasing Ca²⁺ Absorption
+                                </h4>
+                                <ul class="space-y-2 text-2xl pen-blue font-sub">
+                                    <li class="flex justify-between items-center border-b border-rose-200 pb-1">
+                                        <span>Oxalic acid (fruits & veggies)</span> <span class="pen-red font-bold">↓ Decreases</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-rose-200 pb-1">
+                                        <span>Phytic acid (cereals)</span> <span class="pen-red font-bold">↓ Decreases</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-rose-200 pb-1">
+                                        <span>Alkaline medium</span> <span class="pen-red font-bold">↓ Decreases</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-rose-200 pb-1">
+                                        <span>Emotional instability</span> <span class="pen-red font-bold">↓ Decreases</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Milk & Food Sources -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-amber-100/70 p-4 rounded-xl border border-amber-300">
+                                <span class="bg-amber-500 text-white font-heading font-bold px-2.5 py-0.5 rounded text-sm uppercase">⭐ EXAM POINT</span>
+                                <h5 class="font-heading text-2xl pen-black font-bold mt-1">Calcium in Milk</h5>
+                                <p class="text-2xl pen-blue">
+                                    Readily assimilated because of the presence of:
+                                    <br><span class="highlight-yellow pen-black font-bold">1. Lactose</span> + <span class="highlight-yellow pen-black font-bold">2. Vitamin D</span>
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-xl border border-slate-300">
+                                <h5 class="font-heading text-2xl pen-black font-bold">Other Rich Food Sources:</h5>
+                                <div class="flex flex-wrap gap-2 mt-2 font-sub text-2xl">
+                                    <span class="bg-slate-100 px-3 py-1 rounded-lg border border-slate-300">Molasses</span>
+                                    <span class="bg-slate-100 px-3 py-1 rounded-lg border border-slate-300">Nuts</span>
+                                    <span class="bg-slate-100 px-3 py-1 rounded-lg border border-slate-300">Sesame seeds</span>
+                                    <span class="bg-amber-200 font-bold px-3 py-1 rounded-lg border border-amber-400 text-amber-900">Ragi (Millet)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-slate-300 my-6">
+
+                <!-- SECTION 8 & 9: FUNCTIONS OF CALCIUM & DEFICIENCY -->
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-blue-700 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">8 & 9</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">FUNCTIONS OF CALCIUM & OSTEOPOROSIS</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <div class="bg-white p-5 rounded-xl border border-slate-300">
+                            <h4 class="font-heading text-2xl pen-black font-bold mb-3">
+                                🦴 Key Biological Functions of Ca:
+                            </h4>
+                            <ol class="list-decimal pl-6 space-y-2 text-2xl pen-blue font-sub">
+                                <li><strong class="pen-black">Bone & teeth formation:</strong> Major structural component.</li>
+                                <li>
+                                    <strong class="pen-black">Blood clotting:</strong> Participates in coagulation.
+                                    <div class="inline-block bg-blue-50 px-3 py-0.5 rounded border border-blue-200 text-blue-900 font-bold ml-2">
+                                        Prothrombin → Thrombin (via Ca²⁺)
+                                    </div>
+                                </li>
+                                <li><strong class="pen-black">Muscle function:</strong> Essential for muscle contraction.</li>
+                                <li><strong class="pen-black">Nerve signalling:</strong> Participates in signal propagation.</li>
+                                <li><strong class="pen-black">Intracellular messenger:</strong> Acts as secondary messenger.</li>
+                                <li><strong class="pen-black">Hormone release:</strong> Involved in release of <span class="highlight-yellow pen-black font-bold">Insulin, PTH, Calcitonin</span>.</li>
+                                <li><strong class="pen-black">Membrane integrity & permeability:</strong> Maintains cell boundaries.</li>
+                                <li>
+                                    <strong class="pen-black">Enzyme activation:</strong> Specifically activates:
+                                    <span class="text-red-700 font-bold">Pancreatic lipase</span>, <span class="text-red-700 font-bold">ATPase</span>, and <span class="text-red-700 font-bold">Succinate dehydrogenase</span>.
+                                </li>
+                            </ol>
+                        </div>
+
+                        <!-- Deficiency: Osteoporosis -->
+                        <div class="bg-rose-50 border-2 border-rose-400 p-5 rounded-xl">
+                            <h4 class="font-heading text-2xl text-rose-900 font-bold mb-2 flex items-center gap-2">
+                                ⚠️ Deficiency Condition: Osteoporosis
+                            </h4>
+                            <p class="text-2xl pen-blue">
+                                Associated with <span class="highlight-pink pen-black font-bold">gradual demineralization of bony tissues</span> due to decreased calcium absorption in bones.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-3 text-center font-sub text-2xl">
+                                <div class="bg-white p-2 rounded-lg border border-rose-200 pen-red font-bold">1. Porosity of bones</div>
+                                <div class="bg-white p-2 rounded-lg border border-rose-200 pen-red font-bold">2. Thinness of bones</div>
+                                <div class="bg-white p-2 rounded-lg border border-rose-200 pen-red font-bold">3. Fragility of bones</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- ========================================================================= -->
+            <!-- TAB 3: PHOSPHORUS & SULPHUR -->
+            <!-- ========================================================================= -->
+            <div id="tab-3" class="tab-content hidden space-y-8">
+
+                <!-- SECTION 10, 11, 12: PHOSPHORUS -->
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-purple-700 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">10–12</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">PHOSPHORUS (P)</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <!-- Key Stats -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-purple-50 p-4 rounded-xl border-2 border-purple-300">
+                                <span class="font-heading text-xl pen-black font-bold">Abundance</span>
+                                <p class="text-2xl pen-blue font-bold">
+                                    <span class="highlight-yellow pen-black">2nd most abundant</span> mineral after Calcium.
+                                </p>
+                                <p class="text-xl pen-red font-bold mt-1">~22% of total body minerals</p>
+                            </div>
+
+                            <div class="bg-purple-50 p-4 rounded-xl border-2 border-purple-300">
+                                <span class="font-heading text-xl pen-black font-bold">Dietary Status</span>
+                                <p class="text-2xl pen-blue font-bold">
+                                    Present in <span class="underline">nearly all foods</span>.
+                                </p>
+                                <p class="text-xl text-emerald-700 font-bold mt-1">Dietary deficiency is VERY RARE!</p>
+                            </div>
+                        </div>
+
+                        <!-- Phosphorus Distribution Flowchart -->
+                        <div class="bg-white p-5 rounded-xl border-2 border-slate-800 my-4">
+                            <h4 class="font-heading text-2xl pen-black font-bold mb-4 text-center">
+                                🧪 Distribution of Phosphorus in the Body
+                            </h4>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-amber-50 p-4 rounded-xl border border-amber-300">
+                                    <div class="flex justify-between items-center border-b border-amber-300 pb-2">
+                                        <span class="font-heading text-2xl font-bold text-amber-900">80% In Bones</span>
+                                        <span class="bg-amber-600 text-white font-bold px-2.5 py-0.5 rounded-full text-lg">80%</span>
+                                    </div>
+                                    <p class="text-2xl pen-blue mt-2">
+                                        Present as <span class="highlight-yellow pen-black font-bold">calcium phosphate</span> in skeletal tissue.
+                                    </p>
+                                </div>
+
+                                <div class="bg-purple-50 p-4 rounded-xl border border-purple-300">
+                                    <div class="flex justify-between items-center border-b border-purple-300 pb-2">
+                                        <span class="font-heading text-2xl font-bold text-purple-900">20% In Blood & Cells</span>
+                                        <span class="bg-purple-600 text-white font-bold px-2.5 py-0.5 rounded-full text-lg">20%</span>
+                                    </div>
+                                    <ul class="list-disc pl-5 mt-2 text-xl pen-blue space-y-1 font-sub">
+                                        <li>Soluble phosphate ions</li>
+                                        <li>Lipids & Proteins</li>
+                                        <li>Carbohydrates</li>
+                                        <li><strong class="pen-black">Nucleic acids & Cell membranes</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Food Sources & Deficiency Hook -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-xl border border-slate-300">
+                                <h5 class="font-heading text-2xl pen-black font-bold mb-2">Rich Food Sources:</h5>
+                                <p class="text-2xl pen-blue font-sub">
+                                    Meat, Poultry, Fish, Egg, Milk, Nuts, Pulses.
+                                </p>
+                            </div>
+
+                            <div class="bg-amber-100/80 p-4 rounded-xl border-2 border-amber-400">
+                                <h5 class="font-heading text-2xl pen-black font-bold flex items-center gap-2">
+                                    🧠 Memory Hook for P Deficiency:
+                                </h5>
+                                <p class="text-2xl pen-red font-bold mt-1">
+                                    P deficiency → Weak + Won't eat + Bone pain
+                                </p>
+                                <p class="text-xl pen-blue font-sub">(Weakness, Anorexia, Pain in bones)</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-slate-300 my-6">
+
+                <!-- SECTION 13, 14, 15: SULPHUR -->
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-yellow-600 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">13–15</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">SULPHUR (S)</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <!-- Key Unique Point -->
+                        <div class="bg-amber-100 border-l-4 border-amber-500 p-4 rounded-r-xl">
+                            <span class="bg-red-600 text-white font-heading px-2 py-0.5 rounded text-xs uppercase font-bold">⭐ EXAM ALERT</span>
+                            <p class="text-2xl pen-blue font-bold mt-1">
+                                Sulphur differs from other minerals! Required principally in the form of <span class="highlight-yellow pen-black">sulphur-containing amino acids</span>.
+                            </p>
+                        </div>
+
+                        <!-- Two Essential Amino Acids -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-2">
+                            <div class="bg-white p-4 rounded-xl border-2 border-slate-800 text-center">
+                                <span class="text-lg font-sub text-slate-500">Sulphur Amino Acid #1</span>
+                                <h4 class="font-heading text-3xl font-bold pen-red">CYSTEINE</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border-2 border-slate-800 text-center">
+                                <span class="text-lg font-sub text-slate-500">Sulphur Amino Acid #2</span>
+                                <h4 class="font-heading text-3xl font-bold pen-red">METHIONINE</h4>
+                            </div>
+                        </div>
+
+                        <!-- Biological Occurrence & Vitamins -->
+                        <div class="bg-yellow-50/70 p-5 rounded-xl border border-yellow-300 space-y-3">
+                            <h4 class="font-heading text-2xl pen-black font-bold">Distribution & Biological Association:</h4>
+                            <ul class="list-disc pl-6 text-2xl pen-blue space-y-2">
+                                <li>Present in <span class="highlight-yellow pen-black font-bold">all proteins</span>.</li>
+                                <li>Particularly prevalent in <span class="highlight-pink pen-black font-bold">Keratin of skin and hair</span>.</li>
+                                <li>
+                                    Essential component of vitamins: 
+                                    <span class="bg-white px-3 py-1 rounded border border-slate-300 font-bold pen-black ml-2">Thiamine (B1)</span> and 
+                                    <span class="bg-white px-3 py-1 rounded border border-slate-300 font-bold pen-black ml-1">Biotin (B7)</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Food Sources & Deficiency Symptoms -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-xl border border-slate-300">
+                                <h5 class="font-heading text-2xl pen-black font-bold mb-2">Food Sources:</h5>
+                                <div class="flex flex-wrap gap-2 text-2xl font-sub">
+                                    <span class="bg-yellow-100 px-3 py-1 rounded-lg border border-yellow-300">Egg</span>
+                                    <span class="bg-yellow-100 px-3 py-1 rounded-lg border border-yellow-300">Garlic</span>
+                                    <span class="bg-yellow-100 px-3 py-1 rounded-lg border border-yellow-300">Onions</span>
+                                    <span class="bg-yellow-100 px-3 py-1 rounded-lg border border-yellow-300">Broccoli</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-rose-50 p-4 rounded-xl border border-rose-300">
+                                <h5 class="font-heading text-2xl pen-red font-bold mb-1">Deficiency Symptoms Mentioned:</h5>
+                                <ul class="list-circle pl-5 text-xl pen-blue font-sub space-y-1">
+                                    <li>Severe arthritis symptoms</li>
+                                    <li>Acne</li>
+                                    <li>Brittle nails</li>
+                                    <li>Brittle hair</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- ========================================================================= -->
+            <!-- TAB 4: MAGNESIUM & ELECTROLYTES (Na, K, Cl) -->
+            <!-- ========================================================================= -->
+            <div id="tab-4" class="tab-content hidden space-y-8">
+
+                <!-- SECTION 16 & 17: MAGNESIUM -->
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-teal-700 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">16–17</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">MAGNESIUM (Mg)</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Role in Plants -->
+                            <div class="bg-emerald-50 p-4 rounded-xl border-2 border-emerald-400">
+                                <h4 class="font-heading text-2xl font-bold text-emerald-900 mb-2">🌿 Role in Plants:</h4>
+                                <p class="text-2xl pen-blue">
+                                    Component of <span class="highlight-green pen-black font-bold">Chlorophyll</span>.
+                                    <br>Absolutely essential for plants to synthesise carbohydrates during photosynthesis!
+                                </p>
+                            </div>
+
+                            <!-- Amount in Human Body -->
+                            <div class="bg-teal-50 p-4 rounded-xl border-2 border-teal-400">
+                                <h4 class="font-heading text-2xl font-bold text-teal-900 mb-2">🧍 Amount in Human Body:</h4>
+                                <p class="text-3xl pen-red font-bold">20–28 g</p>
+                                <p class="text-xl pen-blue">
+                                    <span class="highlight-yellow pen-black font-bold">More than half</span> of body magnesium is stored in the <strong class="pen-black">bones</strong>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Functions & Deficiency -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-300">
+                            <h4 class="font-heading text-2xl pen-black font-bold mb-2">Major Functions:</h4>
+                            <ul class="list-disc pl-6 text-2xl pen-blue space-y-2">
+                                <li>Essential part of enzymes involved in <span class="highlight-yellow pen-black font-bold">liberation of energy</span>.</li>
+                                <li>Helps maintain <span class="highlight-yellow pen-black font-bold">electrical potential of nerve and muscle membranes</span>.</li>
+                                <li>Widely occurs in foods of <strong class="pen-black">vegetable origin</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Deficiency Conditions -->
+                        <div class="bg-rose-50 border-2 border-rose-300 p-4 rounded-xl">
+                            <h5 class="font-heading text-2xl pen-red font-bold mb-1">
+                                ⚠️ Mg Deficiency Associated Complications:
+                            </h5>
+                            <div class="flex flex-wrap gap-3 font-sub text-2xl">
+                                <span class="bg-white px-3 py-1 rounded-lg border border-rose-300 font-bold text-rose-900">1. Kwashiorkor</span>
+                                <span class="bg-white px-3 py-1 rounded-lg border border-rose-300 font-bold text-rose-900">2. Hypertension</span>
+                                <span class="bg-white px-3 py-1 rounded-lg border border-rose-300 font-bold text-rose-900">3. Coronary Heart Disease</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-slate-300 my-6">
+
+                <!-- SECTION 18 to 25: SODIUM, POTASSIUM & CHLORINE -->
+                <section>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-slate-900 text-white font-heading font-bold text-lg px-3 py-0.5 rounded-full">18–25</span>
+                        <h3 class="font-heading text-2xl sm:text-3xl pen-black font-bold">SODIUM (Na), POTASSIUM (K) & CHLORINE (Cl)</h3>
+                    </div>
+
+                    <div class="pl-2 sm:pl-4 space-y-4">
+                        <p class="text-2xl pen-blue">
+                            Discussed together due to crucial roles in body fluids, membrane potentials & nerve impulse conduction.
+                        </p>
+
+                        <!-- High-Yield Comparison Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                            <!-- Sodium -->
+                            <div class="bg-blue-50 p-4 rounded-xl border-2 border-blue-400 space-y-2">
+                                <div class="flex justify-between items-center border-b border-blue-300 pb-1">
+                                    <h4 class="font-heading text-2xl font-bold pen-black">Sodium (Na⁺)</h4>
+                                    <span class="bg-blue-600 text-white text-lg font-bold px-2 py-0.5 rounded-full">2%</span>
+                                </div>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Location:</strong> Extracellular</p>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Role:</strong> Membrane potential + Nerve impulse (with K⁺)</p>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Digestive Fluid:</strong> NaHCO₃ in Bile & Pancreatic Juice</p>
+                                <div class="bg-rose-100 p-2 rounded text-lg pen-red font-bold font-sub mt-2">
+                                    Deficiency: Loss of energy, confusion
+                                </div>
+                            </div>
+
+                            <!-- Potassium -->
+                            <div class="bg-emerald-50 p-4 rounded-xl border-2 border-emerald-400 space-y-2">
+                                <div class="flex justify-between items-center border-b border-emerald-300 pb-1">
+                                    <h4 class="font-heading text-2xl font-bold pen-black">Potassium (K⁺)</h4>
+                                    <span class="bg-emerald-600 text-white text-lg font-bold px-2 py-0.5 rounded-full">5%</span>
+                                </div>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Location:</strong> Mainly Intracellular</p>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Role:</strong> Membrane potential + Lean body tissue component</p>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Dietary Status:</strong> Widely distributed (Deficiency rare)</p>
+                                <div class="bg-rose-100 p-2 rounded text-lg pen-red font-bold font-sub mt-2">
+                                    Deficiency: Muscular weakness, paralysis
+                                </div>
+                            </div>
+
+                            <!-- Chlorine -->
+                            <div class="bg-amber-50 p-4 rounded-xl border-2 border-amber-400 space-y-2">
+                                <div class="flex justify-between items-center border-b border-amber-300 pb-1">
+                                    <h4 class="font-heading text-2xl font-bold pen-black">Chlorine (Cl⁻)</h4>
+                                    <span class="bg-amber-600 text-white text-lg font-bold px-2 py-0.5 rounded-full">3%</span>
+                                </div>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Location:</strong> Extracellular</p>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Role:</strong> Digestive fluids balance</p>
+                                <p class="text-xl pen-blue font-sub"><strong class="pen-black">Digestive Fluid:</strong> HCl in Gastric Juice</p>
+                                <div class="bg-rose-100 p-2 rounded text-lg pen-red font-bold font-sub mt-2">
+                                    Deficiency: Loss of energy, confusion
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Digestive Fluids Flowchart & Daily Intake Box -->
+                        <div class="bg-white p-5 rounded-xl border-2 border-slate-800">
+                            <div class="flex justify-between items-center flex-wrap gap-2 mb-3">
+                                <h4 class="font-heading text-2xl pen-black font-bold">
+                                    🧪 Role of Na & Cl in Digestive Fluids
+                                </h4>
+                                <div class="bg-yellow-300 px-3 py-1 rounded-lg border border-yellow-500 font-heading font-bold text-slate-900 text-xl">
+                                    NaCl Daily Limit: ≤ 5 g/day
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-sub text-2xl">
+                                <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                                    <span class="font-bold text-blue-900">Sodium Bicarbonate (NaHCO₃):</span>
+                                    <ul class="list-disc pl-5 text-xl pen-blue mt-1">
+                                        <li>Bile</li>
+                                        <li>Pancreatic juice</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-amber-50 p-3 rounded-lg border border-amber-200">
+                                    <span class="font-bold text-amber-900">Hydrochloric Acid (HCl):</span>
+                                    <ul class="list-disc pl-5 text-xl pen-blue mt-1">
+                                        <li>Gastric juice</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- ========================================================================= -->
+            <!-- TAB 5: MASTER COMPARISON TABLES & NUMERICAL REVISION -->
+            <!-- ========================================================================= -->
+            <div id="tab-5" class="tab-content hidden space-y-8">
+
+                <!-- MASTER COMPARISON TABLE -->
+                <section>
+                    <h3 class="font-heading text-3xl pen-black font-bold mb-4">
+                        📋 MASTER COMPARISON TABLE — ALL MINERALS
+                    </h3>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse font-sub text-xl bg-white rounded-lg border-2 border-slate-800">
+                            <thead>
+                                <tr class="bg-slate-900 text-white font-heading">
+                                    <th class="p-2.5 text-left border border-slate-700">Mineral</th>
+                                    <th class="p-2.5 text-left border border-slate-700">Key Location / Form</th>
+                                    <th class="p-2.5 text-left border border-slate-700">Major Function / Fact</th>
+                                    <th class="p-2.5 text-left border border-slate-700">Major Sources</th>
+                                    <th class="p-2.5 text-left border border-slate-700">Deficiency / Key Point</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-300 pen-blue">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-2.5 font-bold pen-black">Calcium (Ca)</td>
+                                    <td class="p-2.5">99% skeleton (calcium phosphate)</td>
+                                    <td class="p-2.5">Bones, teeth, clotting, muscle, nerves</td>
+                                    <td class="p-2.5">Milk, molasses, nuts, sesame, ragi</td>
+                                    <td class="p-2.5 text-red-600 font-bold">Osteoporosis</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-2.5 font-bold pen-black">Phosphorus (P)</td>
+                                    <td class="p-2.5">80% in bones as calcium phosphate</td>
+                                    <td class="p-2.5">Bones, nucleic acids, cell membranes</td>
+                                    <td class="p-2.5">Meat, poultry, fish, egg, milk, nuts, pulses</td>
+                                    <td class="p-2.5">Weakness, anorexia, bone pain</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-2.5 font-bold pen-black">Sulphur (S)</td>
+                                    <td class="p-2.5">Cysteine & Methionine; keratin</td>
+                                    <td class="p-2.5">Proteins, keratin, thiamine, biotin</td>
+                                    <td class="p-2.5">Egg, garlic, onion, broccoli</td>
+                                    <td class="p-2.5">Arthritis symptoms, acne, brittle hair/nails</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-2.5 font-bold pen-black">Magnesium (Mg)</td>
+                                    <td class="p-2.5">&gt;½ stored in bones</td>
+                                    <td class="p-2.5">Chlorophyll, energy enzymes, potential</td>
+                                    <td class="p-2.5">Vegetable foods</td>
+                                    <td class="p-2.5">Kwashiorkor, hypertension, CHD</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-2.5 font-bold pen-black">Sodium (Na)</td>
+                                    <td class="p-2.5">Extracellular (2% share)</td>
+                                    <td class="p-2.5">Membrane potential, nerve impulses, NaHCO₃</td>
+                                    <td class="p-2.5">Table salt, diet</td>
+                                    <td class="p-2.5">Loss of energy, confusion</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-2.5 font-bold pen-black">Potassium (K)</td>
+                                    <td class="p-2.5">Mainly Intracellular (5% share)</td>
+                                    <td class="p-2.5">Membrane potential, lean tissue</td>
+                                    <td class="p-2.5">Widely distributed</td>
+                                    <td class="p-2.5 text-red-600 font-bold">Muscular weakness, paralysis</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-2.5 font-bold pen-black">Chloride (Cl)</td>
+                                    <td class="p-2.5">Extracellular (3% share)</td>
+                                    <td class="p-2.5">Digestive fluids, HCl in gastric juice</td>
+                                    <td class="p-2.5">Table salt</td>
+                                    <td class="p-2.5">Loss of energy, confusion</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <hr class="border-slate-300 my-6">
+
+                <!-- HIGH-YIELD NUMERICAL CHEAT SHEET -->
+                <section>
+                    <h3 class="font-heading text-3xl pen-black font-bold mb-4 flex items-center gap-2">
+                        💯 HIGH-YIELD NUMERICAL DATA CHEAT SHEET
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 font-sub text-2xl">
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">4–6%</strong>: Body weight as minerals</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">80%</strong>: Minerals in skeleton</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">&gt;100 mg/day</strong>: Macromineral threshold</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">&lt;20 mg/day</strong>: Micromineral threshold</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">1200 g</strong>: Calcium in 70-kg male</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">39%</strong>: Calcium share of body minerals</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">99%</strong>: Body calcium in skeleton</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">1%</strong>: Calcium in soft tissues/fluids</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">20–30%</strong>: Usual calcium absorption</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">22%</strong>: Phosphorus share of minerals</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">80%</strong>: Phosphorus in bones</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">20–28 g</strong>: Magnesium in human body</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">2%</strong>: Sodium share</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">5%</strong>: Potassium share</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300"><strong class="pen-red text-3xl">3%</strong>: Chlorine share</div>
+                        <div class="bg-amber-50 p-3 rounded-lg border border-amber-300 col-span-1 sm:col-span-2 md:col-span-3">
+                            <strong class="pen-red text-3xl">≤ 5 g/day</strong>: Stated maximum daily intake of NaCl
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- ========================================================================= -->
+            <!-- TAB 6: INTERACTIVE PRACTICE QUIZ & MCQS -->
+            <!-- ========================================================================= -->
+            <div id="tab-6" class="tab-content hidden space-y-8">
+
+                <section>
+                    <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+                        <h3 class="font-heading text-3xl pen-black font-bold">
+                            📝 TOPPER'S INTERACTIVE PRACTICE SET & MCQS
+                        </h3>
+                        <div class="bg-emerald-100 text-emerald-900 border border-emerald-400 font-bold px-3 py-1 rounded-lg text-lg">
+                            Score: <span id="quizScore">0</span> / 15
+                        </div>
+                    </div>
+
+                    <p class="text-2xl pen-blue mb-4">
+                        Test your memory with real exam questions directly based on the study material.
+                    </p>
+
+                    <!-- MCQ CONTAINER -->
+                    <div class="space-y-6" id="mcqContainer">
+                        <!-- Questions will be populated dynamically -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- FOOTER SIGNATURE -->
+            <div class="mt-12 pt-6 border-t-2 border-slate-300 text-center font-doodle text-xl text-slate-500">
+                <p>✨ Written with care by Food Chemistry Topper | Verified 100% accurate to source material ✨</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // MCQ Dataset directly from the study material
+        const mcqs = [
+            {
+                q: "1. Minerals are defined in the study material as:",
+                options: [
+                    "A. Organic components of food",
+                    "B. Inorganic components that leave ash on burning",
+                    "C. Vitamins present in food",
+                    "D. Proteins present in tissues"
+                ],
+                answer: 1,
+                explanation: "Minerals are inorganic components that leave ash as residue when burnt."
+            },
+            {
+                q: "2. Approximately what percentage of human body weight consists of minerals?",
+                options: ["A. 1–2%", "B. 2–3%", "C. 4–6%", "D. 10–12%"],
+                answer: 2,
+                explanation: "Minerals constitute approximately 4–6% of human body weight."
+            },
+            {
+                q: "3. The most abundant mineral in the human body is:",
+                options: ["A. Phosphorus", "B. Calcium", "C. Magnesium", "D. Potassium"],
+                answer: 1,
+                explanation: "Calcium is the most abundant mineral in the body (~1200g in 70kg male)."
+            },
+            {
+                q: "4. Approximately 99% of body calcium is found in the:",
+                options: ["A. Blood", "B. Muscles", "C. Skeleton", "D. Liver"],
+                answer: 2,
+                explanation: "Approximately 99% of body calcium is present in the skeleton as calcium phosphate."
+            },
+            {
+                q: "5. Usual absorption of ingested calcium is:",
+                options: ["A. 5–10%", "B. 20–30%", "C. 40–50%", "D. 80–90%"],
+                answer: 1,
+                explanation: "Usually, only about 20–30% of ingested calcium is absorbed by the body."
+            },
+            {
+                q: "6. Which of the following increases calcium absorption?",
+                options: ["A. Phytic acid", "B. Oxalic acid", "C. Vitamin D", "D. Alkaline medium"],
+                answer: 2,
+                explanation: "Vitamin D, lactose, low pH, low fat, and high protein increase calcium absorption."
+            },
+            {
+                q: "7. Calcium in milk is readily assimilated mainly because of:",
+                options: ["A. Protein and fat", "B. Lactose and vitamin D", "C. Iron and zinc", "D. Phytic acid"],
+                answer: 1,
+                explanation: "Milk calcium is readily assimilated due to lactose and vitamin D."
+            },
+            {
+                q: "8. Phosphorus is approximately what percentage of total body minerals?",
+                options: ["A. 10%", "B. 15%", "C. 22%", "D. 39%"],
+                answer: 2,
+                explanation: "Phosphorus accounts for approximately 22% of total minerals."
+            },
+            {
+                q: "9. Which mineral is a component of nucleic acids and cell membranes?",
+                options: ["A. Calcium", "B. Phosphorus", "C. Sodium", "D. Chloride"],
+                answer: 1,
+                explanation: "Phosphorus is a crucial component of nucleic acids and cell membranes."
+            },
+            {
+                q: "10. The sulphur-containing amino acids mentioned are:",
+                options: ["A. Lysine and methionine", "B. Cysteine and methionine", "C. Glycine and cysteine", "D. Alanine and valine"],
+                answer: 1,
+                explanation: "Sulphur is required principally as Cysteine and Methionine."
+            },
+            {
+                q: "11. Magnesium is a component of:",
+                options: ["A. Haemoglobin", "B. Chlorophyll", "C. Insulin only", "D. Collagen"],
+                answer: 1,
+                explanation: "Magnesium is a key central component of Chlorophyll in plants."
+            },
+            {
+                q: "12. Which mineral is mainly intracellular?",
+                options: ["A. Sodium", "B. Chloride", "C. Potassium", "D. Calcium"],
+                answer: 2,
+                explanation: "Potassium (K⁺) is mainly intracellular."
+            },
+            {
+                q: "13. Sodium and chloride are mainly:",
+                options: ["A. Intracellular", "B. Extracellular", "C. Nuclear", "D. Skeletal"],
+                answer: 1,
+                explanation: "Sodium (Na⁺) and Chloride (Cl⁻) are extracellular."
+            },
+            {
+                q: "14. Potassium deficiency can result in:",
+                options: ["A. Osteoporosis", "B. Muscular weakness or paralysis", "C. Anorexia only", "D. Brittle hair"],
+                answer: 1,
+                explanation: "Potassium deficiency leads to muscular weakness or paralysis."
+            },
+            {
+                q: "15. The stated adequate daily intake limit for NaCl is:",
+                options: ["A. 1 g/day", "B. 3 g/day", "C. 5 g/day", "D. 10 g/day"],
+                answer: 2,
+                explanation: "Adequate daily intake of NaCl should not be more than 5 g/day."
+            }
+        ];
+
+        let currentScore = 0;
+        let answeredQuestions = new Set();
+
+        // Initialize App
+        window.onload = function() {
+            renderMCQs();
+            setupSearch();
+        };
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.remove('hidden');
+
+            // Update tab button styles
+            document.querySelectorAll('.nav-tab').forEach(btn => {
+                btn.classList.remove('bg-amber-400', 'text-slate-950', 'font-bold');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
+                activeBtn.classList.add('bg-amber-400', 'text-slate-950', 'font-bold');
+            }
+
+            // Scroll notebook top smoothly
+            document.getElementById('notebook-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Toggle Highlighter Effect
+        let highlightsEnabled = true;
+        function toggleHighlights() {
+            highlightsEnabled = !highlightsEnabled;
+            const container = document.getElementById('notebook-container');
+            const btnText = document.getElementById('hlBtnText');
+            
+            if (highlightsEnabled) {
+                container.classList.remove('hide-highlights');
+                btnText.textContent = "Highlights: ON";
+            } else {
+                container.classList.add('hide-highlights');
+                btnText.textContent = "Highlights: OFF";
+            }
+        }
+
+        // Render Practice MCQs
+        function renderMCQs() {
+            const container = document.getElementById('mcqContainer');
+            container.innerHTML = '';
+
+            mcqs.forEach((item, qIndex) => {
+                const card = document.createElement('div');
+                card.className = 'bg-white p-5 rounded-xl border-2 border-slate-800 shadow-sm space-y-3 font-sub text-2xl';
+                card.innerHTML = `
+                    <p class="font-heading font-bold text-2xl pen-black">${item.q}</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        ${item.options.map((opt, oIndex) => `
+                            <button onclick="checkAnswer(${qIndex}, ${oIndex}, this)" 
+                                class="mcq-opt-${qIndex} text-left px-4 py-2 rounded-lg border border-slate-300 hover:bg-amber-50 transition pen-blue">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="exp-${qIndex}" class="hidden p-3 rounded-lg bg-slate-100 text-xl font-hand mt-2 border-l-4 border-l-amber-500">
+                        <strong class="pen-black">Explanation:</strong> ${item.explanation}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Check Answer Logic
+        function checkAnswer(qIndex, selectedIndex, btn) {
+            if (answeredQuestions.has(qIndex)) return; // Already answered
+
+            const item = mcqs[qIndex];
+            const buttons = document.querySelectorAll(`.mcq-opt-${qIndex}`);
+            
+            buttons.forEach(b => b.disabled = true);
+
+            if (selectedIndex === item.answer) {
+                btn.classList.add('bg-emerald-200', 'border-emerald-600', 'pen-green', 'font-bold');
+                currentScore++;
+                document.getElementById('quizScore').textContent = currentScore;
+            } else {
+                btn.classList.add('bg-rose-200', 'border-rose-600', 'pen-red', 'font-bold');
+                buttons[item.answer].classList.add('bg-emerald-200', 'border-emerald-600', 'pen-green', 'font-bold');
+            }
+
+            // Reveal explanation
+            document.getElementById(`exp-${qIndex}`).classList.remove('hidden');
+            answeredQuestions.add(qIndex);
+        }
+
+        // Keyword Search Filter
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase().trim();
+                if (!query) return;
+
+                // Automatically switch to tab 1 or reveal all matching content
+                const sections = document.querySelectorAll('.tab-content p, .tab-content li, .tab-content h3, .tab-content h4');
+                sections.forEach(el => {
+                    if (el.textContent.toLowerCase().includes(query)) {
+                        el.style.backgroundColor = 'rgba(254, 240, 138, 0.4)';
+                    } else {
+                        el.style.backgroundColor = 'transparent';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

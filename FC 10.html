@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Chemistry: Lipids - Topper's Handwritten Study Notes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Realistic Handwriting & Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500;600;700&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Permanent+Marker&family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Hand-written Font Classes */
+        .font-kalam { font-family: 'Kalam', cursive; }
+        .font-caveat { font-family: 'Caveat', cursive; }
+        .font-patrick { font-family: 'Patrick Hand', cursive; }
+        .font-architect { font-family: 'Architects Daughter', cursive; }
+        .font-marker { font-family: 'Permanent Marker', cursive; }
+        .font-indie { font-family: 'Indie Flower', cursive; }
+
+        /* Pen Colors */
+        .pen-blue { color: #1e40af; } /* Deep Gel Blue Ink */
+        .pen-black { color: #0f172a; } /* Dark Black Ink */
+        .pen-red { color: #dc2626; } /* Correction / Alert Red Ink */
+        .pen-green { color: #15803d; } /* Green Ink for tricks */
+
+        /* Highlighter Effect */
+        .highlight-yellow {
+            background: linear-gradient(100deg, rgba(254, 240, 138, 0.85) 0%, rgba(253, 224, 71, 0.9) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            box-shadow: 1px 2px 4px rgba(250, 204, 21, 0.2);
+            display: inline;
+        }
+
+        .highlight-green {
+            background: linear-gradient(100deg, rgba(187, 247, 208, 0.85) 0%, rgba(134, 239, 172, 0.9) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline;
+        }
+
+        .highlight-pink {
+            background: linear-gradient(100deg, rgba(251, 207, 232, 0.85) 0%, rgba(244, 114, 182, 0.8) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline;
+        }
+
+        /* Handwritten Circle / Underline Effects */
+        .hand-circle {
+            border: 2px solid #dc2626;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+
+        .wavy-underline {
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: #dc2626;
+            text-decoration-thickness: 2px;
+        }
+
+        /* Ruled Notebook Paper Background */
+        .notebook-page {
+            background-color: #fdfbf7;
+            background-image: 
+                linear-gradient(#e0f2fe 1px, transparent 1px),
+                linear-gradient(90deg, transparent 72px, #fca5a5 72px, #fca5a5 74px, transparent 74px);
+            background-size: 100% 34px, 100% 100%;
+            line-height: 34px;
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+            position: relative;
+            min-height: 980px;
+            transition: all 0.3s ease;
+        }
+
+        /* Binder Holes on Left Margin */
+        .binder-hole {
+            width: 18px;
+            height: 18px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4), 0 0 0 2px #f1f5f9;
+            position: absolute;
+            left: 28px;
+        }
+
+        /* Sticky Notes */
+        .sticky-note {
+            background: #fef08a;
+            box-shadow: 4px 5px 10px rgba(0,0,0,0.15);
+            transform: rotate(-2deg);
+            border-bottom-right-radius: 25px 5px;
+            transition: transform 0.2s ease;
+        }
+        .sticky-note:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        /* Red Teacher Stamp */
+        .stamp-box {
+            border: 3px dashed #dc2626;
+            color: #dc2626;
+            transform: rotate(-6deg);
+            border-radius: 8px;
+            padding: 4px 12px;
+            display: inline-block;
+            font-family: 'Permanent Marker', cursive;
+            text-transform: uppercase;
+        }
+
+        /* Print styles */
+        @media print {
+            body { background: white; padding: 0; }
+            .no-print { display: none !important; }
+            .notebook-page { box-shadow: none; margin: 0; page-break-after: always; width: 100% !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-800 text-slate-900 min-h-screen font-kalam pb-16 selection:bg-yellow-300">
+
+    <!-- TOP NAV CONTROL BAR (No-Print) -->
+    <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-700 text-white px-4 py-3 shadow-xl">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4">
+            
+            <!-- Title Branding -->
+            <div class="flex items-center space-x-3">
+                <div class="bg-yellow-400 text-slate-900 p-2 rounded-lg font-bold text-xl shadow flex items-center">
+                    <i class="fa-solid fa-book-open mr-2"></i> Topper's Pad
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-wide text-yellow-300 font-kalam">FOOD CHEMISTRY - LIPIDS (Class 10)</h1>
+                    <p class="text-xs text-slate-400 font-sans">Instructor: Anubhav Pandey (ICAR JRF, UGC NET Qualified) | Swa Education</p>
+                </div>
+            </div>
+
+            <!-- Page Selector & View Controls -->
+            <div class="flex items-center flex-wrap gap-2 text-sm">
+                <div class="bg-slate-800 p-1 rounded-lg border border-slate-700 flex space-x-1">
+                    <button onclick="switchPage('all')" id="btn-all" class="px-3 py-1.5 rounded-md transition font-sans font-medium text-xs bg-yellow-500 text-slate-950 font-bold shadow">
+                        All Pages
+                    </button>
+                    <button onclick="switchPage(1)" id="btn-p1" class="px-3 py-1.5 rounded-md hover:bg-slate-700 transition font-sans text-xs text-slate-300">
+                        Page 1: Intro & Omega-3
+                    </button>
+                    <button onclick="switchPage(2)" id="btn-p2" class="px-3 py-1.5 rounded-md hover:bg-slate-700 transition font-sans text-xs text-slate-300">
+                        Page 2: Omega-6 & 9 Structure
+                    </button>
+                    <button onclick="switchPage(3)" id="btn-p3" class="px-3 py-1.5 rounded-md hover:bg-slate-700 transition font-sans text-xs text-slate-300">
+                        Page 3: Comparison Matrix
+                    </button>
+                </div>
+
+                <!-- Action Buttons -->
+                <button onclick="toggleQuizModal()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded-lg text-xs font-sans font-bold flex items-center shadow">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i> Revision Quiz
+                </button>
+
+                <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-sans font-bold flex items-center shadow">
+                    <i class="fa-solid fa-print mr-1.5"></i> Print / PDF
+                </button>
+
+                <button onclick="speakNotes()" class="bg-amber-600 hover:bg-amber-500 text-white px-3 py-1.5 rounded-lg text-xs font-sans font-bold flex items-center shadow" title="Read summary aloud">
+                    <i class="fa-solid fa-volume-high mr-1.5"></i> Audio Note
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="max-w-6xl mx-auto mt-2">
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                <input type="text" id="searchInput" onkeyup="searchNotes()" placeholder="Search keywords (e.g. Oleic, EPA, PUFA, Marine, Flaxseed)..." class="w-full bg-slate-800 border border-slate-700 rounded-md pl-8 pr-4 py-1 text-xs text-slate-200 placeholder-slate-400 focus:outline-none focus:border-yellow-400 font-sans">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-4xl mx-auto my-6 px-3 space-y-12">
+
+        <!-- ================= PAGE 1 ================= -->
+        <section id="page-1" class="notebook-page p-6 pl-24 md:pl-28 rounded-r-2xl border-l-8 border-slate-300 text-slate-900">
+            <!-- Binder Holes -->
+            <div class="binder-hole" style="top: 60px;"></div>
+            <div class="binder-hole" style="top: 240px;"></div>
+            <div class="binder-hole" style="top: 420px;"></div>
+            <div class="binder-hole" style="top: 600px;"></div>
+            <div class="binder-hole" style="top: 780px;"></div>
+
+            <!-- Page Header / Date Stamp -->
+            <div class="flex justify-between items-start border-b border-slate-300 pb-2 mb-4">
+                <div class="font-caveat text-sm text-slate-500">
+                    <span>Date: <span class="underline text-slate-700">Class 10 - Food Tech</span></span> | 
+                    <span>Page: <span class="underline text-slate-700">01</span></span>
+                </div>
+                <div class="stamp-box text-xs">
+                    ⭐ TOPPER NOTEBOOK - 100/100
+                </div>
+            </div>
+
+            <!-- Main Title & Chapter Banner -->
+            <div class="text-center my-4 relative">
+                <h2 class="font-marker text-3xl md:text-4xl text-slate-900 tracking-wider uppercase mb-1">
+                    FOOD CHEMISTRY: LIPIDS
+                </h2>
+                <div class="font-kalam text-lg text-blue-800 font-bold">
+                    Chapter 11 • Subtopic: Essential Fatty Acids (ω-3, ω-6, ω-9)
+                </div>
+                <div class="absolute -top-2 right-0 hidden md:block">
+                    <!-- Cute Beaker Doodle -->
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 3h12M9 3v6l-5 9a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3l-5-9V3"/>
+                        <path d="M8.5 14h7M10 11h4"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Sticky Note Callout in Margin/Top -->
+            <div class="sticky-note p-3 mb-6 max-w-md mx-auto text-slate-900 font-caveat text-base leading-snug">
+                <p class="font-bold text-red-700"><i class="fa-solid fa-thumbtack mr-1"></i> EXAM OVERVIEW & CREDITS:</p>
+                <p>• Notes based on lectures by <b>Anubhav Pandey Sir</b> (ICAR JRF & UGC NET Qualified).</p>
+                <p>• High-yield board exam topic: Definition, shorthand nomenclature (Cx:y n-z), functions & food sources.</p>
+            </div>
+
+            <!-- TOPIC 1: ESSENTIAL FATTY ACIDS DEFINITION -->
+            <div class="space-y-4 mb-8">
+                <h3 class="font-kalam font-bold text-2xl pen-black border-b-2 border-slate-800 inline-block">
+                    1. What are Essential Fatty Acids (EFAs)?
+                </h3>
+
+                <ul class="list-disc list-inside space-y-3 pen-blue text-lg leading-loose">
+                    <li>
+                        <span class="highlight-yellow font-bold">Essential Fatty Acids:</span> Fatty acids that <span class="wavy-underline pen-red font-bold">cannot be synthesized</span> by the human body and <span class="font-bold">MUST be supplied through the diet</span>.
+                    </li>
+                    <li>
+                        Out of various omega fatty acid families, <span class="hand-circle font-bold pen-black">Omega-3, Omega-6, and Omega-9</span> are the 3 most popular types in human nutrition.
+                    </li>
+                    <li>
+                        <span class="font-bold text-slate-900">Omega-3 & Omega-6:</span> Families of <span class="highlight-green font-bold text-slate-900">Polyunsaturated Fats (PUFAs)</span> that our body cannot produce on its own. Needs to be taken via food or dietary supplements.
+                    </li>
+                    <li>
+                        <span class="font-bold text-slate-900">Omega-9:</span> Family of <span class="highlight-pink font-bold text-slate-900">Monounsaturated Fats (MUFAs)</span>. The human body <span class="font-bold pen-red">CAN synthesize</span> Omega-9 from any unsaturated fats we consume!
+                        <br>
+                        <span class="text-sm font-caveat pen-green font-bold">➜ Note: Omega-9 is NOT strictly "essential", but replacing saturated fats with Omega-9 provides immense cardiovascular health benefits!</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- TOPIC 2: OMEGA-3 FATTY ACIDS -->
+            <div class="space-y-4 mb-8">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-kalam font-bold text-2xl pen-black bg-yellow-200 px-2 py-1 rounded">
+                        2. ω-3 (Omega-3) Fatty Acids
+                    </h3>
+                    <span class="pen-red font-caveat text-xl font-bold">V. V. IMP! ⭐⭐⭐</span>
+                </div>
+
+                <!-- Hand drawn Definition box -->
+                <div class="p-3 border-2 border-blue-900 rounded-xl bg-sky-50/50 pen-blue text-lg leading-relaxed">
+                    <p class="font-bold">
+                        📌 Definition: <span class="pen-black">In ω-3 fatty acids, the <span class="highlight-yellow">first double bond appears at the 3rd carbon atom</span> counting from the <span class="pen-red font-bold">methyl (CH₃) end</span> of the carbon chain.</span>
+                    </p>
+                    <p class="mt-2 text-sm font-caveat text-red-700 font-bold">
+                        <i class="fa-solid fa-lightbulb"></i> EXAM TIP: Precursor Rule: α-Linolenic Acid (<span class="font-bold">ALA</span>) is the chemical precursor of <span class="font-bold">EPA</span> & <span class="font-bold">DHA</span>!
+                    </p>
+                </div>
+
+                <!-- Major Members List & Formula Notation -->
+                <div class="grid grid-md-2 gap-4 my-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-300 shadow-sm">
+                        <h4 class="font-bold pen-black text-xl mb-2 flex items-center">
+                            <i class="fa-solid fa-flask text-blue-600 mr-2"></i> Major Members of ω-3:
+                        </h4>
+                        <ol class="list-decimal list-inside space-y-2 text-lg pen-blue">
+                            <li>
+                                <b class="pen-black">ALA</b>: α-Linolenic acid 
+                                <span class="bg-blue-100 text-blue-900 text-xs px-2 py-0.5 rounded-full font-sans font-bold ml-1">C18:3 n-3</span>
+                            </li>
+                            <li>
+                                <b class="pen-black">EPA</b>: Eicosapentaenoic acid 
+                                <span class="bg-blue-100 text-blue-900 text-xs px-2 py-0.5 rounded-full font-sans font-bold ml-1">C20:5 n-3</span>
+                            </li>
+                            <li>
+                                <b class="pen-black">DHA</b>: Docosahexaenoic acid 
+                                <span class="bg-blue-100 text-blue-900 text-xs px-2 py-0.5 rounded-full font-sans font-bold ml-1">C22:6 n-3</span>
+                            </li>
+                        </ol>
+                        <p class="mt-3 text-xs pen-red font-caveat text-base font-bold bg-red-50 p-2 rounded">
+                            <i class="fa-solid fa-fish"></i> Key Fact: EPA & DHA are primarily <span class="highlight-yellow">marine-derived fatty acids</span> (found in oily fish like salmon, sardines).
+                        </p>
+                    </div>
+
+                    <!-- Flowchart SVG Diagram for Precursor -->
+                    <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-200 flex flex-col justify-center items-center text-center">
+                        <p class="font-bold pen-black text-lg mb-2 font-kalam">Precursor Conversion Pathway</p>
+                        <svg width="220" height="120" viewBox="0 0 220 120" class="my-1">
+                            <!-- ALA Box -->
+                            <rect x="10" y="10" width="200" height="30" rx="8" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+                            <text x="110" y="30" text-anchor="middle" font-family="Kalam" font-size="14" font-weight="bold" fill="#0f172a">ALA (C18:3 n-3)</text>
+                            
+                            <!-- Arrow down -->
+                            <path d="M 110 42 L 110 65" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="3,3"/>
+                            
+                            <!-- Split arrows -->
+                            <path d="M 110 65 L 60 82" stroke="#dc2626" stroke-width="2" />
+                            <path d="M 110 65 L 160 82" stroke="#dc2626" stroke-width="2" />
+
+                            <!-- EPA Box -->
+                            <rect x="10" y="82" width="90" height="28" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+                            <text x="55" y="100" text-anchor="middle" font-family="Kalam" font-size="12" font-weight="bold" fill="#1e3a8a">EPA (C20:5)</text>
+
+                            <!-- DHA Box -->
+                            <rect x="120" y="82" width="90" height="28" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+                            <text x="165" y="100" text-anchor="middle" font-family="Kalam" font-size="12" font-weight="bold" fill="#1e3a8a">DHA (C22:6)</text>
+                        </svg>
+                        <span class="text-xs font-caveat pen-blue">Dietary ALA converts to EPA & DHA in human body!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 1 Footer doodle -->
+            <div class="mt-8 pt-4 border-t border-slate-300 flex justify-between items-center text-xs text-slate-500 font-sans">
+                <span>Food Chemistry - Class 10 Notes</span>
+                <span class="font-caveat text-lg pen-red">Turn page for Omega-6 & Omega-9 structures ➜</span>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2 ================= -->
+        <section id="page-2" class="notebook-page p-6 pl-24 md:pl-28 rounded-r-2xl border-l-8 border-slate-300 text-slate-900">
+            <!-- Binder Holes -->
+            <div class="binder-hole" style="top: 60px;"></div>
+            <div class="binder-hole" style="top: 240px;"></div>
+            <div class="binder-hole" style="top: 420px;"></div>
+            <div class="binder-hole" style="top: 600px;"></div>
+            <div class="binder-hole" style="top: 780px;"></div>
+
+            <!-- Header -->
+            <div class="flex justify-between items-start border-b border-slate-300 pb-2 mb-4">
+                <div class="font-caveat text-sm text-slate-500">
+                    <span>Subject: <span class="underline text-slate-700">Food Chemistry</span></span> | 
+                    <span>Page: <span class="underline text-slate-700">02</span></span>
+                </div>
+                <div class="text-xs font-caveat pen-green font-bold bg-green-100 px-2 py-0.5 rounded">
+                    ✔ Chemical Structure Focus
+                </div>
+            </div>
+
+            <!-- TOPIC 3: OMEGA-6 FATTY ACIDS -->
+            <div class="space-y-4 mb-8">
+                <h3 class="font-kalam font-bold text-2xl pen-black bg-yellow-200 px-2 py-1 rounded inline-block">
+                    3. ω-6 (Omega-6) Fatty Acids
+                </h3>
+
+                <p class="pen-blue text-lg leading-relaxed">
+                    • <span class="font-bold">Definition:</span> In ω-6 fatty acids, the <span class="highlight-yellow font-bold">first double bond appears at the 6th carbon atom</span> counting from the methyl (CH₃) end of the carbon chain.
+                </p>
+                <p class="pen-blue text-lg">
+                    • <span class="font-bold pen-black">Source Richness:</span> <span class="highlight-green">Vegetable oils</span> (Corn oil, Sunflower oil, Soybean oil) are exceptionally rich in ω-6 fatty acids.
+                </p>
+
+                <!-- Major Members of Omega-6 Table -->
+                <div class="bg-white rounded-xl border border-slate-300 overflow-hidden shadow-sm my-4">
+                    <div class="bg-slate-800 text-white font-kalam font-bold px-4 py-2 text-lg">
+                        Major Members of ω-6 Fatty Acids
+                    </div>
+                    <div class="p-4 space-y-3 font-patrick text-xl">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <div>
+                                <span class="font-bold pen-black">Linoleic Acid (LA)</span>
+                                <span class="text-xs font-sans text-slate-500 block">Common in plant seed oils</span>
+                            </div>
+                            <span class="bg-amber-100 text-amber-900 text-sm font-bold px-3 py-1 rounded-full font-sans">
+                                C18:2 n-6
+                            </span>
+                        </div>
+
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                            <div>
+                                <span class="font-bold pen-black">Arachidonic Acid (AA)</span>
+                                <span class="text-xs font-sans text-slate-500 block">Precursor to signaling molecules</span>
+                            </div>
+                            <span class="bg-amber-100 text-amber-900 text-sm font-bold px-3 py-1 rounded-full font-sans">
+                                C20:4 n-6
+                            </span>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="font-bold pen-black">Docosapentaenoic Acid (DPA)</span>
+                                <span class="text-xs font-sans text-slate-500 block">Omega-6 variant of DPA</span>
+                            </div>
+                            <span class="bg-amber-100 text-amber-900 text-sm font-bold px-3 py-1 rounded-full font-sans">
+                                C22:5 n-6
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOPIC 4: OMEGA-9 FATTY ACIDS & CHEMICAL STRUCTURE -->
+            <div class="space-y-4 mb-8">
+                <h3 class="font-kalam font-bold text-2xl pen-black bg-yellow-200 px-2 py-1 rounded inline-block">
+                    4. ω-9 (Omega-9) Fatty Acids & Structure
+                </h3>
+
+                <p class="pen-blue text-lg leading-relaxed">
+                    • <span class="font-bold">Definition:</span> First double bond appears at the <span class="highlight-yellow font-bold">9th carbon atom</span> from the methyl (CH₃) end of the carbon chain.
+                    <br>
+                    • <span class="font-bold pen-black">Chief Member:</span> <span class="pen-red font-bold underline">Oleic Acid</span> (C18:1 n-9).
+                </p>
+
+                <!-- CHEMICAL BACKBONE DIAGRAM -->
+                <div class="bg-amber-50/80 p-5 rounded-2xl border-2 border-amber-300 my-6 shadow-md">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="font-bold font-kalam text-xl text-slate-900">
+                            🧪 Hand-Drawn Chemical Structure: Oleic Acid (C18:1 n-9)
+                        </h4>
+                        <span class="text-xs font-caveat pen-red font-bold">PDF Page 5 Reference</span>
+                    </div>
+
+                    <!-- Carbon Chain SVG Illustration -->
+                    <div class="overflow-x-auto py-4 text-center">
+                        <svg width="680" height="140" viewBox="0 0 680 140" class="mx-auto">
+                            <!-- Background Highlight for Omega-9 position -->
+                            <rect x="300" y="15" width="80" height="90" fill="#fef08a" rx="10" opacity="0.6"/>
+
+                            <!-- Arrow to double bond -->
+                            <path d="M 340 5 L 340 30" stroke="#dc2626" stroke-width="2.5"/>
+                            <text x="340" y="-2" text-anchor="middle" font-family="Kalam" font-size="14" font-weight="bold" fill="#dc2626">omega-9 double bond</text>
+
+                            <!-- Text formula representation -->
+                            <!-- CH3 Methyl End -->
+                            <text x="25" y="60" font-family="Kalam" font-size="16" font-weight="bold" fill="#dc2626">H₃C</text>
+                            
+                            <!-- Zigzag Carbon Chain line -->
+                            <path d="M 50 55 L 70 75 L 90 55 L 110 75 L 130 55 L 150 75 L 170 55 L 190 75 L 210 55 L 230 75 L 250 55 L 270 75 L 290 55 L 310 75" 
+                                  fill="none" stroke="#1e3a8a" stroke-width="2.5" stroke-linejoin="round"/>
+
+                            <text x="310" y="80" font-family="Kalam" font-size="15" font-weight="bold" fill="#0f172a">HC</text>
+                            
+                            <!-- Double Bond Symbol = -->
+                            <line x1="330" y1="58" x2="350" y2="58" stroke="#dc2626" stroke-width="3"/>
+                            <line x1="330" y1="66" x2="350" y2="66" stroke="#dc2626" stroke-width="3"/>
+
+                            <text x="360" y="80" font-family="Kalam" font-size="15" font-weight="bold" fill="#0f172a">HC</text>
+
+                            <!-- Continuing Carbon Chain to Carboxyl End -->
+                            <path d="M 380 75 L 400 55 L 420 75 L 440 55 L 460 75 L 480 55 L 500 75 L 520 55 L 540 75 L 560 55 L 580 75 L 600 55" 
+                                  fill="none" stroke="#1e3a8a" stroke-width="2.5" stroke-linejoin="round"/>
+
+                            <!-- Carboxyl Group COOH -->
+                            <text x="610" y="55" font-family="Kalam" font-size="18" font-weight="bold" fill="#0f172a">C</text>
+                            <line x1="620" y1="45" x2="635" y2="30" stroke="#0f172a" stroke-width="2"/>
+                            <text x="638" y="28" font-family="Kalam" font-size="16" font-weight="bold" fill="#0f172a">O</text>
+                            <line x1="620" y1="55" x2="635" y2="70" stroke="#0f172a" stroke-width="2"/>
+                            <text x="638" y="78" font-family="Kalam" font-size="16" font-weight="bold" fill="#0f172a">OH</text>
+
+                            <!-- Carbon number tags -->
+                            <text x="25" y="100" font-family="Caveat" font-size="14" fill="#dc2626" font-weight="bold">C1 (Methyl End)</text>
+                            <text x="325" y="115" font-family="Caveat" font-size="15" fill="#dc2626" font-weight="bold">C9 (1st double bond)</text>
+                            <text x="610" y="100" font-family="Caveat" font-size="14" fill="#1e3a8a" font-weight="bold">C18 (Carboxyl End)</text>
+                        </svg>
+                    </div>
+
+                    <div class="mt-2 text-center text-sm font-caveat pen-blue font-bold">
+                        Formula Summary: H₃C-(CH₂)₇-CH=CH-(CH₂)₇-COOH (C18:1 n-9)
+                    </div>
+                </div>
+
+                <!-- COMMON MISTAKE ALERT BOX -->
+                <div class="bg-red-50 border-2 border-red-400 p-4 rounded-xl space-y-2">
+                    <div class="flex items-center text-red-700 font-bold font-kalam text-lg">
+                        <i class="fa-solid fa-triangle-exclamation mr-2 text-xl"></i> COMMON BOARD EXAM MISTAKE!
+                    </div>
+                    <p class="pen-black text-base leading-snug font-patrick">
+                        <b>Don't confuse IUPAC numbering with Omega (ω) numbering!</b>
+                        <br>
+                        • <b>IUPAC System:</b> Carbon #1 starts at the <b>Carboxyl Carbon (-COOH)</b>.
+                        <br>
+                        • <b>Omega (ω) System:</b> Carbon #1 starts at the <b>Methyl Carbon (-CH₃)</b> end!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Page 2 Footer -->
+            <div class="mt-8 pt-4 border-t border-slate-300 flex justify-between items-center text-xs text-slate-500 font-sans">
+                <span>Food Chemistry - Class 10 Notes</span>
+                <span class="font-caveat text-lg pen-red">Turn page for Full Comparison Table ➜</span>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3 ================= -->
+        <section id="page-3" class="notebook-page p-6 pl-24 md:pl-28 rounded-r-2xl border-l-8 border-slate-300 text-slate-900">
+            <!-- Binder Holes -->
+            <div class="binder-hole" style="top: 60px;"></div>
+            <div class="binder-hole" style="top: 240px;"></div>
+            <div class="binder-hole" style="top: 420px;"></div>
+            <div class="binder-hole" style="top: 600px;"></div>
+            <div class="binder-hole" style="top: 780px;"></div>
+
+            <!-- Header -->
+            <div class="flex justify-between items-start border-b border-slate-300 pb-2 mb-4">
+                <div class="font-caveat text-sm text-slate-500">
+                    <span>Subject: <span class="underline text-slate-700">Food Chemistry</span></span> | 
+                    <span>Page: <span class="underline text-slate-700">03 (Master Table)</span></span>
+                </div>
+                <div class="stamp-box text-xs">
+                    MUST REVISE BEFORE EXAM
+                </div>
+            </div>
+
+            <div class="text-center my-2">
+                <h3 class="font-marker text-2xl text-slate-900">
+                    MASTER COMPARISON TABLE: OMEGA-3 vs OMEGA-6 vs OMEGA-9
+                </h3>
+                <p class="font-caveat text-base pen-blue">Complete breakdown of Type, Synthesis, Health Benefits & Dietary Sources (Exact from PDF Page 7)</p>
+            </div>
+
+            <!-- COMPARISON TABLE -->
+            <div class="overflow-x-auto my-6 shadow-lg rounded-xl border-2 border-slate-800 bg-white">
+                <table class="w-full text-left border-collapse font-patrick text-base">
+                    <thead>
+                        <tr class="bg-slate-900 text-white font-kalam text-lg">
+                            <th class="p-3 border-b border-r border-slate-700 w-1/5">Attribute</th>
+                            <th class="p-3 border-b border-r border-slate-700 bg-blue-900 w-1/4">Omega-3 (ω-3)</th>
+                            <th class="p-3 border-b border-r border-slate-700 bg-amber-900 w-1/4">Omega-6 (ω-6)</th>
+                            <th class="p-3 border-b border-slate-700 bg-emerald-900 w-1/4">Omega-9 (ω-9)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-300 pen-blue">
+                        <!-- Row 1: MUFA / PUFA -->
+                        <tr class="hover:bg-amber-50/50">
+                            <td class="p-3 font-bold pen-black border-r border-slate-300 bg-slate-100">Fat Type</td>
+                            <td class="p-3 border-r border-slate-300 font-bold text-blue-900">PUFA (Polyunsaturated)</td>
+                            <td class="p-3 border-r border-slate-300 font-bold text-amber-900">PUFA (Polyunsaturated)</td>
+                            <td class="p-3 font-bold text-emerald-900 bg-emerald-50/40">MUFA (Monounsaturated)</td>
+                        </tr>
+
+                        <!-- Row 2: Synthesis -->
+                        <tr class="hover:bg-amber-50/50">
+                            <td class="p-3 font-bold pen-black border-r border-slate-300 bg-slate-100">Body Synthesis</td>
+                            <td class="p-3 border-r border-slate-300 pen-red font-bold">
+                                ❌ CANNOT be synthesized by human body
+                            </td>
+                            <td class="p-3 border-r border-slate-300 pen-red font-bold">
+                                ❌ CANNOT be synthesized by human body
+                            </td>
+                            <td class="p-3 pen-green font-bold bg-emerald-50/40">
+                                ✔ Human body CAN produce Omega-9 (from unsaturated fats)
+                            </td>
+                        </tr>
+
+                        <!-- Row 3: Health Benefits -->
+                        <tr class="hover:bg-amber-50/50">
+                            <td class="p-3 font-bold pen-black border-r border-slate-300 bg-slate-100">Health Benefits</td>
+                            <td class="p-3 border-r border-slate-300 text-sm leading-tight space-y-1">
+                                <p>• Vital component of cell membrane</p>
+                                <p>• Support mental health & brain</p>
+                                <p>• Improves heart health & lowers liver fat</p>
+                                <p>• Support healthy weight management</p>
+                                <p>• Reduce inflammation</p>
+                                <p>• Support infant bone development</p>
+                            </td>
+                            <td class="p-3 border-r border-slate-300 text-sm leading-tight space-y-1">
+                                <p>• Reduce nerve pain</p>
+                                <p>• Decrease blood pressure</p>
+                                <p>• Lower heart disease risk</p>
+                                <p>• Promote bone health</p>
+                            </td>
+                            <td class="p-3 text-sm leading-tight space-y-1 bg-emerald-50/40">
+                                <p>• Reduce cardiovascular disease risk</p>
+                                <p>• Acts as a substitute in case of low levels of ω-3 or ω-6</p>
+                                <p class="text-xs font-caveat pen-red font-bold mt-1">*(However, it is less efficient than ω-3 and ω-6)*</p>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4: Food Sources -->
+                        <tr class="hover:bg-amber-50/50">
+                            <td class="p-3 font-bold pen-black border-r border-slate-300 bg-slate-100">Dietary Sources</td>
+                            <td class="p-3 border-r border-slate-300 text-sm leading-tight">
+                                <p class="font-bold text-slate-900"><i class="fa-solid fa-fish text-blue-600"></i> Marine Sources:</p>
+                                <p class="mb-2">Oily fish: Sardines, Salmon, Mackerel, Herrings.</p>
+                                <p class="font-bold text-slate-900"><i class="fa-solid fa-seedling text-green-600"></i> Plant Sources:</p>
+                                <p>Green leafy veggies (Kale, Spinach), Chia oil, Flaxseed oil, Walnut oil, Soybean oil, Canola oil.</p>
+                            </td>
+                            <td class="p-3 border-r border-slate-300 text-sm leading-tight">
+                                <p class="font-bold text-slate-900"><i class="fa-solid fa-bottle-droplet text-amber-600"></i> Plant Seed Oils:</p>
+                                <p>Corn oil, Sunflower oil, Safflower oil, Sesame oil, Walnut oil, Cottonseed oil, Soybean oil.</p>
+                            </td>
+                            <td class="p-3 text-sm leading-tight bg-emerald-50/40">
+                                <p class="font-bold text-slate-900"><i class="fa-solid fa-cloud-meatball text-emerald-700"></i> Oils & Nuts:</p>
+                                <p>Olive oil, Almond oil, Peanut oil, Avocado oil, Walnuts, Cashew nut oil, Rapeseed, Canola oil, Avocados, Eggs, Fish.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- MEMORY TRICK / SUMMARY STICKY NOTE -->
+            <div class="grid md:grid-cols-2 gap-4 my-6">
+                <div class="sticky-note p-4 text-slate-900">
+                    <h4 class="font-bold font-kalam text-lg text-red-800 border-b border-amber-400 pb-1 mb-2">
+                        💡 TOPPER'S MEMORY TRICK (MNEMONIC)
+                    </h4>
+                    <p class="font-caveat text-xl leading-relaxed">
+                        • <b>"ALA makes EPA & DHA swimming in the Sea!"</b> → ALA is precursor; EPA & DHA are marine/fish derived!
+                        <br>
+                        • <b>"3 & 6 are Non-Synthesized, 9 is Synthesized fine!"</b> → ω-3 & ω-6 = Essential PUFAs; ω-9 = Non-essential MUFA!
+                    </p>
+                </div>
+
+                <div class="bg-indigo-50 border-2 border-indigo-200 p-4 rounded-xl">
+                    <h4 class="font-bold font-kalam text-lg text-indigo-950 mb-1">
+                        🎯 Quick Exam Summary Checklist
+                    </h4>
+                    <ul class="list-disc list-inside font-patrick text-base pen-blue space-y-1">
+                        <li><span class="highlight-yellow">Precursor of EPA & DHA</span> = α-Linolenic Acid (ALA).</li>
+                        <li><span class="highlight-green">Oleic Acid</span> = C18:1 n-9 (Omega-9 MUFA).</li>
+                        <li><span class="highlight-pink">Vegetable oils</span> are richest in Omega-6 (LA).</li>
+                        <li>Omega-3 reduces inflammation & supports infant bone development.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Page 3 Footer -->
+            <div class="mt-8 pt-4 border-t border-slate-300 flex justify-between items-center text-xs text-slate-500 font-sans">
+                <span>Food Chemistry - Class 10 Notes Complete</span>
+                <span class="font-caveat text-base pen-green font-bold">End of Chapter 11 Notes ✔</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- REVISION QUIZ MODAL (Interactive Learning Tool) -->
+    <div id="quizModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative border-4 border-yellow-400 font-sans">
+            <button onclick="toggleQuizModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center space-x-2 text-yellow-600 mb-2">
+                <i class="fa-solid fa-brain text-2xl"></i>
+                <h3 class="text-xl font-bold font-kalam text-slate-900">Self-Assessment Revision Quiz</h3>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">Test your memory on Food Chemistry: Lipids!</p>
+
+            <div id="quizContent" class="space-y-4">
+                <!-- Question 1 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <p class="font-bold text-slate-800 text-sm mb-2">1. Which fatty acid acts as the precursor for EPA & DHA?</p>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <button onclick="checkAnswer(this, false)" class="p-2 border rounded hover:bg-slate-100 text-left">A. Linoleic Acid (LA)</button>
+                        <button onclick="checkAnswer(this, true)" class="p-2 border rounded hover:bg-slate-100 text-left">B. α-Linolenic Acid (ALA)</button>
+                        <button onclick="checkAnswer(this, false)" class="p-2 border rounded hover:bg-slate-100 text-left">C. Oleic Acid</button>
+                        <button onclick="checkAnswer(this, false)" class="p-2 border rounded hover:bg-slate-100 text-left">D. Arachidonic Acid (AA)</button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <p class="font-bold text-slate-800 text-sm mb-2">2. Can the human body synthesize Omega-9 fatty acids?</p>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <button onclick="checkAnswer(this, true)" class="p-2 border rounded hover:bg-slate-100 text-left">A. Yes, from unsaturated fats</button>
+                        <button onclick="checkAnswer(this, false)" class="p-2 border rounded hover:bg-slate-100 text-left">B. No, it is strictly essential</button>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <p class="font-bold text-slate-800 text-sm mb-2">3. Oleic acid (C18:1) belongs to which fatty acid family?</p>
+                    <div class="grid grid-cols-3 gap-2 text-xs">
+                        <button onclick="checkAnswer(this, false)" class="p-2 border rounded hover:bg-slate-100 text-left">Omega-3</button>
+                        <button onclick="checkAnswer(this, false)" class="p-2 border rounded hover:bg-slate-100 text-left">Omega-6</button>
+                        <button onclick="checkAnswer(this, true)" class="p-2 border rounded hover:bg-slate-100 text-left">Omega-9</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-right">
+                <button onclick="toggleQuizModal()" class="bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-slate-800">
+                    Close Quiz
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // Page switching logic
+        function switchPage(page) {
+            const p1 = document.getElementById('page-1');
+            const p2 = document.getElementById('page-2');
+            const p3 = document.getElementById('page-3');
+
+            const btnAll = document.getElementById('btn-all');
+            const btnP1 = document.getElementById('btn-p1');
+            const btnP2 = document.getElementById('btn-p2');
+            const btnP3 = document.getElementById('btn-p3');
+
+            // Reset buttons styling
+            [btnAll, btnP1, btnP2, btnP3].forEach(b => {
+                b.className = "px-3 py-1.5 rounded-md hover:bg-slate-700 transition font-sans text-xs text-slate-300";
+            });
+
+            if (page === 'all') {
+                p1.style.display = 'block';
+                p2.style.display = 'block';
+                p3.style.display = 'block';
+                btnAll.className = "px-3 py-1.5 rounded-md transition font-sans text-xs bg-yellow-500 text-slate-950 font-bold shadow";
+            } else if (page === 1) {
+                p1.style.display = 'block';
+                p2.style.display = 'none';
+                p3.style.display = 'none';
+                btnP1.className = "px-3 py-1.5 rounded-md transition font-sans text-xs bg-yellow-500 text-slate-950 font-bold shadow";
+            } else if (page === 2) {
+                p1.style.display = 'none';
+                p2.style.display = 'block';
+                p3.style.display = 'none';
+                btnP2.className = "px-3 py-1.5 rounded-md transition font-sans text-xs bg-yellow-500 text-slate-950 font-bold shadow";
+            } else if (page === 3) {
+                p1.style.display = 'none';
+                p2.style.display = 'none';
+                p3.style.display = 'block';
+                btnP3.className = "px-3 py-1.5 rounded-md transition font-sans text-xs bg-yellow-500 text-slate-950 font-bold shadow";
+            }
+        }
+
+        // Quiz Modal Toggle
+        function toggleQuizModal() {
+            const modal = document.getElementById('quizModal');
+            modal.classList.toggle('hidden');
+        }
+
+        // Check Quiz Answer
+        function checkAnswer(button, isCorrect) {
+            if (isCorrect) {
+                button.className = "p-2 border rounded text-left bg-emerald-500 text-white font-bold";
+                button.innerHTML += " ✔ Correct!";
+            } else {
+                button.className = "p-2 border rounded text-left bg-rose-500 text-white font-bold";
+                button.innerHTML += " ❌ Try again";
+            }
+        }
+
+        // Search Filter
+        function searchNotes() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const pages = [document.getElementById('page-1'), document.getElementById('page-2'), document.getElementById('page-3')];
+            
+            if (!query) {
+                switchPage('all');
+                return;
+            }
+
+            pages.forEach(page => {
+                const text = page.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    page.style.display = 'block';
+                } else {
+                    page.style.display = 'none';
+                }
+            });
+        }
+
+        // Web Speech API for Audio Summary
+        function speakNotes() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Stop ongoing speech
+                const text = "Food Chemistry: Lipids Class 10 Notes. Essential fatty acids cannot be synthesized by the human body and must come from diet. Omega-3 and Omega-6 are polyunsaturated essential fatty acids. Alpha-Linolenic Acid, ALA, is the precursor for EPA and DHA. Omega-9 is a monounsaturated non-essential fatty acid, with Oleic Acid as its main member.";
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 0.95;
+                utterance.pitch = 1.0;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Speech synthesis is not supported in your browser.");
+            }
+        }
+    </script>
+</body>
+</html>

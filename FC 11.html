@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Chemistry — Vitamins | Topper's Notebook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kalam:wght@400;700&family=Patrick+Hand&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        handwriting: ['Kalam', 'cursive'],
+                        annotation: ['Caveat', 'cursive'],
+                        clean: ['Patrick Hand', 'cursive'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gelblue: '#1e3a8a',
+                        gelblueDark: '#1e293b',
+                        markerblack: '#0f172a',
+                        penred: '#dc2626',
+                        highlighter: '#fef08a',
+                        paper: '#fcfbf7',
+                        paperDark: '#1e1e24',
+                        stickynote: '#fef3c7',
+                        stickyPink: '#fce7f3',
+                        stickyGreen: '#dcfce7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .notebook-paper {
+            background-color: #fdfbf7;
+            background-image: 
+                linear-gradient(90deg, transparent 69px, #fca5a5 69px, #fca5a5 71px, transparent 71px),
+                linear-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 100% 100%, 100% 2rem;
+            line-height: 2rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .dark .notebook-paper {
+            background-color: #1a1c23;
+            background-image: 
+                linear-gradient(90deg, transparent 69px, #991b1b 69px, #991b1b 71px, transparent 71px),
+                linear-gradient(#2d3748 1px, transparent 1px);
+            background-size: 100% 100%, 100% 2rem;
+            color: #cbd5e1;
+        }
+
+        .grid-paper {
+            background-color: #fdfbf7;
+            background-image: 
+                linear-gradient(90deg, transparent 69px, #fca5a5 69px, #fca5a5 71px, transparent 71px),
+                linear-gradient(#e2e8f0 1px, transparent 1px),
+                linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+            background-size: 100% 100%, 100% 2rem, 2rem 100%;
+        }
+
+        .hl-yellow {
+            background: linear-gradient(100deg, rgba(254, 240, 138, 0.85) 0%, rgba(253, 224, 71, 0.95) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            box-shadow: 1px 2px 4px rgba(0,0,0,0.04);
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        .hl-green {
+            background: linear-gradient(100deg, rgba(187, 247, 208, 0.8) 0%, rgba(134, 239, 172, 0.9) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline;
+        }
+
+        .hl-pink {
+            background: linear-gradient(100deg, rgba(254, 205, 211, 0.8) 0%, rgba(251, 113, 133, 0.4) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline;
+        }
+
+        .pen-circle {
+            border: 2px solid #dc2626;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+
+        .pen-box {
+            border: 2px solid #1e3a8a;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .sticky-tape {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 90px;
+            height: 24px;
+            background: rgba(243, 244, 246, 0.7);
+            border: 1px solid rgba(209, 213, 219, 0.5);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .hand-drawn-border {
+            border: 2px solid #0f172a;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        /* Custom scrollbar for clean study environment */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { box-shadow: none; border: none; }
+            body { background: white; }
+            .page-break { page-break-after: always; }
+        }
+    </style>
+</head>
+<body class="bg-slate-200 text-slate-800 font-handwriting min-h-screen transition-colors duration-300">
+
+    <header class="no-print sticky top-0 z-50 bg-slate-900 text-white shadow-lg border-b border-slate-700 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 font-sans">
+            <div class="flex items-center space-x-3">
+                <div class="bg-amber-400 text-slate-900 font-extrabold px-2.5 py-1 rounded text-sm tracking-wider flex items-center gap-1">
+                    <span>📖 TOPPER'S DOCS</span>
+                </div>
+                <h1 class="text-base sm:text-lg font-bold truncate max-w-xs md:max-w-md">Food Chemistry — Vitamins</h1>
+            </div>
+
+            <!-- Page & View Controls -->
+            <div class="flex items-center flex-wrap gap-2 text-xs sm:text-sm">
+                <div class="bg-slate-800 p-1 rounded-lg border border-slate-700 flex items-center space-x-1">
+                    <button onclick="changePage(-1)" class="px-2 py-1 rounded hover:bg-slate-700 font-bold" title="Previous Page">◀</button>
+                    <span id="pageIndicator" class="px-2 font-mono font-semibold text-amber-300">Page 1 / 6</span>
+                    <button onclick="changePage(1)" class="px-2 py-1 rounded hover:bg-slate-700 font-bold" title="Next Page">▶</button>
+                </div>
+
+                <button onclick="toggleViewAll()" id="btnViewAll" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1.5 rounded-lg flex items-center gap-1">
+                    <span>📜 Scroll View</span>
+                </button>
+
+                <div class="hidden md:flex items-center space-x-1 bg-slate-800 p-1 rounded-lg border border-slate-700">
+                    <button onclick="setPaperStyle('ruled')" class="px-2 py-1 rounded hover:bg-slate-700 text-xs active" id="btnRuled">Ruled</button>
+                    <button onclick="setPaperStyle('grid')" class="px-2 py-1 rounded hover:bg-slate-700 text-xs" id="btnGrid">Grid</button>
+                </div>
+
+                <button onclick="openQuizModal()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-3 py-1.5 rounded-lg shadow transition flex items-center gap-1">
+                    <span>🎯 Practice Quiz</span>
+                </button>
+
+                <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-3 py-1.5 rounded-lg transition hidden sm:inline-flex items-center gap-1">
+                    <span>🖨️ Print Notes</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto my-4 sm:my-8 px-2 sm:px-4">
+        
+        <!-- Search and Quick Filter Bar -->
+        <div class="no-print mb-4 bg-white/90 backdrop-blur rounded-xl p-3 shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-3 font-sans text-xs sm:text-sm">
+            <div class="relative flex-1 min-w-[200px]">
+                <input type="text" id="searchInput" oninput="searchNotes()" placeholder="🔍 Search formulas, vitamins, chemical names (e.g. Retinol, Milling, C. Funk)..." class="w-full pl-8 pr-4 py-1.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                <span class="absolute left-2.5 top-2 text-slate-400">🔍</span>
+            </div>
+            <div class="flex items-center space-x-2 overflow-x-auto py-1">
+                <span class="text-slate-500 font-medium whitespace-nowrap">Jump to:</span>
+                <button onclick="jumpToPage(1)" class="px-2 py-1 bg-slate-100 hover:bg-amber-100 rounded text-slate-700 whitespace-nowrap">1. Intro & Discovery</button>
+                <button onclick="jumpToPage(2)" class="px-2 py-1 bg-slate-100 hover:bg-amber-100 rounded text-slate-700 whitespace-nowrap">2. Classification & Master Table</button>
+                <button onclick="jumpToPage(3)" class="px-2 py-1 bg-slate-100 hover:bg-amber-100 rounded text-slate-700 whitespace-nowrap">3. Functions & Toxicity</button>
+                <button onclick="jumpToPage(4)" class="px-2 py-1 bg-slate-100 hover:bg-amber-100 rounded text-slate-700 whitespace-nowrap">4. Sources & RDA</button>
+                <button onclick="jumpToPage(5)" class="px-2 py-1 bg-slate-100 hover:bg-amber-100 rounded text-slate-700 whitespace-nowrap">5. Losses & Restoration</button>
+                <button onclick="jumpToPage(6)" class="px-2 py-1 bg-slate-100 hover:bg-amber-100 rounded text-slate-700 whitespace-nowrap">6. Mindmap & Revision</button>
+            </div>
+        </div>
+
+        <!-- Notebook Wrapper with Left Margin & Binder Rings -->
+        <div id="notebookContainer" class="notebook-paper min-h-[90vh] rounded-r-2xl rounded-l-md p-6 sm:p-10 pl-16 sm:pl-24 transition-all duration-300">
+            
+            <!-- Binder Spiral Holes Visual -->
+            <div class="absolute left-3 top-0 bottom-0 flex flex-col justify-between py-8 w-6 pointer-events-none no-print">
+                <template id="spiralTemplate">
+                    <div class="w-4 h-4 rounded-full bg-slate-800 border-2 border-slate-400 shadow-inner my-2 flex items-center justify-center">
+                        <div class="w-8 h-1.5 bg-slate-300 transform -rotate-12 rounded-full -ml-4 shadow-sm"></div>
+                    </div>
+                </template>
+                <div id="spiralContainer" class="flex flex-col justify-around h-full"></div>
+            </div>
+
+            <!-- Page 1 Content -->
+            <div id="page1" class="note-page space-y-6">
+                <!-- Header Banner -->
+                <div class="border-b-2 border-slate-800 pb-3 flex flex-wrap justify-between items-end">
+                    <div>
+                        <span class="text-sm font-bold text-red-600 font-sans tracking-widest uppercase">Class 11 | Food Chemistry Series</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-markerblack tracking-tight mt-1">
+                            📚 FOOD CHEMISTRY — VITAMINS
+                        </h2>
+                    </div>
+                    <div class="text-right font-annotation text-lg text-slate-600">
+                        <span>Source: Anubhav Pandey</span> | <span class="text-blue-700 font-bold">Topper's Sheet #1</span>
+                    </div>
+                </div>
+
+                <!-- Exam Strategy Callout -->
+                <div class="relative bg-amber-50/90 border-2 border-amber-300 rounded-xl p-4 my-4 font-sans text-sm text-amber-950 shadow-sm">
+                    <div class="sticky-tape"></div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl">🔴</span>
+                        <div>
+                            <strong class="font-extrabold text-red-700 uppercase tracking-wide">Exam Strategy & High Yield Note:</strong>
+                            <p class="mt-1 font-handwriting text-base leading-relaxed text-slate-800">
+                                This chapter is extremely high yield for <span class="hl-yellow">classification, matching, one-word, statement-based MCQs & comparisons</span>. 
+                                Memorize the <span class="pen-circle">Vitamin–Chemical Name–Solubility Table</span> early!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 1.1 -->
+                <section class="space-y-3">
+                    <h3 class="text-2xl font-bold text-markerblack border-b border-dashed border-slate-400 pb-1 flex items-center gap-2">
+                        <span>1. VITAMINS — INTRODUCTION</span>
+                    </h3>
+                    
+                    <div class="pl-2 space-y-2 text-lg text-gelblue leading-loose">
+                        <p class="text-xl">
+                            <strong class="text-slate-900 font-bold">1.1 Definition:</strong> Vitamins are <span class="hl-yellow font-bold text-slate-900">essential organic micronutrients</span> vital for normal body functioning.
+                        </p>
+                        <ul class="list-disc pl-6 space-y-1 text-slate-800">
+                            <li>They are <strong class="text-blue-900">Organic Compounds</strong>.</li>
+                            <li>Required by the body in <span class="hl-yellow font-bold">small amounts</span>.</li>
+                            <li>Essential for normal metabolic and enzyme-related body functions.</li>
+                            <li><strong class="text-red-600">Distinct from Macronutrients:</strong> (Carbohydrates, Proteins, Fats).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Flowchart / Tree Diagram -->
+                    <div class="my-6 p-4 bg-white/60 rounded-xl border border-slate-300 shadow-sm font-handwriting">
+                        <p class="font-bold text-slate-700 text-sm font-sans mb-2">🔑 KEY CONCEPT: NUTRIENT CLASSIFICATION TREE</p>
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                            <div class="bg-blue-100 text-blue-900 border-2 border-blue-400 rounded-lg p-2 px-4 font-bold">
+                                NUTRIENTS
+                            </div>
+                            <span class="text-2xl hidden md:inline">➔</span>
+                            <span class="text-2xl md:hidden">↓</span>
+                            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                                <div class="bg-slate-100 border border-slate-400 p-3 rounded-lg flex-1">
+                                    <span class="font-bold text-slate-900">1. Macronutrients</span> (Large Amounts)
+                                    <div class="text-sm text-slate-600 mt-1">Carbohydrates, Proteins, Fats</div>
+                                    <div class="text-xs text-blue-700 mt-1 font-sans">Role: Energy & Structural build</div>
+                                </div>
+                                <div class="bg-amber-100 border-2 border-amber-400 p-3 rounded-lg flex-1">
+                                    <span class="font-bold text-amber-900">2. Micronutrients</span> (Small Amounts)
+                                    <div class="text-sm font-bold text-amber-900 mt-1">👉 VITAMINS</div>
+                                    <div class="text-xs text-amber-800 mt-1 font-sans">Role: Metabolism & Regulation</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Table 1.1 -->
+                    <div class="overflow-x-auto my-4">
+                        <table class="w-full text-left border-collapse border-2 border-slate-800 text-base font-clean bg-white/80">
+                            <thead>
+                                <tr class="bg-slate-800 text-white text-lg">
+                                    <th class="p-2.5 border border-slate-700">Feature</th>
+                                    <th class="p-2.5 border border-slate-700">Vitamins</th>
+                                    <th class="p-2.5 border border-slate-700">Macronutrients</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-300">
+                                <tr>
+                                    <td class="p-2 font-bold border border-slate-300">Nature</td>
+                                    <td class="p-2 border border-slate-300 text-blue-900">Organic compounds</td>
+                                    <td class="p-2 border border-slate-300">Major nutrients</td>
+                                </tr>
+                                <tr class="bg-slate-50">
+                                    <td class="p-2 font-bold border border-slate-300">Required Amount</td>
+                                    <td class="p-2 border border-slate-300 text-red-600 font-bold">Small amounts</td>
+                                    <td class="p-2 border border-slate-300">Comparatively larger amounts</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold border border-slate-300">Examples</td>
+                                    <td class="p-2 border border-slate-300 font-bold text-amber-800">A, B, C, D, E, K</td>
+                                    <td class="p-2 border border-slate-300">Carbohydrates, proteins, fats</td>
+                                </tr>
+                                <tr class="bg-slate-50">
+                                    <td class="p-2 font-bold border border-slate-300">Major Significance</td>
+                                    <td class="p-2 border border-slate-300">Normal body function, metabolism, enzyme roles</td>
+                                    <td class="p-2 border border-slate-300">Energy yield & structural roles</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Section 1.2 & 1.3 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                    <div class="bg-red-50/80 border-2 border-red-300 p-4 rounded-xl relative">
+                        <h4 class="text-xl font-bold text-red-700 flex items-center gap-1">
+                            <span>⚠️ EXAM FACT: DISCOVERY</span>
+                        </h4>
+                        <div class="text-2xl font-extrabold text-slate-900 mt-2 font-handwriting">
+                            <span class="hl-yellow">C. Funk</span> discovered vitamins in <span class="hl-yellow">1912</span>.
+                        </div>
+                        <p class="text-sm text-red-800 font-sans mt-2">
+                            💡 Memorandum Chain: <strong>C. Funk ➔ Vitamins ➔ 1912</strong>
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50/80 border-2 border-blue-300 p-4 rounded-xl">
+                        <h4 class="text-xl font-bold text-blue-900">1.3 Species Requirement Variation</h4>
+                        <p class="text-base text-slate-800 mt-1">
+                            Vitamin requirements differ among animal species due to differences in:
+                        </p>
+                        <ul class="list-disc pl-5 text-base text-blue-900 font-bold mt-1">
+                            <li>Metabolic pathways</li>
+                            <li>Vitamin synthesis capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Margin Doodle / Quick Sticky Summary -->
+                <div class="bg-stickynote p-4 rounded-lg shadow-md border border-amber-200 relative rotate-1 my-4">
+                    <div class="sticky-tape"></div>
+                    <p class="font-bold text-amber-900 text-lg mb-1">⚡ Ultra Quick Revision — Topic 1</p>
+                    <ul class="list-disc pl-5 text-slate-800 text-base space-y-1">
+                        <li>Vitamins = Essential Organic Micronutrients (small amounts needed).</li>
+                        <li>Not energy yielders (like carbs/fats).</li>
+                        <li>C. Funk (1912).</li>
+                        <li>Requirements vary by species due to metabolism & synthesis capacity.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Page 2 Content -->
+            <div id="page2" class="note-page space-y-6 hidden">
+                <div class="border-b-2 border-slate-800 pb-2 flex justify-between items-end">
+                    <h2 class="text-3xl font-extrabold text-markerblack">2. CLASSIFICATION OF VITAMINS</h2>
+                    <span class="font-annotation text-lg text-slate-600">Topper's Sheet #2</span>
+                </div>
+
+                <p class="text-xl text-slate-800">
+                    Vitamins are classified strictly on the basis of their <span class="hl-yellow font-bold">SOLUBILITY</span> into two major groups:
+                </p>
+
+                <!-- Classification Diagram -->
+                <div class="p-5 bg-white/90 border-2 border-slate-800 rounded-2xl shadow-sm text-center">
+                    <div class="inline-block bg-slate-900 text-white font-extrabold text-xl px-6 py-2 rounded-xl mb-4">
+                        VITAMINS
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+                        <!-- Water soluble -->
+                        <div class="bg-blue-50 border-2 border-blue-400 p-4 rounded-xl">
+                            <div class="flex items-center justify-between border-b border-blue-300 pb-2">
+                                <span class="text-xl font-bold text-blue-900">1. Water-Soluble</span>
+                                <span class="bg-blue-600 text-white text-xs px-2 py-0.5 rounded font-sans font-bold">W.B.C.</span>
+                            </div>
+                            <ul class="mt-3 text-lg text-slate-800 space-y-1">
+                                <li>• <strong class="text-blue-900">B-Complex vitamins</strong></li>
+                                <li>• <strong class="text-blue-900">Vitamin C</strong></li>
+                            </ul>
+                            <div class="mt-3 bg-amber-100 p-2 rounded text-xs text-amber-900 font-sans">
+                                🧠 Trick: <strong>W.B.C.</strong> = <u>W</u>ater = Vitamin <u>B</u> + Vitamin <u>C</u>
+                            </div>
+                        </div>
+
+                        <!-- Fat soluble -->
+                        <div class="bg-amber-50 border-2 border-amber-400 p-4 rounded-xl">
+                            <div class="flex items-center justify-between border-b border-amber-300 pb-2">
+                                <span class="text-xl font-bold text-amber-950">2. Fat-Soluble</span>
+                                <span class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded font-sans font-bold">A D E K</span>
+                            </div>
+                            <ul class="mt-3 text-lg text-slate-800 space-y-1">
+                                <li>• <strong class="text-amber-900">Vitamin A, D, E, K</strong></li>
+                            </ul>
+                            <div class="mt-3 bg-amber-200/70 p-2 rounded text-xs text-amber-950 font-sans">
+                                🧠 Trick: <strong>ADEK</strong> = Fat Soluble Group
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B-Complex Special Feature -->
+                <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded-r-xl my-4">
+                    <strong class="text-red-700 text-lg uppercase font-sans tracking-wide">🔴 EXAM ALERT: B-COMPLEX STRUCTURE</strong>
+                    <p class="text-lg text-slate-800 mt-1">
+                        B-complex is <span class="pen-circle text-red-600 font-bold">NOT a single compound</span>. It consists of several chemically unrelated compounds, all of which contain <span class="hl-yellow font-bold text-slate-900">NITROGEN</span> as part of their chemical structure!
+                    </p>
+                </div>
+
+                <!-- Section 3: High Priority Table -->
+                <section class="space-y-3">
+                    <h3 class="text-2xl font-bold text-markerblack flex items-center gap-2">
+                        <span>3. VITAMIN – CHEMICAL NAME – SOLUBILITY MASTER TABLE</span>
+                    </h3>
+                    <p class="text-sm font-sans text-red-600 font-bold">🔥 MUST-MEMORIZE TABLE FOR MATCHING & ONE-WORD QUESTIONS</p>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse border-2 border-slate-900 text-lg bg-white">
+                            <thead>
+                                <tr class="bg-slate-900 text-white font-sans text-sm sm:text-base">
+                                    <th class="p-3 border border-slate-700">Vitamin</th>
+                                    <th class="p-3 border border-slate-700">Chemical Name in Source</th>
+                                    <th class="p-3 border border-slate-700">Solubility</th>
+                                    <th class="p-3 border border-slate-700">Memory Chain</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-300 font-clean text-xl">
+                                <tr>
+                                    <td class="p-3 border font-extrabold text-amber-700">Vitamin A</td>
+                                    <td class="p-3 border font-bold text-slate-900">Retinol</td>
+                                    <td class="p-3 border text-amber-800 font-bold">Fat</td>
+                                    <td class="p-3 border text-sm font-sans text-slate-600">A ➔ Retinol ➔ Fat</td>
+                                </tr>
+                                <tr class="bg-blue-50/50">
+                                    <td class="p-3 border font-extrabold text-blue-700">Vitamin B₁</td>
+                                    <td class="p-3 border font-bold text-slate-900">Thiamine</td>
+                                    <td class="p-3 border text-blue-800 font-bold">Water</td>
+                                    <td class="p-3 border text-sm font-sans text-slate-600">B₁ ➔ Thiamine ➔ Water</td>
+                                </tr>
+                                <tr class="bg-blue-50/50">
+                                    <td class="p-3 border font-extrabold text-blue-700">Vitamin C</td>
+                                    <td class="p-3 border font-bold text-slate-900">Ascorbic acid</td>
+                                    <td class="p-3 border text-blue-800 font-bold">Water</td>
+                                    <td class="p-3 border text-sm font-sans text-slate-600">C ➔ Ascorbic acid ➔ Water</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 border font-extrabold text-amber-700">Vitamin D</td>
+                                    <td class="p-3 border font-bold text-slate-900">Calciferol</td>
+                                    <td class="p-3 border text-amber-800 font-bold">Fat</td>
+                                    <td class="p-3 border text-sm font-sans text-slate-600">D ➔ Calciferol ➔ Fat</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 border font-extrabold text-amber-700">Vitamin E</td>
+                                    <td class="p-3 border font-bold text-slate-900">Tocopherol</td>
+                                    <td class="p-3 border text-amber-800 font-bold">Fat</td>
+                                    <td class="p-3 border text-sm font-sans text-slate-600">E ➔ Tocopherol ➔ Fat</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 border font-extrabold text-amber-700">Vitamin K</td>
+                                    <td class="p-3 border font-bold text-slate-900">Phylloquinone</td>
+                                    <td class="p-3 border text-amber-800 font-bold">Fat</td>
+                                    <td class="p-3 border text-sm font-sans text-slate-600">K ➔ Phylloquinone ➔ Fat</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Page 3 Content -->
+            <div id="page3" class="note-page space-y-6 hidden">
+                <div class="border-b-2 border-slate-800 pb-2 flex justify-between items-end">
+                    <h2 class="text-3xl font-extrabold text-markerblack">4. FUNCTIONS & 5. EXCESS / TOXICITY</h2>
+                    <span class="font-annotation text-lg text-slate-600">Topper's Sheet #3</span>
+                </div>
+
+                <section class="space-y-4">
+                    <h3 class="text-2xl font-bold text-markerblack">4. BROAD FUNCTIONAL ROLES OF VITAMINS</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                        <div class="bg-white border-2 border-blue-500 rounded-xl p-4 shadow-sm">
+                            <span class="text-3xl">⚙️</span>
+                            <h4 class="text-xl font-bold text-blue-900 mt-2">1. Coenzymes</h4>
+                            <p class="text-base text-slate-700 mt-1">
+                                Water-soluble vitamins participate directly in enzyme reactions as <span class="hl-yellow font-bold">coenzymes</span> for proper metabolic pathways.
+                            </p>
+                        </div>
+                        <div class="bg-white border-2 border-green-500 rounded-xl p-4 shadow-sm">
+                            <span class="text-3xl">⚖️</span>
+                            <h4 class="text-xl font-bold text-green-900 mt-2">2. Metabolic Regulators</h4>
+                            <p class="text-base text-slate-700 mt-1">
+                                Regulate and maintain smooth metabolic processes throughout the cell.
+                            </p>
+                        </div>
+                        <div class="bg-white border-2 border-amber-500 rounded-xl p-4 shadow-sm">
+                            <span class="text-3xl">🦴</span>
+                            <h4 class="text-xl font-bold text-amber-900 mt-2">3. Structural Roles</h4>
+                            <p class="text-base text-slate-700 mt-1">
+                                Contribute to structural components like <span class="hl-yellow font-bold text-slate-900">Bones & Teeth</span>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="space-y-4 pt-4 border-t border-slate-300">
+                    <h3 class="text-2xl font-bold text-markerblack">5. EXCESS VITAMINS: EXCRETION vs TOXICITY</h3>
+                    <p class="text-lg text-slate-800">
+                        The fate of excess vitamins depends entirely on their solubility group:
+                    </p>
+
+                    <!-- Flowchart for Excess Fate -->
+                    <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-md font-handwriting">
+                        <div class="text-center font-bold text-amber-300 text-xl mb-4">EXCESS VITAMINS IN BODY</div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
+                            <div class="border-2 border-blue-400 p-4 rounded-xl bg-slate-800">
+                                <span class="text-blue-300 font-bold text-xl">Water-Soluble (B, C)</span>
+                                <p class="text-base text-slate-200 mt-2">➔ Exceeding metabolic needs?</p>
+                                <div class="mt-2 bg-blue-600 text-white font-bold p-2 rounded text-lg">
+                                    TYPICALLY EXCRETED in Urine 🚽
+                                </div>
+                                <p class="text-xs text-blue-200 font-sans mt-2">Low risk of toxicity accumulation</p>
+                            </div>
+
+                            <div class="border-2 border-red-400 p-4 rounded-xl bg-slate-800">
+                                <span class="text-red-300 font-bold text-xl">Fat-Soluble (A, D, E, K)</span>
+                                <p class="text-base text-slate-200 mt-2">➔ Exceeding metabolic needs?</p>
+                                <div class="mt-2 bg-red-600 text-white font-bold p-2 rounded text-lg">
+                                    STORED IN BODY (Fat tissue) 📦
+                                </div>
+                                <div class="mt-2 text-yellow-300 font-bold text-base">
+                                    ⚠️ ACCUMULATION ➔ POTENTIAL TOXICITY!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="bg-stickyPink p-4 rounded-xl border border-pink-300 relative my-4">
+                    <strong class="text-red-800 font-bold text-lg font-sans">🧠 FREQUENTLY CONFUSED POINT:</strong>
+                    <p class="text-lg text-slate-800 mt-1">
+                        Do not assume all vitamins are stored or excreted the same! Water-soluble vitamins pass in urine easily, while fat-soluble vitamins store in body fats and cannot be excreted in urine according to source material, posing hypervitaminosis/toxicity risk.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Page 4 Content -->
+            <div id="page4" class="note-page space-y-6 hidden">
+                <div class="border-b-2 border-slate-800 pb-2 flex justify-between items-end">
+                    <h2 class="text-3xl font-extrabold text-markerblack">6. FOOD SOURCES & 7. REQUIREMENTS / RDA</h2>
+                    <span class="font-annotation text-lg text-slate-600">Topper's Sheet #4</span>
+                </div>
+
+                <!-- Food Sources -->
+                <section class="space-y-3">
+                    <h3 class="text-2xl font-bold text-markerblack">6. DISTRIBUTION OF VITAMINS IN FOODS</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-green-50 border-2 border-green-400 p-4 rounded-xl">
+                            <h4 class="text-xl font-bold text-green-900 flex items-center gap-2">
+                                <span>🥦 Plant Food Sources</span>
+                            </h4>
+                            <ul class="list-disc pl-5 text-lg text-slate-800 space-y-1 mt-2">
+                                <li><span class="hl-yellow">Green leafy vegetables</span></li>
+                                <li>Nuts</li>
+                                <li>Whole grains</li>
+                                <li>Certain fruits</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-amber-50 border-2 border-amber-400 p-4 rounded-xl">
+                            <h4 class="text-xl font-bold text-amber-950 flex items-center gap-2">
+                                <span>🥩 Animal Food Sources</span>
+                            </h4>
+                            <ul class="list-disc pl-5 text-lg text-slate-800 space-y-1 mt-2">
+                                <li>Meat</li>
+                                <li>Eggs</li>
+                                <li>Organ meats</li>
+                            </ul>
+                            <div class="mt-3 p-2 bg-red-100 border border-red-300 rounded text-red-900 text-sm font-bold font-sans">
+                                🚨 EXCEPTION TO MEMORIZE: Animal foods are rich in water-soluble vitamins <span class="underline uppercase">EXCEPT Vitamin C</span>!
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Requirements & RDA -->
+                <section class="space-y-4 pt-4 border-t border-slate-300">
+                    <h3 class="text-2xl font-bold text-markerblack">7. FACTORS AFFECTING VITAMIN REQUIREMENTS & RDA</h3>
+                    
+                    <div class="bg-white/80 border-2 border-slate-800 p-4 rounded-xl">
+                        <p class="text-lg font-bold text-slate-900 mb-2">5 Key Factors Influencing Individual Requirements:</p>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center text-lg font-bold">
+                            <div class="bg-slate-100 p-2 rounded border">1. Age</div>
+                            <div class="bg-slate-100 p-2 rounded border">2. Gender</div>
+                            <div class="bg-amber-100 p-2 rounded border border-amber-400 text-amber-900">3. Physiological State (Pregnancy & Lactation)</div>
+                            <div class="bg-slate-100 p-2 rounded border">4. Genetics</div>
+                            <div class="bg-slate-100 p-2 rounded border">5. Dietary Habits</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 border-2 border-blue-400 p-4 rounded-xl space-y-2">
+                        <h4 class="text-xl font-bold text-blue-900">RDA = Recommended Dietary Allowance</h4>
+                        <ul class="list-disc pl-5 text-lg text-slate-800 space-y-1">
+                            <li><strong class="text-red-600">Differs among countries</strong> (Not uniform worldwide!).</li>
+                            <li>Periodically updated based on evolving scientific evidence.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Potency Timeline -->
+                    <div class="bg-slate-800 text-white p-4 rounded-xl">
+                        <h4 class="text-lg font-bold text-amber-300 font-sans">8. VITAMIN POTENCY & UNITS EVOLUTION</h4>
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mt-3 text-center font-handwriting text-lg">
+                            <div class="bg-slate-700 p-2 rounded w-full">Bioassays (Early method)</div>
+                            <span>➔</span>
+                            <div class="bg-slate-700 p-2 rounded w-full">International Units (IU)</div>
+                            <span>➔</span>
+                            <div class="bg-amber-500 text-slate-950 font-bold p-2 rounded w-full">Weight Units (µg / mg)</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Page 5 Content -->
+            <div id="page5" class="note-page space-y-6 hidden">
+                <div class="border-b-2 border-slate-800 pb-2 flex justify-between items-end">
+                    <h2 class="text-3xl font-extrabold text-markerblack">9. LOSSES IN FOOD PROCESSING & 10. RESTORATION</h2>
+                    <span class="font-annotation text-lg text-slate-600">Topper's Sheet #5</span>
+                </div>
+
+                <!-- Processing Losses -->
+                <section class="space-y-4">
+                    <h3 class="text-2xl font-bold text-markerblack">9. VITAMIN LOSSES DURING PROCESSING & STORAGE</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-red-50 border-2 border-red-300 p-4 rounded-xl space-y-2">
+                            <h4 class="text-xl font-bold text-red-900">1. Trimming & Peeling Examples</h4>
+                            <p class="text-lg text-slate-800">
+                                Specific exam examples from source:
+                            </p>
+                            <ul class="list-disc pl-5 text-lg text-slate-900 font-bold">
+                                <li><span class="hl-yellow">Apple & Pineapple</span> ➔ <strong class="text-red-700">Vitamin C Loss</strong></li>
+                                <li><span class="hl-yellow">Carrot</span> ➔ <strong class="text-red-700">Vitamin B₃ Loss</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-amber-50 border-2 border-amber-300 p-4 rounded-xl space-y-2">
+                            <h4 class="text-xl font-bold text-amber-950">2. Cereal Milling</h4>
+                            <p class="text-lg text-slate-800">
+                                Cereals hold vitamins in their <span class="pen-circle">Seed Coat & Germ</span>.
+                            </p>
+                            <p class="text-base text-red-700 font-bold mt-1">
+                                ➔ Milling removes seed coat + germ, leading to major vitamin depletion!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Other Factors -->
+                    <div class="bg-white border-2 border-slate-800 p-4 rounded-xl">
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Other Causes of Vitamin Depletion:</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-lg">
+                            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+                                <strong>Heating & Blanching:</strong> Removes water-soluble vitamins.
+                            </div>
+                            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+                                <strong>HTST Processing & Chemicals:</strong> High Temperature Short Time degrades sensitive vitamins.
+                            </div>
+                            <div class="p-2 bg-slate-100 rounded border border-slate-300">
+                                <strong>Storage:</strong> Prolonged storage causes oxidation/degradation.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Restoration -->
+                <section class="space-y-4 pt-4 border-t border-slate-300">
+                    <h3 class="text-2xl font-bold text-markerblack">10. RESTORATION OF VITAMINS</h3>
+                    <p class="text-xl text-slate-800">
+                        When vitamins are lost during processing, they are restored back into foods via:
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                        <div class="bg-green-100 border-2 border-green-500 p-4 rounded-xl">
+                            <span class="text-2xl font-bold text-green-900">1. FORTIFICATION</span>
+                            <p class="text-base text-slate-700 mt-1">Adding vitamins to foods to boost nutrient levels.</p>
+                        </div>
+                        <div class="bg-blue-100 border-2 border-blue-500 p-4 rounded-xl">
+                            <span class="text-2xl font-bold text-blue-900">2. ENRICHMENT</span>
+                            <p class="text-base text-slate-700 mt-1">Replenishing specific nutrients lost during processing.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 11: Fat Soluble Deep Dive -->
+                <section class="space-y-3 pt-4 border-t border-slate-300">
+                    <h3 class="text-2xl font-bold text-markerblack">11. FAT-SOLUBLE VITAMINS — DEEP DIVE</h3>
+                    <div class="bg-amber-50 border-2 border-amber-400 p-4 rounded-xl space-y-2 text-lg">
+                        <p><strong>Associated Foods:</strong> Butter, Cream, Vegetable oils, Meat fats, Fish fats.</p>
+                        <p><strong class="text-red-700">Nitrogen Status:</strong> Contain <span class="pen-circle">NO Nitrogen</span> in their structure (unlike B-complex!).</p>
+                        <p><strong class="text-blue-900">Heat Stability:</strong> <span class="hl-yellow">More stable to heat than B vitamins</span> (Less cooking loss!).</p>
+                        <p><strong>Absorption:</strong> Absorbed in intestine along with dietary fats and lipids.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Page 6 Content -->
+            <div id="page6" class="note-page space-y-6 hidden">
+                <div class="border-b-2 border-slate-800 pb-2 flex justify-between items-end">
+                    <h2 class="text-3xl font-extrabold text-markerblack">MASTER MIND MAP & HIGH-YIELD REVISION</h2>
+                    <span class="font-annotation text-lg text-slate-600">Topper's Sheet #6</span>
+                </div>
+
+                <!-- Master Mind map -->
+                <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-lg font-handwriting">
+                    <h3 class="text-2xl font-bold text-amber-300 text-center mb-4">🧠 ENTIRE CHAPTER AT A GLANCE</h3>
+                    
+                    <div class="space-y-4 text-base sm:text-lg">
+                        <div class="border border-slate-700 p-3 rounded-lg bg-slate-800">
+                            <span class="text-amber-400 font-bold">VITAMINS DEFINITION & DISCOVERY:</span> Essential organic micronutrients | C. Funk (1912)
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="border border-blue-500/50 p-3 rounded-lg bg-slate-800">
+                                <span class="text-blue-300 font-bold">WATER-SOLUBLE (W.B.C.):</span>
+                                <ul class="list-disc pl-5 text-sm mt-1 space-y-0.5">
+                                    <li>B-complex (contains N, multiple compounds)</li>
+                                    <li>Vitamin C (Ascorbic acid)</li>
+                                    <li>Role: Coenzymes | Excess: Excreted</li>
+                                </ul>
+                            </div>
+                            <div class="border border-amber-500/50 p-3 rounded-lg bg-slate-800">
+                                <span class="text-amber-300 font-bold">FAT-SOLUBLE (ADEK):</span>
+                                <ul class="list-disc pl-5 text-sm mt-1 space-y-0.5">
+                                    <li>A (Retinol), D (Calciferol), E (Tocopherol), K (Phylloquinone)</li>
+                                    <li>No Nitrogen | Absorbed with lipids</li>
+                                    <li>More heat stable | Stored ➔ Toxicity risk</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="border border-slate-700 p-3 rounded-lg bg-slate-800">
+                            <span class="text-green-400 font-bold">LOSSES & RESTORATION:</span>
+                            <p class="text-sm mt-1">Losses: Apple/Pineapple (Vit C), Carrot (Vit B₃), Cereal milling (Seed coat/germ), Heating/Blanching.<br>Restoration: Fortification & Enrichment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High Yield Flash Points -->
+                <div class="space-y-3">
+                    <h3 class="text-2xl font-bold text-markerblack">🔥 HIGH-YIELD LAST DAY REVISION POINTS</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-base">
+                        <div class="bg-amber-100 p-3 rounded-lg border border-amber-300">
+                            ⚡ <strong>C. Funk (1912)</strong> discovered vitamins.
+                        </div>
+                        <div class="bg-amber-100 p-3 rounded-lg border border-amber-300">
+                            ⚡ <strong>B-complex contains Nitrogen</strong>; Fat-soluble do NOT.
+                        </div>
+                        <div class="bg-amber-100 p-3 rounded-lg border border-amber-300">
+                            ⚡ <strong>Apple / Pineapple loss</strong> ➔ Vitamin C.
+                        </div>
+                        <div class="bg-amber-100 p-3 rounded-lg border border-amber-300">
+                            ⚡ <strong>Carrot loss</strong> ➔ Vitamin B₃.
+                        </div>
+                        <div class="bg-amber-100 p-3 rounded-lg border border-amber-300">
+                            ⚡ <strong>Fat soluble vitamins are MORE heat stable</strong> than B vitamins.
+                        </div>
+                        <div class="bg-amber-100 p-3 rounded-lg border border-amber-300">
+                            ⚡ <strong>RDAs differ among countries</strong> and are updated with science.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confused Pairs Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse border-2 border-slate-800 text-sm font-clean bg-white">
+                        <thead>
+                            <tr class="bg-red-700 text-white">
+                                <th class="p-2 border">Common Confusion</th>
+                                <th class="p-2 border">Correct Fact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-2 border text-red-600">❌ Vitamin A = Thiamine</td>
+                                <td class="p-2 border text-green-700 font-bold">✔️ Vitamin A = Retinol | B₁ = Thiamine</td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                                <td class="p-2 border text-red-600">❌ Fat soluble vitamins excreted in urine</td>
+                                <td class="p-2 border text-green-700 font-bold">✔️ Fat soluble stored in body; water soluble excreted</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border text-red-600">❌ Carrot milling causes Vitamin C loss</td>
+                                <td class="p-2 border text-green-700 font-bold">✔️ Carrot peeling = Vit B₃ loss; Apple/Pineapple = Vit C loss</td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                                <td class="p-2 border text-red-600">❌ RDA is identical worldwide</td>
+                                <td class="p-2 border text-green-700 font-bold">✔️ RDAs differ among countries</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Rapid Revision Toggle Cards -->
+                <div class="space-y-3 pt-4 border-t border-slate-300">
+                    <h3 class="text-2xl font-bold text-markerblack">⚡ 20 ONE-LINER RAPID REVISION FLIP CARDS</h3>
+                    <p class="text-sm text-slate-600 font-sans">Click on any card to reveal the exact exam answer!</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-sans text-sm" id="flashcardGrid">
+                        <!-- Cards injected dynamically -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Interactive Quiz Modal -->
+    <div id="quizModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 font-sans">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl relative">
+            <button onclick="closeQuizModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-2xl font-bold">&times;</button>
+            
+            <div class="flex items-center justify-between border-b pb-3">
+                <h3 class="text-xl font-bold text-slate-900">🎯 Master Exam Practice Test (MCQs)</h3>
+                <span id="quizScore" class="bg-amber-100 text-amber-900 font-bold px-3 py-1 rounded-full text-sm">Score: 0 / 0</span>
+            </div>
+
+            <div id="quizContent" class="my-6 space-y-6">
+                <!-- MCQ items injected dynamically -->
+            </div>
+
+            <div class="flex justify-between items-center border-t pt-4">
+                <button onclick="closeQuizModal()" class="px-4 py-2 bg-slate-200 text-slate-700 font-medium rounded-lg hover:bg-slate-300">Close</button>
+                <button onclick="resetQuiz()" class="px-4 py-2 bg-amber-500 text-slate-950 font-bold rounded-lg hover:bg-amber-600">Reset Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 6;
+        let isViewAll = false;
+
+        // Flashcards Data
+        const flashcardsData = [
+            { q: "1. What are vitamins?", a: "Essential organic micronutrients required in small amounts." },
+            { q: "2. Who discovered vitamins in the material?", a: "C. Funk" },
+            { q: "3. Year associated with discovery?", a: "1912" },
+            { q: "4. Basis of vitamin classification?", a: "Solubility in water or fats." },
+            { q: "5. Which vitamins are water-soluble?", a: "B-complex and Vitamin C." },
+            { q: "6. Which vitamins are fat-soluble?", a: "Vitamins A, D, E, and K." },
+            { q: "7. Chemical name of Vitamin A?", a: "Retinol" },
+            { q: "8. Chemical name of Vitamin B₁?", a: "Thiamine" },
+            { q: "9. Chemical name of Vitamin C?", a: "Ascorbic acid" },
+            { q: "10. Chemical name of Vitamin D?", a: "Calciferol" },
+            { q: "11. Chemical name of Vitamin E?", a: "Tocopherol" },
+            { q: "12. Chemical name of Vitamin K?", a: "Phylloquinone" },
+            { q: "13. One key role of water-soluble vitamins?", a: "Acting as coenzymes in enzyme reactions." },
+            { q: "14. Two structural components aided by vitamins?", a: "Bones and teeth." },
+            { q: "15. Plant sources mentioned?", a: "Green leafy vegetables, nuts, whole grains, fruits." },
+            { q: "16. Factors affecting vitamin requirements?", a: "Age, gender, physiological state (pregnancy/lactation), genetics, diet." },
+            { q: "17. What does RDA stand for?", a: "Recommended Dietary Allowance." },
+            { q: "18. Trimming loss in Apple & Pineapple?", a: "Vitamin C loss." },
+            { q: "19. Trimming loss in Carrot?", a: "Vitamin B₃ loss." },
+            { q: "20. How are vitamins restored after losses?", a: "Fortification and Enrichment." }
+        ];
+
+        // MCQs Data
+        const mcqQuestions = [
+            { q: "1. Vitamins are classified nutritionally as:", options: ["Macronutrients", "Micronutrients", "Minerals only", "Energy nutrients"], correct: 1 },
+            { q: "2. According to source material, who discovered vitamins in 1912?", options: ["Pasteur", "C. Funk", "Watson", "Fleming"], correct: 1 },
+            { q: "3. Which group contains only fat-soluble vitamins?", options: ["B, C", "A, D, E, K", "A, B, C", "B, D, C"], correct: 1 },
+            { q: "4. Vitamin B₁ is chemically known as:", options: ["Retinol", "Thiamine", "Calciferol", "Tocopherol"], correct: 1 },
+            { q: "5. Vitamin C is chemically known as:", options: ["Calciferol", "Ascorbic acid", "Retinol", "Tocopherol"], correct: 1 },
+            { q: "6. Excess fat-soluble vitamins may cause:", options: ["Toxicity", "Immediate deficiency", "No effect", "Dehydration"], correct: 0 },
+            { q: "7. Animal products are rich in water-soluble vitamins EXCEPT:", options: ["Vitamin B", "Vitamin C", "Vitamin D", "Vitamin K"], correct: 1 },
+            { q: "8. RDA stands for:", options: ["Recommended Dietary Allowance", "Required Dietary Amount", "Recommended Daily Analysis", "Regular Dietary Allowance"], correct: 0 },
+            { q: "9. Vitamin C loss through peeling/trimming is associated with:", options: ["Apple & Pineapple", "Carrot & Rice", "Wheat & Maize", "Meat & Eggs"], correct: 0 },
+            { q: "10. Vitamin B₃ loss through peeling/trimming is associated with:", options: ["Apple", "Pineapple", "Carrot", "Rice"], correct: 2 },
+            { q: "11. Vitamins present in seed coat and germ are lost during:", options: ["Freezing", "Milling", "Fermentation", "Packaging"], correct: 1 },
+            { q: "12. Compared with B vitamins, fat-soluble vitamins are:", options: ["Less heat-stable", "More heat-stable", "Identical in heat stability", "Always destroyed"], correct: 1 }
+        ];
+
+        let userAnswers = {};
+
+        // Setup Spiral Holes
+        window.onload = function() {
+            const container = document.getElementById('spiralContainer');
+            const template = document.getElementById('spiralTemplate');
+            for(let i=0; i<18; i++) {
+                container.appendChild(template.content.cloneNode(true));
+            }
+            renderFlashcards();
+            renderQuiz();
+        };
+
+        function updatePageDisplay() {
+            if (isViewAll) return;
+            for(let i = 1; i <= totalPages; i++) {
+                const p = document.getElementById(`page${i}`);
+                if (p) {
+                    if (i === currentPage) {
+                        p.classList.remove('hidden');
+                    } else {
+                        p.classList.add('hidden');
+                    }
+                }
+            }
+            document.getElementById('pageIndicator').innerText = `Page ${currentPage} / ${totalPages}`;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function changePage(delta) {
+            if (isViewAll) toggleViewAll();
+            currentPage += delta;
+            if (currentPage < 1) currentPage = 1;
+            if (currentPage > totalPages) currentPage = totalPages;
+            updatePageDisplay();
+        }
+
+        function jumpToPage(pageNum) {
+            if (isViewAll) toggleViewAll();
+            currentPage = pageNum;
+            updatePageDisplay();
+        }
+
+        function toggleViewAll() {
+            isViewAll = !isViewAll;
+            const btn = document.getElementById('btnViewAll');
+            for(let i = 1; i <= totalPages; i++) {
+                const p = document.getElementById(`page${i}`);
+                if (p) {
+                    if (isViewAll) {
+                        p.classList.remove('hidden');
+                        p.classList.add('border-b-4', 'border-slate-300', 'pb-12', 'mb-12');
+                    } else {
+                        p.classList.remove('border-b-4', 'border-slate-300', 'pb-12', 'mb-12');
+                    }
+                }
+            }
+            if (isViewAll) {
+                btn.innerHTML = "<span>📖 Slide View</span>";
+                document.getElementById('pageIndicator').innerText = "All Pages";
+            } else {
+                btn.innerHTML = "<span>📜 Scroll View</span>";
+                updatePageDisplay();
+            }
+        }
+
+        function setPaperStyle(style) {
+            const container = document.getElementById('notebookContainer');
+            const btnR = document.getElementById('btnRuled');
+            const btnG = document.getElementById('btnGrid');
+
+            if (style === 'grid') {
+                container.classList.remove('notebook-paper');
+                container.classList.add('grid-paper');
+                btnG.classList.add('bg-slate-700', 'text-amber-300', 'font-bold');
+                btnR.classList.remove('bg-slate-700', 'text-amber-300', 'font-bold');
+            } else {
+                container.classList.remove('grid-paper');
+                container.classList.add('notebook-paper');
+                btnR.classList.add('bg-slate-700', 'text-amber-300', 'font-bold');
+                btnG.classList.remove('bg-slate-700', 'text-amber-300', 'font-bold');
+            }
+        }
+
+        // Render Flashcards
+        function renderFlashcards() {
+            const grid = document.getElementById('flashcardGrid');
+            grid.innerHTML = '';
+            flashcardsData.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-3 rounded-lg border border-slate-300 shadow-sm cursor-pointer hover:border-amber-400 transition";
+                card.onclick = () => {
+                    const ans = card.querySelector('.flash-ans');
+                    ans.classList.toggle('hidden');
+                };
+                card.innerHTML = `
+                    <div class="font-bold text-slate-800">${item.q}</div>
+                    <div class="flash-ans hidden mt-2 pt-2 border-t border-slate-200 text-blue-900 font-bold bg-amber-50 p-2 rounded">
+                        👉 ${item.a}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Quiz Logic
+        function openQuizModal() {
+            document.getElementById('quizModal').classList.remove('hidden');
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quizModal').classList.add('hidden');
+        }
+
+        function renderQuiz() {
+            const content = document.getElementById('quizContent');
+            content.innerHTML = '';
+            mcqQuestions.forEach((q, qIndex) => {
+                const div = document.createElement('div');
+                div.className = "p-4 bg-slate-50 rounded-xl border border-slate-200";
+                
+                let optionsHTML = '';
+                q.options.forEach((opt, optIndex) => {
+                    optionsHTML += `
+                        <button onclick="selectAnswer(${qIndex}, ${optIndex})" id="opt_${qIndex}_${optIndex}" 
+                            class="w-full text-left p-2.5 rounded-lg border border-slate-300 hover:bg-slate-100 transition text-sm flex items-center justify-between">
+                            <span>${String.fromCharCode(65 + optIndex)}. ${opt}</span>
+                            <span class="status-icon"></span>
+                        </button>
+                    `;
+                });
+
+                div.innerHTML = `
+                    <p class="font-bold text-slate-900 mb-3">${q.q}</p>
+                    <div class="space-y-2" id="q_container_${qIndex}">${optionsHTML}</div>
+                `;
+                content.appendChild(div);
+            });
+        }
+
+        function selectAnswer(qIndex, optIndex) {
+            const q = mcqQuestions[qIndex];
+            userAnswers[qIndex] = optIndex;
+
+            for (let i = 0; i < q.options.length; i++) {
+                const btn = document.getElementById(`opt_${qIndex}_${i}`);
+                btn.className = "w-full text-left p-2.5 rounded-lg border border-slate-300 text-sm flex items-center justify-between";
+                btn.querySelector('.status-icon').innerText = "";
+
+                if (i === q.correct) {
+                    btn.classList.add('bg-green-100', 'border-green-500', 'text-green-900', 'font-bold');
+                    btn.querySelector('.status-icon').innerText = "✓";
+                } else if (i === optIndex && optIndex !== q.correct) {
+                    btn.classList.add('bg-red-100', 'border-red-500', 'text-red-900');
+                    btn.querySelector('.status-icon').innerText = "✗";
+                }
+            }
+            updateScore();
+        }
+
+        function updateScore() {
+            let score = 0;
+            let answered = Object.keys(userAnswers).length;
+            mcqQuestions.forEach((q, idx) => {
+                if (userAnswers[idx] === q.correct) score++;
+            });
+            document.getElementById('quizScore').innerText = `Score: ${score} / ${mcqQuestions.length}`;
+        }
+
+        function resetQuiz() {
+            userAnswers = {};
+            renderQuiz();
+            document.getElementById('quizScore').innerText = `Score: 0 / ${mcqQuestions.length}`;
+        }
+
+        // Search Function
+        function searchNotes() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            if(!query) return;
+
+            if (!isViewAll) toggleViewAll();
+
+            const textNodes = document.querySelectorAll('.note-page p, .note-page li, .note-page td, .note-page div');
+            textNodes.forEach(node => {
+                if (node.children.length === 0 && node.innerText) {
+                    if (node.innerText.toLowerCase().includes(query)) {
+                        node.style.backgroundColor = '#fef08a';
+                    } else {
+                        node.style.backgroundColor = '';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

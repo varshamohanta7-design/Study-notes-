@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Chemistry — Class 13: Topper Handwritten Notes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Realistic Handwriting -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Permanent+Marker&family=Architects+Daughter&display=swap" rel="stylesheet">
+    <!-- FontAwesome for cute icons/doodles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --ink-blue: #0f3c5c;
+            --ink-black: #111827;
+            --ink-red: #991b1b;
+            --ink-green: #14532d;
+            --highlighter-yellow: #fef08a;
+            --highlighter-pink: #fbcfe8;
+            --highlighter-green: #bbf7d0;
+            --paper-bg: #fefdfa;
+            --ruled-line: #e2e8f0;
+            --margin-line: #fca5a5;
+        }
+
+        body {
+            font-family: 'Patrick Hand', cursive, sans-serif;
+            background-color: #e5e7eb;
+            color: var(--ink-blue);
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .font-marker {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .font-handwriting {
+            font-family: 'Caveat', cursive;
+        }
+
+        .font-kalam {
+            font-family: 'Kalam', cursive;
+        }
+
+        .font-architect {
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        /* Paper Styles */
+        .paper-ruled {
+            background-color: var(--paper-bg);
+            background-image: 
+                linear-gradient(90deg, transparent 59px, var(--margin-line) 59px, var(--margin-line) 61px, transparent 61px),
+                linear-gradient(var(--ruled-line) 1px, transparent 0);
+            background-size: 100% 100%, 100% 2rem;
+        }
+
+        .paper-grid {
+            background-color: var(--paper-bg);
+            background-image: 
+                linear-gradient(90deg, transparent 59px, var(--margin-line) 59px, var(--margin-line) 61px, transparent 61px),
+                linear-gradient(to right, #cbd5e1 1px, transparent 1px),
+                linear-gradient(to bottom, #cbd5e1 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+        }
+
+        .paper-dark {
+            background-color: #1e293b;
+            background-image: 
+                linear-gradient(90deg, transparent 59px, #475569 59px, #475569 61px, transparent 61px),
+                linear-gradient(#334155 1px, transparent 0);
+            background-size: 100% 100%, 100% 2rem;
+            color: #f1f5f9;
+        }
+
+        .paper-dark .ink-text {
+            color: #93c5fd !important;
+        }
+
+        .paper-dark .heading-text {
+            color: #f8fafc !important;
+        }
+
+        /* Highlighter effect */
+        .hl-yellow {
+            background: linear-gradient(104deg, rgba(254, 240, 138, 0) 0.9%, rgba(254, 240, 138, 0.85) 2.4%, rgba(254, 240, 138, 0.75) 5.8%, rgba(254, 240, 138, 0.8) 93%, rgba(254, 240, 138, 0.7) 96%, rgba(254, 240, 138, 0) 98%);
+            padding: 0.1em 0.3em;
+            border-radius: 0.2em 0.4em;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            display: inline-block;
+        }
+
+        .hl-pink {
+            background: linear-gradient(104deg, rgba(251, 207, 232, 0) 0.9%, rgba(251, 207, 232, 0.85) 2.4%, rgba(251, 207, 232, 0.75) 5.8%, rgba(251, 207, 232, 0.8) 93%, rgba(251, 207, 232, 0.7) 96%, rgba(251, 207, 232, 0) 98%);
+            padding: 0.1em 0.3em;
+            border-radius: 0.2em 0.4em;
+            display: inline-block;
+        }
+
+        .hl-green {
+            background: linear-gradient(104deg, rgba(187, 247, 208, 0) 0.9%, rgba(187, 247, 208, 0.85) 2.4%, rgba(187, 247, 208, 0.75) 5.8%, rgba(187, 247, 208, 0.8) 93%, rgba(187, 247, 208, 0.7) 96%, rgba(187, 247, 208, 0) 98%);
+            padding: 0.1em 0.3em;
+            border-radius: 0.2em 0.4em;
+            display: inline-block;
+        }
+
+        /* Handwritten SVG underline/circles */
+        .hand-circle {
+            border: 2px solid #ef4444;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            padding: 2px 6px;
+        }
+
+        .hand-box {
+            border: 2px solid #1d4ed8;
+            border-radius: 245px 18px 200px 12px/18px 210px 12px 245px;
+            padding: 8px 14px;
+            background-color: rgba(239, 246, 255, 0.4);
+        }
+
+        .hand-box-alert {
+            border: 2px dashed #dc2626;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            background-color: #fef2f2;
+        }
+
+        /* Spiral Binder rings */
+        .spiral-ring {
+            width: 14px;
+            height: 28px;
+            background: linear-gradient(90deg, #94a3b8 0%, #cbd5e1 40%, #475569 100%);
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Doodles and Sticky notes */
+        .sticky-note {
+            background: #fef08a;
+            box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.15);
+            transform: rotate(-1.5deg);
+            transition: transform 0.2s ease;
+        }
+        .sticky-note:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        /* Natural handwriting imperfection tilts */
+        .tilt-1 { transform: rotate(-0.5deg); }
+        .tilt-2 { transform: rotate(0.8deg); }
+        .tilt-3 { transform: rotate(-1.2deg); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+
+        /* Print optimization */
+        @media print {
+            body { background: white; }
+            .no-print { display: none !important; }
+            .notebook-container { box-shadow: none !important; margin: 0 !important; width: 100% !important; max-width: 100% !important; }
+        }
+    </style>
+</head>
+<body class="min-h-screen py-4 px-2 sm:px-6 md:px-10">
+
+    <!-- TOP TOOLBAR (NO-PRINT) -->
+    <header class="max-w-6xl mx-auto mb-6 bg-white border border-slate-300 rounded-xl p-3 shadow-md flex flex-wrap items-center justify-between gap-4 no-print">
+        <div class="flex items-center gap-3">
+            <div class="bg-blue-600 text-white p-2.5 rounded-lg shadow">
+                <i class="fa-solid fa-book-open text-xl"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-bold font-kalam text-slate-800 leading-tight">Food Chemistry Notes — Class 13</h1>
+                <p class="text-xs text-slate-500">Topper-Quality Exam Notes • Strictly Source-Aligned</p>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex flex-wrap items-center gap-2 text-sm">
+            <!-- Paper Theme Switcher -->
+            <div class="flex items-center bg-slate-100 rounded-lg p-1 border border-slate-200">
+                <button onclick="setPaperTheme('ruled')" id="btn-ruled" class="px-2.5 py-1 rounded text-xs font-medium bg-white shadow-sm text-slate-700">Ruled</button>
+                <button onclick="setPaperTheme('grid')" id="btn-grid" class="px-2.5 py-1 rounded text-xs font-medium text-slate-600 hover:text-slate-900">Grid</button>
+                <button onclick="setPaperTheme('dark')" id="btn-dark" class="px-2.5 py-1 rounded text-xs font-medium text-slate-600 hover:text-slate-900">Dark</button>
+            </div>
+
+            <!-- View Tabs -->
+            <div class="flex items-center bg-slate-100 rounded-lg p-1 border border-slate-200">
+                <button onclick="switchTab('notes')" id="tab-notes" class="px-3 py-1 rounded-md text-xs font-bold bg-blue-600 text-white shadow-sm">Notes</button>
+                <button onclick="switchTab('mindmap')" id="tab-mindmap" class="px-3 py-1 rounded-md text-xs font-bold text-slate-700 hover:bg-slate-200">Mindmaps</button>
+                <button onclick="switchTab('quiz')" id="tab-quiz" class="px-3 py-1 rounded-md text-xs font-bold text-slate-700 hover:bg-slate-200">Quiz (25 MCQs)</button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="relative">
+                <input type="text" id="searchInput" oninput="searchNotes()" placeholder="Search notes..." class="pl-7 pr-3 py-1 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-36 sm:w-44">
+                <i class="fa-solid fa-search absolute left-2 top-2 text-slate-400 text-xs"></i>
+            </div>
+
+            <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1 shadow">
+                <i class="fa-solid fa-print"></i> Print Notes
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN NOTEBOOK CONTAINER -->
+    <main id="notebook" class="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-300 relative paper-ruled transition-colors duration-300 notebook-container">
+        
+        <!-- Left Spiral Binder Rings Visual (Desktop) -->
+        <div class="absolute left-2 top-0 bottom-0 flex flex-col justify-between py-8 z-20 pointer-events-none no-print">
+            <template id="spiral-template">
+                <div class="spiral-ring"></div>
+            </template>
+            <!-- Generated via JS for exact spacing -->
+            <div id="spiral-container" class="flex flex-col gap-6"></div>
+        </div>
+
+        <!-- Notebook Inner Content Area -->
+        <div class="pl-14 sm:pl-20 pr-4 sm:pr-10 py-8 relative">
+            
+            <!-- Sticky Note Floating Bookmark / Shortcut Tag -->
+            <div class="absolute right-4 top-4 sticky-note p-3 rounded-md border border-yellow-300 max-w-[170px] hidden lg:block z-10 text-slate-800">
+                <div class="flex items-center gap-1 font-bold text-xs text-amber-800">
+                    <i class="fa-solid fa-bookmark text-amber-600"></i> TOPPER TRICK
+                </div>
+                <p class="text-xs font-handwriting text-slate-900 leading-tight mt-1">
+                    "1 TPP, 2 FAD-FMN, 3 NAD-NADP, 5 CoA."<br>
+                    <span class="text-red-700 font-bold">1 Beri • 2 Mouth • 3 Pellagra • 5 Feet</span>
+                </p>
+            </div>
+
+            <!-- NOTES TAB SECTION -->
+            <div id="section-notes" class="space-y-10">
+
+                <!-- HEADER BANNER -->
+                <div class="border-b-4 border-slate-800 pb-4 relative">
+                    <div class="flex justify-between items-start flex-wrap gap-2">
+                        <div>
+                            <span class="bg-red-100 text-red-800 text-xs font-bold px-2.5 py-1 rounded border border-red-300 uppercase tracking-wider">Class 13 • Detailed Study Notes</span>
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-marker text-slate-900 mt-2 tracking-wide heading-text">
+                                FOOD CHEMISTRY — VITAMINS
+                            </h1>
+                            <p class="font-kalam text-slate-600 text-sm sm:text-base mt-1">
+                                Comprehensive breakdown of Water-Soluble & B-Complex Vitamins (B₁, B₂, B₃, B₅)
+                            </p>
+                        </div>
+                        <div class="text-right font-handwriting text-slate-600 text-sm bg-yellow-50 p-2.5 rounded border border-yellow-200 shadow-sm">
+                            <p><strong>Subject:</strong> Food Chemistry</p>
+                            <p><strong>Target:</strong> 100% Score / Competitive Exams</p>
+                            <p class="text-red-600 font-bold">★ High-Yield Source Material</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Source coverage disclaimer box -->
+                    <div class="mt-4 bg-blue-50 border-l-4 border-blue-500 p-3 rounded-r text-xs sm:text-sm text-blue-900 font-kalam">
+                        <i class="fa-solid fa-circle-info text-blue-600 mr-1"></i>
+                        <strong>Source Coverage Note:</strong> These notes are prepared strictly from the uploaded Class 13 Food Chemistry material. Detailed content is provided for Water-soluble, B-complex, B₁, B₂, B₃, and B₅. B₆, B₇, B₉, and B₁₂ are included for chemical names as in source.
+                    </div>
+                </div>
+
+                <!-- SECTION 1: WATER-SOLUBLE VITAMINS -->
+                <section class="space-y-4 searchable-item">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-slate-900 text-white font-marker px-3 py-1 rounded text-lg">1</span>
+                        <h2 class="text-2xl sm:text-3xl font-marker text-slate-900 heading-text">WATER-SOLUBLE VITAMINS</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Left Explanation -->
+                        <div class="md:col-span-2 space-y-3">
+                            <p class="text-lg font-kalam text-slate-800 ink-text">
+                                <strong class="text-slate-900 font-bold">Meaning & Basic Characteristics:</strong> Water-soluble vitamins are vitamins that dissolve readily in water and, according to the study material, are <span class="hl-yellow font-bold">not stored to any significant extent</span> in the body.
+                            </p>
+
+                            <!-- Major characteristics table / list -->
+                            <div class="bg-white/80 rounded-xl p-4 border-2 border-slate-800 shadow-sm space-y-2">
+                                <h3 class="font-bold text-slate-900 font-kalam text-base border-b border-slate-300 pb-1">
+                                    <i class="fa-solid fa-list-check text-red-600"></i> Core Characteristics Overview
+                                </h3>
+                                <ul class="space-y-1.5 text-base">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-arrow-right text-blue-600 mt-1.5 text-xs"></i>
+                                        <span><strong>Storage in body:</strong> <span class="hl-pink">Not stored to any extent</span> in body tissue.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-arrow-right text-blue-600 mt-1.5 text-xs"></i>
+                                        <span><strong>Excess intake:</strong> Excess is <span class="hl-yellow">excreted through the kidney</span>.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-arrow-right text-blue-600 mt-1.5 text-xs"></i>
+                                        <span><strong>Requirement:</strong> Regular / <span class="hl-yellow">daily supply is necessary</span> for normal body functions.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-arrow-right text-blue-600 mt-1.5 text-xs"></i>
+                                        <span><strong>B-group production:</strong> Some B vitamins result from <span class="hl-green">bacterial activity in the small intestine</span>.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-arrow-right text-blue-600 mt-1.5 text-xs"></i>
+                                        <span><strong>Food use:</strong> Many are used as food additives.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-arrow-right text-blue-600 mt-1.5 text-xs"></i>
+                                        <span><strong>Cooking loss:</strong> <span class="hl-pink font-bold">Extensively lost by leaching</span> during cooking.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right Hand-Drawn Flow & Visuals -->
+                        <div class="flex flex-col justify-between space-y-4">
+                            <!-- Flow Diagram -->
+                            <div class="hand-box space-y-2 text-center">
+                                <p class="font-bold text-red-700 font-kalam border-b border-red-200 pb-1">⚡ Exam Flow Diagram</p>
+                                <div class="text-sm space-y-1 font-handwriting text-slate-800">
+                                    <div class="bg-amber-100 p-1 rounded font-bold">Water-Soluble Vitamins</div>
+                                    <div>↓</div>
+                                    <div class="bg-red-100 p-1 rounded text-red-900 font-bold">Little / No Storage</div>
+                                    <div>↓</div>
+                                    <div class="bg-yellow-100 p-1 rounded text-amber-900 font-bold">Excess → Excreted via Kidney</div>
+                                    <div>↓</div>
+                                    <div class="bg-emerald-100 p-1 rounded text-emerald-900 font-bold">Daily Supply Required</div>
+                                </div>
+                            </div>
+
+                            <!-- Leaching Callout Box -->
+                            <div class="bg-orange-50 border-2 border-orange-400 p-3 rounded-lg text-xs space-y-1">
+                                <p class="font-bold text-orange-900 font-kalam text-sm">
+                                    <i class="fa-solid fa-fire text-orange-600"></i> Cooking Observation: LEACHING
+                                </p>
+                                <p class="text-slate-700">
+                                    <strong class="text-orange-900">Leaching:</strong> Movement of water-soluble components from food into the cooking water. Causes massive vitamin loss!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exam Alert Box -->
+                    <div class="hand-box-alert p-3 flex items-center gap-3">
+                        <div class="bg-red-600 text-white font-bold p-2 rounded-full text-xs shrink-0">EXAM TIP</div>
+                        <p class="text-sm text-red-900 font-kalam">
+                            <strong>Frequently Confused Point:</strong> Excess water-soluble vitamins are <u>not stored</u> in fat or liver; they are <u>excreted through the kidney</u>!
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SECTION 2 & 3: B-COMPLEX VITAMINS & CHEMICAL NAMES -->
+                <section class="space-y-4 border-t-2 border-dashed border-slate-300 pt-6 searchable-item">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-slate-900 text-white font-marker px-3 py-1 rounded text-lg">2 & 3</span>
+                        <h2 class="text-2xl sm:text-3xl font-marker text-slate-900 heading-text">B-COMPLEX VITAMINS & CHEMICAL NAMES</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- General Characteristics -->
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-bold font-kalam text-blue-900">Why Grouped Together?</h3>
+                            <p class="font-kalam text-slate-800">
+                                One key reason for grouping B vitamins together is that they <span class="hl-yellow">occur together in nature</span>.
+                            </p>
+
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-300">
+                                <p class="font-bold text-slate-900">Key Features of B-Complex:</p>
+                                <ol class="list-decimal pl-5 space-y-1 text-base">
+                                    <li><strong>Occurrence:</strong> Occur together in nature.</li>
+                                    <li><strong>Nitrogen Content:</strong> According to study material, <span class="hl-pink font-bold">ALL B-complex vitamins contain nitrogen</span> in their structure.</li>
+                                    <li><strong>Coenzyme Function:</strong> In general, function as <span class="hl-yellow">coenzymes</span> essential in metabolic processes of living cells.</li>
+                                </ol>
+                            </div>
+
+                            <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-lg text-sm text-emerald-900 font-handwriting">
+                                <span class="font-bold text-emerald-950">Conceptual Flow:</span> B-complex vitamins → Function as coenzymes → Participate in metabolic reactions → Essential for cell survival.
+                            </div>
+                        </div>
+
+                        <!-- Chemical Names Master Table -->
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-xl font-bold font-kalam text-slate-900">Chemical Names Table</h3>
+                                <span class="text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded font-bold">Must Memorize!</span>
+                            </div>
+
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-sm border-2 border-slate-900 bg-white rounded-lg overflow-hidden">
+                                    <thead class="bg-slate-900 text-white font-kalam">
+                                        <tr>
+                                            <th class="p-2 border-b">Vitamin</th>
+                                            <th class="p-2 border-b">Chemical Name</th>
+                                            <th class="p-2 border-b">Mnemonic / Hook</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-300 font-kalam text-base">
+                                        <tr class="hover:bg-amber-50">
+                                            <td class="p-2 font-bold text-blue-700">B₁</td>
+                                            <td class="p-2"><span class="hl-yellow font-bold">Thiamine</span></td>
+                                            <td class="p-2 text-xs text-slate-600">The 1st Tea (Thiamine)</td>
+                                        </tr>
+                                        <tr class="hover:bg-amber-50">
+                                            <td class="p-2 font-bold text-blue-700">B₂</td>
+                                            <td class="p-2"><span class="hl-yellow font-bold">Riboflavin</span></td>
+                                            <td class="p-2 text-xs text-slate-600">Yellow Flavin pigment</td>
+                                        </tr>
+                                        <tr class="hover:bg-amber-50">
+                                            <td class="p-2 font-bold text-blue-700">B₃</td>
+                                            <td class="p-2"><span class="hl-yellow font-bold">Niacin</span></td>
+                                            <td class="p-2 text-xs text-slate-600">Nicotinic acid + amide</td>
+                                        </tr>
+                                        <tr class="hover:bg-amber-50">
+                                            <td class="p-2 font-bold text-blue-700">B₅</td>
+                                            <td class="p-2"><span class="hl-yellow font-bold">Pantothenic acid</span></td>
+                                            <td class="p-2 text-xs text-slate-600">Penta = 5 (Pantothenic)</td>
+                                        </tr>
+                                        <tr class="hover:bg-amber-50">
+                                            <td class="p-2 font-bold text-slate-600">B₆</td>
+                                            <td class="p-2">Pyridoxine</td>
+                                            <td class="p-2 text-xs text-slate-500">Name only in source</td>
+                                        </tr>
+                                        <tr class="hover:bg-amber-50">
+                                            <td class="p-2 font-bold text-slate-600">B₇</td>
+                                            <td class="p-2">Biotin</td>
+                                            <td class="p-2 text-xs text-slate-500">Name only in source</td>
+                                        </tr>
+                                        <tr class="hover:bg-amber-50">
+                                            <td class="p-2 font-bold text-slate-600">B₉</td>
+                                            <td class="p-2">Folic acid</td>
+                                            <td class="p-2 text-xs text-slate-500">Name only in source</td>
+                                        </tr>
+                                        <tr class="hover:bg-amber-50">
+                                            <td class="p-2 font-bold text-slate-600">B₁₂</td>
+                                            <td class="p-2">Cobalamine</td>
+                                            <td class="p-2 text-xs text-slate-500">Name only in source</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Numbering Trap Notice -->
+                            <div class="bg-red-50 p-2.5 rounded border border-red-300 text-xs text-red-900 font-handwriting">
+                                ⚠️ <strong>Important Sequence Note:</strong> Sequence is B₁ → B₂ → B₃ → B₅ → B₆ → B₇ → B₉ → B₁₂. Notice B₄, B₈, B₁₀, B₁₁ are <u>not listed</u> in this source table!
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: VITAMIN B1 — THIAMINE -->
+                <section class="space-y-4 border-t-2 border-dashed border-slate-300 pt-6 searchable-item">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-blue-800 text-white font-marker px-3 py-1 rounded text-lg">4</span>
+                            <h2 class="text-2xl sm:text-3xl font-marker text-slate-900 heading-text">VITAMIN B₁ — THIAMINE</h2>
+                        </div>
+                        <span class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full border border-red-300">Coenzyme: TPP • Disease: Beri-beri</span>
+                    </div>
+
+                    <!-- Grid Layout for B1 Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        
+                        <!-- Card 1: Solubility & Stability -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 shadow-sm space-y-2">
+                            <h3 class="font-bold font-kalam text-blue-900 border-b border-slate-200 pb-1 text-lg">
+                                🧪 Solubility & Stability
+                            </h3>
+                            <ul class="space-y-1.5 text-base">
+                                <li><strong>Solubility:</strong> Readily soluble in water; <span class="hl-pink">insoluble in fat solvents</span>.</li>
+                                <li><strong>Stability Status:</strong> Described as <span class="hl-yellow font-bold">one of the least stable vitamins</span>.</li>
+                                <li><strong>Dry vs Solution:</strong> Dry form is fairly stable. Solution form is <span class="hl-pink">unstable with heat & alkali</span>.</li>
+                                <li><strong>Freezing effect:</strong> Freezing has <span class="hl-green">little or no effect</span> on thiamine content.</li>
+                                <li><strong>Key Factor:</strong> Temperature is a major stability factor.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 2: Thermal & Chemical Destruction -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 shadow-sm space-y-2">
+                            <h3 class="font-bold font-kalam text-amber-900 border-b border-slate-200 pb-1 text-lg">
+                                🔥 Thermal & Chemical Effects
+                            </h3>
+                            <p class="text-xs text-slate-600">Thermal destruction is pH-dependent!</p>
+                            <div class="bg-amber-50 p-2 rounded text-sm text-slate-800 border border-amber-200">
+                                🍖 <strong>"Meaty" Flavour Link:</strong> Thermal destruction of thiamine yields degradation products that create characteristic odour & contribute to <span class="hl-yellow font-bold">"meaty" flavour in cooked foods</span>.
+                            </div>
+                            <ul class="space-y-1 text-sm">
+                                <li><strong>Cereal Protection:</strong> Starch/protein in cereals protect thiamine in certain pH ranges.</li>
+                                <li><strong>Destroyed by:</strong> Oxidation & Reduction.</li>
+                                <li><strong class="text-red-700">Sensitivities:</strong> Sensitive to <span class="hl-pink font-bold">Sulphur dioxide (SO₂) & Sulphites</span>. Do NOT use SO₂ to preserve thiamine foods!</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 3: Function & Active Coenzyme -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 shadow-sm space-y-2">
+                            <h3 class="font-bold font-kalam text-emerald-900 border-b border-slate-200 pb-1 text-lg">
+                                ⚙️ Function & Active Form
+                            </h3>
+                            <div class="text-center bg-emerald-50 p-3 rounded-lg border border-emerald-300">
+                                <p class="text-xs text-slate-600 uppercase font-bold">Coenzyme Synthesis</p>
+                                <p class="font-handwriting text-base font-bold text-emerald-950 mt-1">
+                                    Thiamine (B₁) + Phosphoric Acid<br>
+                                    ↓<br>
+                                    <span class="text-xl text-red-700 font-marker">TPP</span><br>
+                                    <span class="text-xs text-emerald-800">(Thiamine Pyrophosphate)</span>
+                                </p>
+                            </div>
+                            <p class="text-xs text-slate-700">
+                                <strong>Risk Factor:</strong> High consumption of <span class="hl-yellow">tea & alcohol</span> alters thiamine absorption, increasing deficiency risk!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- B1 Deficiency Section -->
+                    <div class="bg-red-50 border-2 border-red-400 rounded-xl p-4 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-marker text-red-900">🚨 Vitamin B₁ Deficiency Spectrum</h3>
+                            <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded font-bold">HIGH-YIELD EXAM TOPIC</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
+                            <!-- Mild Deficiency -->
+                            <div class="bg-white p-3 rounded-lg border border-red-200 shadow-sm">
+                                <h4 class="font-bold text-red-800 font-kalam border-b border-red-100 pb-1">1. Mild Deficiency Symptoms</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-slate-800 mt-2 text-sm">
+                                    <li>Fatigue & Emotional instability</li>
+                                    <li>Depression & Irritability</li>
+                                    <li>Retarded normal growth</li>
+                                    <li>Loss of appetite</li>
+                                </ul>
+                            </div>
+
+                            <!-- Severe Deficiency - Beri Beri -->
+                            <div class="bg-white p-3 rounded-lg border border-red-300 shadow-sm">
+                                <h4 class="font-bold text-red-900 font-kalam border-b border-red-100 pb-1">
+                                    2. Severe Prolonged Deficiency → <span class="hl-pink font-bold">BERI-BERI</span>
+                                </h4>
+                                <p class="text-xs text-slate-600 mt-1">Affects 3 major body systems:</p>
+                                <div class="grid grid-cols-3 gap-1 text-center text-xs font-bold text-slate-800 mt-2">
+                                    <span class="bg-amber-100 p-1 rounded">Neurological System</span>
+                                    <span class="bg-rose-100 p-1 rounded">Cardiovascular System</span>
+                                    <span class="bg-blue-100 p-1 rounded">Gastrointestinal Tract</span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-2 italic font-handwriting">
+                                    Source diagram highlights: Loss of tendon reflexes, foot/wrist drop, tingling, numbness, weakness, emaciation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: VITAMIN B2 — RIBOFLAVIN -->
+                <section class="space-y-4 border-t-2 border-dashed border-slate-300 pt-6 searchable-item">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-amber-600 text-white font-marker px-3 py-1 rounded text-lg">5</span>
+                            <h2 class="text-2xl sm:text-3xl font-marker text-slate-900 heading-text">VITAMIN B₂ — RIBOFLAVIN</h2>
+                        </div>
+                        <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full border border-amber-300">Coenzymes: FMN & FAD • Light Sensitive</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <!-- Left: Sources & Chemical Pigment -->
+                        <div class="space-y-3">
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-300 space-y-2">
+                                <h3 class="font-bold text-amber-900 font-kalam text-lg">🥛 Food Sources & Pigment</h3>
+                                <p class="text-sm">Widely distributed in small amounts. Good sources:</p>
+                                <div class="flex flex-wrap gap-1 text-xs">
+                                    <span class="bg-white px-2 py-1 rounded border">Milk</span>
+                                    <span class="bg-white px-2 py-1 rounded border">Cheese</span>
+                                    <span class="bg-white px-2 py-1 rounded border">Liver</span>
+                                    <span class="bg-white px-2 py-1 rounded border">Eggs</span>
+                                    <span class="bg-white px-2 py-1 rounded border">Leafy Vegetables</span>
+                                    <span class="bg-yellow-200 font-bold px-2 py-1 rounded">Dried Yeast (Rich!)</span>
+                                </div>
+                                <hr class="border-amber-200">
+                                <p class="text-sm font-handwriting">
+                                    <strong>Pigment Group:</strong> Belongs to yellow fluorescent pigments called <span class="hl-yellow font-bold">Flavins</span>.<br>
+                                    Color: <span class="hl-yellow">Orange-Yellow</span> → On reduction becomes <span class="hl-pink font-bold">Colourless</span>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Middle: Stability & Baking Soda Alert -->
+                        <div class="space-y-3">
+                            <div class="bg-white rounded-xl p-4 border-2 border-slate-800 space-y-2">
+                                <h3 class="font-bold text-slate-900 font-kalam text-lg">☀️ Stability & Sensitivity</h3>
+                                <ul class="space-y-1 text-sm">
+                                    <li><strong>Solubility:</strong> Less soluble than thiamine (B₁).</li>
+                                    <li><strong>Heat Stability:</strong> More stable than B₁ in acidic & neutral media.</li>
+                                    <li><strong class="text-red-700">Alkaline Heating:</strong> Destroyed by heating in alkali. <span class="hl-pink font-bold">Baking soda used for faster cooking destroys much riboflavin!</span></li>
+                                    <li><strong class="text-red-700">Light Sensitivity:</strong> On exposure to <span class="hl-yellow font-bold">LIGHT</span>, riboflavin readily loses vitamin activity!</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right: Phosphorylation & Coenzymes -->
+                        <div class="space-y-3">
+                            <div class="bg-white rounded-xl p-4 border-2 border-slate-800 space-y-2 text-center">
+                                <h3 class="font-bold text-slate-900 font-kalam text-lg">🔄 Coenzymes (FMN & FAD)</h3>
+                                <p class="text-xs text-slate-600">Must undergo phosphorylation in intestinal tract before absorption!</p>
+                                <div class="bg-blue-50 p-2 rounded border border-blue-200 space-y-1 font-handwriting text-sm">
+                                    <p>Riboflavin + Phosphoric Acid</p>
+                                    <p class="font-bold text-blue-900">↓</p>
+                                    <p class="font-marker text-red-700 text-lg">FMN & FAD</p>
+                                    <p class="text-xs text-slate-600">(Flavin Mononucleotide / Flavin Adenine Dinucleotide)</p>
+                                </div>
+                                <p class="text-xs font-bold text-slate-800">Role: Catalyse Oxidation-Reduction Reactions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- B2 Deficiency Card -->
+                    <div class="bg-amber-50 border-2 border-amber-400 p-4 rounded-xl space-y-2">
+                        <h3 class="text-lg font-bold font-kalam text-amber-950">👁️ Riboflavin (B₂) Deficiency Manifestations</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-sm font-handwriting">
+                            <div class="bg-white p-2 rounded border border-amber-300">
+                                <strong class="text-red-700 block">Cheilosis</strong>
+                                Reddened denuded areas on lips, cracks at corners of mouth.
+                            </div>
+                            <div class="bg-white p-2 rounded border border-amber-300">
+                                <strong class="text-red-700 block">Glostitis</strong>
+                                (Spelled Glostitis in source) Swollen & reddened tongue.
+                            </div>
+                            <div class="bg-white p-2 rounded border border-amber-300">
+                                <strong class="text-red-700 block">Dermatitis</strong>
+                                Scaly, greasy dermatitis on face, ears & body.
+                            </div>
+                            <div class="bg-white p-2 rounded border border-amber-300">
+                                <strong class="text-red-700 block">Eye Disorders</strong>
+                                Itching, burning, lacrimation & cataract.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: VITAMIN B3 — NIACIN -->
+                <section class="space-y-4 border-t-2 border-dashed border-slate-300 pt-6 searchable-item">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-700 text-white font-marker px-3 py-1 rounded text-lg">6</span>
+                            <h2 class="text-2xl sm:text-3xl font-marker text-slate-900 heading-text">VITAMIN B₃ — NIACIN</h2>
+                        </div>
+                        <span class="bg-emerald-100 text-emerald-900 text-xs font-bold px-3 py-1 rounded-full border border-emerald-300">Coenzymes: NAD & NADP • Disease: Pellagra (3 Ds)</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Box 1: Meaning & Synthesis -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 space-y-2">
+                            <h3 class="font-bold text-emerald-900 font-kalam text-lg">🧬 Meaning & Dual Synthesis</h3>
+                            <p class="text-sm">
+                                <strong>Niacin Term:</strong> Includes <span class="hl-yellow">Nicotinic acid + Nicotinamide</span>.
+                            </p>
+                            <div class="bg-emerald-50 p-2.5 rounded border border-emerald-200 text-xs space-y-1 font-handwriting">
+                                <p class="font-bold text-emerald-950">Synthesis Pathways:</p>
+                                <p>1. Synthesized by <strong>intestinal microflora</strong>.</p>
+                                <p>2. Formed in tissues from amino acid <span class="hl-pink font-bold">TRYPTOPHAN</span>.</p>
+                                <p class="text-slate-600">*Milk & eggs have high niacin potency due to tryptophan!</p>
+                            </div>
+                        </div>
+
+                        <!-- Box 2: High Stability -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 space-y-2">
+                            <h3 class="font-bold text-slate-900 font-kalam text-lg">🛡️ High Stability (Tough Cookie!)</h3>
+                            <div class="bg-emerald-100 p-2 rounded text-center font-bold text-emerald-900 text-sm">
+                                <span class="hl-yellow text-base">One of the MOST STABLE vitamins!</span>
+                            </div>
+                            <p class="text-sm">Relatively resistant to:</p>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-center font-bold">
+                                <span class="bg-slate-100 p-1.5 rounded">Heat resistant</span>
+                                <span class="bg-slate-100 p-1.5 rounded">Light resistant</span>
+                                <span class="bg-slate-100 p-1.5 rounded">Acid resistant</span>
+                                <span class="bg-slate-100 p-1.5 rounded">Alkaline resistant</span>
+                            </div>
+                            <p class="text-xs text-red-600 font-handwriting">Contrast: B₁ is fragile (least stable), B₃ is tough (most stable)!</p>
+                        </div>
+
+                        <!-- Box 3: Coenzymes & Biological Role -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 space-y-2 text-center">
+                            <h3 class="font-bold text-slate-900 font-kalam text-lg">⚡ Coenzymes: NAD & NADP</h3>
+                            <p class="text-xs text-slate-600">Active component in biological oxidation!</p>
+                            <div class="bg-amber-50 p-2 rounded border border-amber-300 font-marker text-red-700 text-xl">
+                                NAD & NADP
+                            </div>
+                            <p class="text-xs text-slate-700 font-handwriting">
+                                Nicotinamide Adenine Dinucleotide (NAD)<br>
+                                Nicotinamide Adenine Dinucleotide Phosphate (NADP)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pellagra Box (3 Ds) -->
+                    <div class="bg-red-50 border-2 border-red-500 rounded-xl p-4 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-marker text-red-900">🚨 Severe Deficiency → PELLAGRA & The 3 Ds</h3>
+                            <span class="bg-red-600 text-white text-xs font-bold px-2.5 py-1 rounded">FAMOUS EXAM QUESTION</span>
+                        </div>
+
+                        <p class="text-sm text-slate-800 font-kalam">
+                            General early symptoms: Weakness, indigestion, ulcerated mouth & tongue. Prolonged deficiency causes <strong>Pellagra</strong>.
+                        </p>
+
+                        <!-- The 3 Ds Banner -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+                            <div class="bg-white p-3 rounded-lg border-2 border-red-400 shadow-sm">
+                                <span class="font-marker text-3xl text-red-600 block">D1</span>
+                                <strong class="text-lg font-kalam text-slate-900">Diarrhoea</strong>
+                                <p class="text-xs text-slate-500">Gastrointestinal distress</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border-2 border-red-400 shadow-sm">
+                                <span class="font-marker text-3xl text-red-600 block">D2</span>
+                                <strong class="text-lg font-kalam text-slate-900">Dementia</strong>
+                                <p class="text-xs text-slate-500">Neurological & mental changes</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border-2 border-red-400 shadow-sm">
+                                <span class="font-marker text-3xl text-red-600 block">D3</span>
+                                <strong class="text-lg font-kalam text-slate-900">Dermatitis</strong>
+                                <p class="text-xs text-slate-500">Skin lesions <span class="text-red-600 font-bold">(aggravated by sunlight!)</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 7: VITAMIN B5 — PANTOTHENIC ACID -->
+                <section class="space-y-4 border-t-2 border-dashed border-slate-300 pt-6 searchable-item">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-purple-700 text-white font-marker px-3 py-1 rounded text-lg">7</span>
+                            <h2 class="text-2xl sm:text-3xl font-marker text-slate-900 heading-text">VITAMIN B₅ — PANTOTHENIC ACID</h2>
+                        </div>
+                        <span class="bg-purple-100 text-purple-900 text-xs font-bold px-3 py-1 rounded-full border border-purple-300">Coenzyme A (CoA) • Burning Feet Syndrome</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Distribution & Flora -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 space-y-2">
+                            <h3 class="font-bold text-purple-900 font-kalam text-lg">🌾 Sources & Synthesis</h3>
+                            <p class="text-sm">Widely distributed in foods.</p>
+                            <ul class="text-xs space-y-1 list-disc pl-4">
+                                <li><strong>Abundant in:</strong> Animal tissues, whole-grain cereals, pulses.</li>
+                                <li><strong>Lesser amounts in:</strong> Milk, vegetables, fruits.</li>
+                                <li><strong>Flora synthesis:</strong> Synthesized by intestinal microflora.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Stability Facts (pH 4-7) -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 space-y-2">
+                            <h3 class="font-bold text-slate-900 font-kalam text-lg">⚖️ Stability (pH 4 – 7)</h3>
+                            <div class="bg-purple-50 p-2 rounded text-center font-bold text-purple-900 text-sm">
+                                Stable pH Range: <span class="hl-yellow font-bold text-base">pH 4 to 7</span>
+                            </div>
+                            <ul class="text-xs space-y-1">
+                                <li><strong>Form:</strong> More stable in solution than dry form.</li>
+                                <li><strong class="text-red-700">Decomposed by:</strong> Alkali, Dry heat, Moist heat.</li>
+                                <li><strong>Neutral solution:</strong> Stable to moist heat in neutral solutions.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Coenzyme A & Role -->
+                        <div class="bg-white rounded-xl p-4 border-2 border-slate-800 space-y-2 text-center">
+                            <h3 class="font-bold text-slate-900 font-kalam text-lg">🔑 Coenzyme A (CoA)</h3>
+                            <div class="bg-amber-100 p-2 rounded border border-amber-300 font-marker text-purple-900 text-xl">
+                                Coenzyme A
+                            </div>
+                            <p class="text-xs text-slate-700 font-handwriting mt-1">
+                                Essential for: <strong>Release of energy from carbohydrates</strong> & <strong>Glucose synthesis</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- B5 Deficiency: Burning Feet Syndrome -->
+                    <div class="bg-purple-50 border-2 border-purple-400 p-4 rounded-xl space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold font-kalam text-purple-950">🔥 Vitamin B₅ Deficiency — BURNING FEET SYNDROME</h3>
+                            <span class="bg-purple-700 text-white text-xs font-bold px-2 py-0.5 rounded">High Yield</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-handwriting">
+                            <div class="bg-white p-3 rounded border border-purple-200">
+                                <strong class="text-purple-900 block font-kalam">Primary Manifestation:</strong>
+                                Burning sensation & numbness in feet. Pain & abnormal sensations in arms and legs.
+                            </div>
+                            <div class="bg-white p-3 rounded border border-purple-200">
+                                <strong class="text-purple-900 block font-kalam">Other Associated Symptoms:</strong>
+                                Loss of appetite, nausea, indigestion, pulse rise, fainting attacks, & increased susceptibility to infection.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 8, 9, 10, 11: MASTER COMPARISONS & FLOWCHARTS -->
+                <section class="space-y-6 border-t-4 border-slate-900 pt-6 searchable-item">
+                    
+                    <div class="text-center space-y-1">
+                        <h2 class="text-3xl font-marker text-slate-900 heading-text">MASTER REVISION & HIGH-YIELD MAPS</h2>
+                        <p class="text-sm font-kalam text-slate-600">Quick-Scan Tables & Diagrams for Exam Day</p>
+                    </div>
+
+                    <!-- Master Comparison Table -->
+                    <div class="bg-white rounded-xl p-4 border-2 border-slate-900 shadow-md overflow-x-auto">
+                        <h3 class="text-xl font-bold font-kalam text-slate-900 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-table text-blue-600"></i> Master Comparison: B₁ vs B₂ vs B₃ vs B₅
+                        </h3>
+                        <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-slate-900 text-white font-kalam">
+                                    <th class="p-2 border">Feature</th>
+                                    <th class="p-2 border">B₁ (Thiamine)</th>
+                                    <th class="p-2 border">B₂ (Riboflavin)</th>
+                                    <th class="p-2 border">B₃ (Niacin)</th>
+                                    <th class="p-2 border">B₅ (Pantothenic Acid)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-300 font-kalam">
+                                <tr>
+                                    <td class="p-2 font-bold bg-slate-100">Stability</td>
+                                    <td class="p-2 text-red-700">Least stable</td>
+                                    <td class="p-2">Stable in acid/neutral</td>
+                                    <td class="p-2 text-emerald-700 font-bold">Most stable</td>
+                                    <td class="p-2">Stable at pH 4–7</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold bg-slate-100">Sensitivity</td>
+                                    <td class="p-2">Heat, alkali, SO₂/sulphite</td>
+                                    <td class="p-2 text-amber-800 font-bold">LIGHT, alkali/baking soda</td>
+                                    <td class="p-2 text-slate-600">Resistant to most</td>
+                                    <td class="p-2">Alkali, dry heat</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold bg-slate-100">Coenzyme</td>
+                                    <td class="p-2 font-bold text-blue-800">TPP</td>
+                                    <td class="p-2 font-bold text-amber-800">FMN, FAD</td>
+                                    <td class="p-2 font-bold text-emerald-800">NAD, NADP</td>
+                                    <td class="p-2 font-bold text-purple-800">Coenzyme A</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold bg-slate-100">Major Role</td>
+                                    <td class="p-2">Coenzyme function</td>
+                                    <td class="p-2">Oxidation-Reduction</td>
+                                    <td class="p-2">Biological oxidation</td>
+                                    <td class="p-2">Energy from carbs & glucose</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-bold bg-slate-100">Deficiency</td>
+                                    <td class="p-2 font-bold text-red-700">Beri-beri</td>
+                                    <td class="p-2">Cheilosis, Glostitis, Eye</td>
+                                    <td class="p-2 font-bold text-red-700">Pellagra (3 Ds)</td>
+                                    <td class="p-2 font-bold text-purple-800">Burning Feet Syndrome</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Side-by-Side Flowcharts -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Coenzyme Map -->
+                        <div class="hand-box space-y-3">
+                            <h4 class="font-marker text-lg text-slate-900 border-b border-blue-200 pb-1 text-center">
+                                🗺️ High-Yield Vitamin → Coenzyme Map
+                            </h4>
+                            <div class="font-handwriting text-base space-y-2">
+                                <div class="flex items-center justify-between bg-white p-2 rounded border">
+                                    <span>B₁ Thiamine</span>
+                                    <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                                    <span class="font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">TPP</span>
+                                </div>
+                                <div class="flex items-center justify-between bg-white p-2 rounded border">
+                                    <span>B₂ Riboflavin</span>
+                                    <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                                    <span class="font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">FMN + FAD</span>
+                                </div>
+                                <div class="flex items-center justify-between bg-white p-2 rounded border">
+                                    <span>B₃ Niacin</span>
+                                    <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                                    <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">NAD + NADP</span>
+                                </div>
+                                <div class="flex items-center justify-between bg-white p-2 rounded border">
+                                    <span>B₅ Pantothenic Acid</span>
+                                    <i class="fa-solid fa-arrow-right text-slate-400"></i>
+                                    <span class="font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">Coenzyme A</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Don't Mix These Up Box -->
+                        <div class="hand-box-alert p-4 space-y-2">
+                            <h4 class="font-marker text-lg text-red-900 border-b border-red-300 pb-1 text-center">
+                                🚨 DON'T MIX THESE UP! (Exam Traps)
+                            </h4>
+                            <ul class="text-sm font-handwriting space-y-1 text-red-950">
+                                <li>• <strong>Beri-beri:</strong> B₁ (Thiamine)</li>
+                                <li>• <strong>Cheilosis & Glostitis:</strong> B₂ (Riboflavin)</li>
+                                <li>• <strong>Pellagra & 3 Ds:</strong> B₃ (Niacin)</li>
+                                <li>• <strong>Burning Feet Syndrome:</strong> B₅ (Pantothenic Acid)</li>
+                                <li>• <strong>Light Sensitive:</strong> B₂ Riboflavin</li>
+                                <li>• <strong>Tryptophan Precursor:</strong> B₃ Niacin</li>
+                                <li>• <strong>SO₂ / Sulphite Sensitive:</strong> B₁ Thiamine</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- MINDMAP / SUMMARY TAB SECTION (HIDDEN BY DEFAULT) -->
+            <div id="section-mindmap" class="hidden space-y-8">
+                <div class="text-center border-b-2 border-slate-900 pb-4">
+                    <h2 class="text-3xl sm:text-4xl font-marker text-slate-900 heading-text">COMPLETE ONE-GLANCE REVISION SHEET</h2>
+                    <p class="font-kalam text-slate-600 text-sm">Visual Mindmap Tree & Ultra Quick Revision</p>
+                </div>
+
+                <!-- Visual Tree Hierarchy Box -->
+                <div class="bg-amber-50/60 p-6 rounded-2xl border-2 border-slate-800 text-center space-y-6">
+                    <div class="inline-block bg-slate-900 text-white font-marker text-xl px-6 py-2 rounded-full shadow-lg">
+                        VITAMINS
+                    </div>
+                    <div>↓</div>
+                    <div class="inline-block bg-blue-700 text-white font-kalam text-lg px-5 py-1.5 rounded-xl">
+                        WATER-SOLUBLE VITAMINS (No storage • Excreted via Kidney • Leached in Cooking)
+                    </div>
+                    <div>↓</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+                        
+                        <!-- B1 Tree Node -->
+                        <div class="bg-white p-3 rounded-xl border-2 border-blue-500 shadow space-y-1">
+                            <span class="font-marker text-blue-800 text-lg block border-b pb-1">B₁ THIAMINE</span>
+                            <p class="text-xs"><strong>Coenzyme:</strong> TPP</p>
+                            <p class="text-xs"><strong>Stability:</strong> Least stable</p>
+                            <p class="text-xs"><strong>Deficiency:</strong> Beri-beri</p>
+                            <p class="text-xs text-red-600"><strong>Note:</strong> Sensitive to SO₂/sulphite</p>
+                        </div>
+
+                        <!-- B2 Tree Node -->
+                        <div class="bg-white p-3 rounded-xl border-2 border-amber-500 shadow space-y-1">
+                            <span class="font-marker text-amber-800 text-lg block border-b pb-1">B₂ RIBOFLAVIN</span>
+                            <p class="text-xs"><strong>Coenzymes:</strong> FMN & FAD</p>
+                            <p class="text-xs"><strong>Pigment:</strong> Orange-yellow</p>
+                            <p class="text-xs"><strong>Deficiency:</strong> Cheilosis, Glostitis</p>
+                            <p class="text-xs text-amber-700"><strong>Note:</strong> Sensitive to LIGHT</p>
+                        </div>
+
+                        <!-- B3 Tree Node -->
+                        <div class="bg-white p-3 rounded-xl border-2 border-emerald-500 shadow space-y-1">
+                            <span class="font-marker text-emerald-800 text-lg block border-b pb-1">B₃ NIACIN</span>
+                            <p class="text-xs"><strong>Coenzymes:</strong> NAD & NADP</p>
+                            <p class="text-xs"><strong>Precursor:</strong> Tryptophan</p>
+                            <p class="text-xs"><strong>Deficiency:</strong> Pellagra (3 Ds)</p>
+                            <p class="text-xs text-emerald-700"><strong>Note:</strong> Most stable vitamin</p>
+                        </div>
+
+                        <!-- B5 Tree Node -->
+                        <div class="bg-white p-3 rounded-xl border-2 border-purple-500 shadow space-y-1">
+                            <span class="font-marker text-purple-800 text-lg block border-b pb-1">B₅ PANTOTHENIC</span>
+                            <p class="text-xs"><strong>Coenzyme:</strong> Coenzyme A</p>
+                            <p class="text-xs"><strong>Stability:</strong> pH 4 – 7</p>
+                            <p class="text-xs"><strong>Deficiency:</strong> Burning Feet</p>
+                            <p class="text-xs text-purple-700"><strong>Note:</strong> Energy from carbs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 60-Second Last Minute Bullet List -->
+                <div class="bg-white p-5 rounded-xl border-2 border-slate-900 space-y-3">
+                    <h3 class="text-xl font-bold font-kalam text-slate-900 border-b pb-1">
+                        ⚡ 60-Second Last-Minute Bullet List
+                    </h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm font-handwriting text-slate-900">
+                        <li class="bg-slate-50 p-2 rounded border">• Excess water-soluble vitamins are excreted in kidney, requiring daily intake.</li>
+                        <li class="bg-slate-50 p-2 rounded border">• Leaching is movement of water-soluble vitamins into cooking water.</li>
+                        <li class="bg-slate-50 p-2 rounded border">• Thermal destruction of B₁ produces "meaty" flavour.</li>
+                        <li class="bg-slate-50 p-2 rounded border">• SO₂ and sulphites destroy B₁ and must not be used as preservatives for B₁.</li>
+                        <li class="bg-slate-50 p-2 rounded border">• Riboflavin (B₂) reduction turns orange-yellow into colourless form.</li>
+                        <li class="bg-slate-50 p-2 rounded border">• Baking soda destroys riboflavin during cooking.</li>
+                        <li class="bg-slate-50 p-2 rounded border">• Niacin (B₃) includes nicotinic acid + nicotinamide.</li>
+                        <li class="bg-slate-50 p-2 rounded border">• Pellagra 3 Ds: Diarrhoea, Dementia, Dermatitis (aggravated by sunlight).</li>
+                        <li class="bg-slate-50 p-2 rounded border">• Pantothenic acid (B₅) is stable in pH 4-7 range.</li>
+                        <li class="bg-slate-50 p-2 rounded border">• B₅ deficiency causes Burning Feet Syndrome.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- QUIZ TAB SECTION (25 MCQs) -->
+            <div id="section-quiz" class="hidden space-y-6">
+                <div class="flex justify-between items-center border-b-2 border-slate-900 pb-4 flex-wrap gap-2">
+                    <div>
+                        <h2 class="text-3xl font-marker text-slate-900 heading-text">PRACTICE QUIZ — 25 MCQs</h2>
+                        <p class="font-kalam text-slate-600 text-sm">Self-Assessment Tool Based Strictly on the Source Notes</p>
+                    </div>
+                    <div id="quiz-score" class="bg-blue-600 text-white font-bold px-4 py-2 rounded-xl text-sm shadow">
+                        Score: 0 / 25
+                    </div>
+                </div>
+
+                <!-- Quiz Container Generated by JS -->
+                <div id="quiz-container" class="space-y-4"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Generate spiral rings on left margin
+        const spiralContainer = document.getElementById('spiral-container');
+        const template = document.getElementById('spiral-template');
+        for (let i = 0; i < 18; i++) {
+            const clone = template.content.cloneNode(true);
+            spiralContainer.appendChild(clone);
+        }
+
+        function setPaperTheme(theme) {
+            const notebook = document.getElementById('notebook');
+            const btnRuled = document.getElementById('btn-ruled');
+            const btnGrid = document.getElementById('btn-grid');
+            const btnDark = document.getElementById('btn-dark');
+
+            notebook.classList.remove('paper-ruled', 'paper-grid', 'paper-dark');
+            btnRuled.className = "px-2.5 py-1 rounded text-xs font-medium text-slate-600 hover:text-slate-900";
+            btnGrid.className = "px-2.5 py-1 rounded text-xs font-medium text-slate-600 hover:text-slate-900";
+            btnDark.className = "px-2.5 py-1 rounded text-xs font-medium text-slate-600 hover:text-slate-900";
+
+            if (theme === 'ruled') {
+                notebook.classList.add('paper-ruled');
+                btnRuled.className = "px-2.5 py-1 rounded text-xs font-medium bg-white shadow-sm text-slate-700 font-bold";
+            } else if (theme === 'grid') {
+                notebook.classList.add('paper-grid');
+                btnGrid.className = "px-2.5 py-1 rounded text-xs font-medium bg-white shadow-sm text-slate-700 font-bold";
+            } else if (theme === 'dark') {
+                notebook.classList.add('paper-dark');
+                btnDark.className = "px-2.5 py-1 rounded text-xs font-medium bg-slate-800 text-white font-bold";
+            }
+        }
+
+        function switchTab(tab) {
+            const secNotes = document.getElementById('section-notes');
+            const secMindmap = document.getElementById('section-mindmap');
+            const secQuiz = document.getElementById('section-quiz');
+
+            const tabNotes = document.getElementById('tab-notes');
+            const tabMindmap = document.getElementById('tab-mindmap');
+            const tabQuiz = document.getElementById('tab-quiz');
+
+            secNotes.classList.add('hidden');
+            secMindmap.classList.add('hidden');
+            secQuiz.classList.add('hidden');
+
+            tabNotes.className = "px-3 py-1 rounded-md text-xs font-bold text-slate-700 hover:bg-slate-200";
+            tabMindmap.className = "px-3 py-1 rounded-md text-xs font-bold text-slate-700 hover:bg-slate-200";
+            tabQuiz.className = "px-3 py-1 rounded-md text-xs font-bold text-slate-700 hover:bg-slate-200";
+
+            if (tab === 'notes') {
+                secNotes.classList.remove('hidden');
+                tabNotes.className = "px-3 py-1 rounded-md text-xs font-bold bg-blue-600 text-white shadow-sm";
+            } else if (tab === 'mindmap') {
+                secMindmap.classList.remove('hidden');
+                tabMindmap.className = "px-3 py-1 rounded-md text-xs font-bold bg-blue-600 text-white shadow-sm";
+            } else if (tab === 'quiz') {
+                secQuiz.classList.remove('hidden');
+                tabQuiz.className = "px-3 py-1 rounded-md text-xs font-bold bg-blue-600 text-white shadow-sm";
+            }
+        }
+
+        function searchNotes() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.searchable-item');
+
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        const mcqs = [
+            { q: "1. Water-soluble vitamins are generally:", opts: ["Stored extensively in body", "Not stored to any extent", "Stored only in adipose tissue", "Stored only in liver"], ans: 1 },
+            { q: "2. Excess ingested water-soluble vitamin is mainly:", opts: ["Stored in fat", "Converted to protein", "Excreted through kidney", "Stored in muscle"], ans: 2 },
+            { q: "3. Water-soluble vitamins are extensively lost during cooking by:", opts: ["Caramelization", "Leaching", "Gelatinization", "Fermentation"], ans: 1 },
+            { q: "4. Which vitamin is also called thiamine?", opts: ["B₁", "B₂", "B₃", "B₅"], ans: 0 },
+            { q: "5. Riboflavin corresponds to:", opts: ["B₁", "B₂", "B₃", "B₅"], ans: 1 },
+            { q: "6. Niacin corresponds to:", opts: ["B₁", "B₂", "B₃", "B₅"], ans: 2 },
+            { q: "7. Pantothenic acid corresponds to:", opts: ["B₁", "B₂", "B₃", "B₅"], ans: 3 },
+            { q: "8. Cobalamine corresponds to:", opts: ["B₆", "B₇", "B₉", "B₁₂"], ans: 3 },
+            { q: "9. The active coenzyme form mentioned for thiamine is:", opts: ["FAD", "NAD", "TPP", "CoA"], ans: 2 },
+            { q: "10. Severe prolonged thiamine deficiency causes:", opts: ["Pellagra", "Beri-beri", "Burning feet syndrome", "Cataract"], ans: 1 },
+            { q: "11. Thiamine is particularly sensitive to:", opts: ["Sulphur dioxide and sulphite", "Oxygen only", "Calcium", "Sodium chloride"], ans: 0 },
+            { q: "12. Thermal destruction of thiamine contributes to development of:", opts: ["Bitter flavour", "'Meaty' flavour", "Sweet flavour", "Sour flavour"], ans: 1 },
+            { q: "13. Riboflavin belongs to which group?", opts: ["Flavins", "Purines", "Porphyrins", "Sterols"], ans: 0 },
+            { q: "14. Riboflavin is what colour?", opts: ["Blue", "Orange-yellow", "Green", "Red"], ans: 1 },
+            { q: "15. Reduction of riboflavin produces:", opts: ["Black form", "Red form", "Colourless form", "Blue form"], ans: 2 },
+            { q: "16. Which factor readily causes loss of riboflavin vitamin activity?", opts: ["Freezing", "Light", "Salt", "Starch"], ans: 1 },
+            { q: "17. Riboflavin forms part of which coenzymes?", opts: ["TPP and CoA", "NAD and NADP", "FMN and FAD", "ATP and ADP"], ans: 2 },
+            { q: "18. Niacin includes:", opts: ["Nicotinic acid only", "Nicotinamide only", "Nicotinic acid and nicotinamide", "Tryptophan only"], ans: 2 },
+            { q: "19. Niacin can be formed in tissues from:", opts: ["Methionine", "Tryptophan", "Glycine", "Lysine"], ans: 1 },
+            { q: "20. Which vitamin is relatively one of the most stable?", opts: ["B₁", "B₂", "B₃", "B₅"], ans: 2 },
+            { q: "21. Nicotinamide is a component of:", opts: ["TPP and CoA", "FMN and FAD", "NAD and NADP", "DNA and RNA"], ans: 2 },
+            { q: "22. Prolonged niacin deficiency causes:", opts: ["Beri-beri", "Pellagra", "Burning feet syndrome", "Cheilosis"], ans: 1 },
+            { q: "23. Pantothenic acid is a component of:", opts: ["FAD", "NAD", "Coenzyme A", "TPP"], ans: 2 },
+            { q: "24. Pantothenic acid is stable in which pH range?", opts: ["1–3", "2–5", "4–7", "7–10"], ans: 2 },
+            { q: "25. A characteristic deficiency manifestation of B₅ is:", opts: ["Pellagra", "Beri-beri", "Burning feet syndrome", "Cheilosis"], ans: 2 }
+        ];
+
+        let userAnswers = {};
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            mcqs.forEach((mcq, idx) => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-4 rounded-xl border-2 border-slate-300 shadow-sm space-y-2 font-kalam";
+                card.innerHTML = `
+                    <p class="font-bold text-slate-900 text-base">${mcq.q}</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                        ${mcq.opts.map((opt, oIdx) => `
+                            <button onclick="selectOption(${idx}, ${oIdx})" id="opt-${idx}-${oIdx}" class="text-left px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 transition">
+                                <span class="font-bold text-slate-500 mr-1">${String.fromCharCode(65 + oIdx)}.</span> ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-${idx}" class="text-xs font-bold hidden mt-1"></div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function selectOption(qIdx, oIdx) {
+            userAnswers[qIdx] = oIdx;
+            const correctOpt = mcqs[qIdx].ans;
+            const feedbackEl = document.getElementById(`feedback-${qIdx}`);
+
+            // Reset options styling
+            for (let i = 0; i < 4; i++) {
+                const btn = document.getElementById(`opt-${qIdx}-${i}`);
+                if (btn) btn.className = "text-left px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 transition";
+            }
+
+            const selectedBtn = document.getElementById(`opt-${qIdx}-${oIdx}`);
+            
+            if (oIdx === correctOpt) {
+                selectedBtn.className = "text-left px-3 py-1.5 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-900 font-bold";
+                feedbackEl.className = "text-xs font-bold text-emerald-700 block";
+                feedbackEl.innerText = "✓ Correct Answer!";
+            } else {
+                selectedBtn.className = "text-left px-3 py-1.5 rounded-lg border-2 border-red-500 bg-red-100 text-red-900 font-bold";
+                const correctBtn = document.getElementById(`opt-${qIdx}-${correctOpt}`);
+                if (correctBtn) correctBtn.className = "text-left px-3 py-1.5 rounded-lg border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold";
+                feedbackEl.className = "text-xs font-bold text-red-600 block";
+                feedbackEl.innerText = `✗ Incorrect. Correct answer is: (${String.fromCharCode(65 + correctOpt)}) ${mcqs[qIdx].opts[correctOpt]}`;
+            }
+
+            // Update Total Score
+            let score = 0;
+            Object.keys(userAnswers).forEach(key => {
+                if (userAnswers[key] === mcqs[key].ans) score++;
+            });
+            document.getElementById('quiz-score').innerText = `Score: ${score} / ${mcqs.length}`;
+        }
+
+        // Initialize quiz on load
+        window.onload = function() {
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>
